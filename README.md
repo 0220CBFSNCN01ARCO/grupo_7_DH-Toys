@@ -1,7 +1,4 @@
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/subscription" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch 0220CBFSNCN01ARCO/grupo_7_DH-Toys on GitHub">Watch</a>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+[![CircleCI](https://img.shields.io/circleci/project/github/ntkme/github-buttons/master.svg)](https://circleci.com/gh/ntkme/github-buttons)
 
 ![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.png)
 
