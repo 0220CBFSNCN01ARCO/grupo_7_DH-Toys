@@ -1,6 +1,6 @@
 [![CircleCI](https://img.shields.io/circleci/project/github/ntkme/github-buttons/master.svg)](https://circleci.com/gh/ntkme/github-buttons)
 
-![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.png)
+[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.png)](https://google.com)
 
 ## Productos brindados por el sitio
 Nuestro sitio va a brindar juguetes y cuentos infantiles para niños desde 0 a 12 años. Se van a mostrar por medio de un catálogo con sus filtros correspondientes para hacer mas amena la búsqueda de los distintos productos que ofreceremos y además incluiremos envíos a domicilio en todo el mundo.
