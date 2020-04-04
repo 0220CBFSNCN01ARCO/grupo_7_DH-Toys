@@ -26,3 +26,13 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
 - Negro: #262626
 - Turquesa: #11D5E1
 - Blanco: #FFFFFF
+
+## Referencias
+- https://www.cachavachacba.com.ar/
+- https://www.elmundodeljuguete.com.ar/3%20a%206%20a%C3%B1os?map=specificationFilter_19
+- https://cebra.com.ar/category/341/Computadoras-Infantiles.html
+- https://www.amazon.es/gp/new-releases/toys/ref=as_li_ss_tl?ie=UTF8&linkCode=sl2&tag=diclacan-21&linkId=e193b02bd61a1c7f6fed4b2db58ddd31
+- https://www.hamleys.com/
+- https://www.jugaia.com/es/
+
+Se seleccionó estas páginas por la estética que presentan, las funcionalidades implementadas. Sabemos que son jugueterias funcionales, recomendadas y con trayectoria en el mercado. Tienen el mismo público objetivo que nuestra idea de proyecto a sí mismo los productos brindados y en algunos casos como "Cachavacha" los servicios.
