@@ -1,3 +1,6 @@
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+
 ## Productos brindados por el sitio
 Nuestro sitio va a brindar juguetes y cuentos infantiles para niños desde 0 a 12 años. Se van a mostrar por medio de un catálogo con sus filtros correspondientes para hacer mas amena la búsqueda de los distintos productos que ofreceremos y además incluiremos envíos a domicilio en todo el mundo.
 
