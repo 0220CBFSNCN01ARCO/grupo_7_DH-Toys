@@ -16,8 +16,8 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
 ## Fuentes y Estilos
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
 
-[Title: font-family: 'Open Sans', sans-serif](https://fonts.google.com/specimen/Open+Sans?query=open+sans&category=Sans+Serif)
-[Body: font-family: 'Montserrat', sans-serif](https://fonts.google.com/specimen/Montserrat?query=montserrat)
+- [Title: font-family: 'Open Sans', sans-serif](https://fonts.google.com/specimen/Open+Sans?query=open+sans&category=Sans+Serif)
+- [Body: font-family: 'Montserrat', sans-serif](https://fonts.google.com/specimen/Montserrat?query=montserrat)
 
 ## Paleta de colores
 - Amarillo Pastel: #FFDD56
