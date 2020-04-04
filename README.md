@@ -1,3 +1,5 @@
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
 ![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.png)
 
 ## Productos brindados por el sitio
