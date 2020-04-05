@@ -24,6 +24,7 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
 
 ![Paleta de Colores](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/paletaDeColores.png)
 
+
 ## Referencias
 - https://www.cachavachacba.com.ar/
 - https://www.elmundodeljuguete.com.ar/3%20a%206%20a%C3%B1os?map=specificationFilter_19
