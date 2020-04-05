@@ -22,7 +22,7 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
 
 ## Paleta de colores
 
-![Paleta de Colores](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/paletaColores.png)
+![Paleta de Colores](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/paletaDeColores.png)
 
 ## Referencias
 - https://www.cachavachacba.com.ar/
