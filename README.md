@@ -1,8 +1,10 @@
 
 [![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.png)](https://google.com)
 
+[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/Mug.jpg)](https://google.com)
+
 ## Productos brindados por el sitio
-Nuestro sitio va a brindar juguetes y cuentos infantiles para niños desde 0 a 12 años. Se van a mostrar por medio de un catálogo con sus filtros correspondientes para hacer mas amena la búsqueda de los distintos productos que ofreceremos y además incluiremos envíos a domicilio en todo el mundo.
+Nuestro sitio va a brindar diversos tipos de juguetes, entre ellos cuentos infantiles y juegos de mesa, para niños de diferentes edades pertenecientes al rango de 0 a 12 años. Se van a mostrar por medio de un catálogo con sus filtros correspondientes para hacer mas amena la búsqueda de los distintos productos que ofreceremos y además incluiremos envíos a domicilio en todo el mundo.
 
 ## Público Objetivo
 Los productos serán para niños pero la venta de los mismos va a ser destinado a adultos mayores de 18 años.
@@ -21,11 +23,8 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
 - [Body: font-family: 'Montserrat', sans-serif](https://fonts.google.com/specimen/Montserrat?query=montserrat)
 
 ## Paleta de colores
-- Amarillo Pastel: #FFDD56
-- Amarillo Pastel2: #FFEA98
-- Negro: #262626
-- Turquesa: #11D5E1
-- Blanco: #FFFFFF
+
+![Paleta de Colores](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/paletaDeColores.png)
 
 ## Referencias
 - https://www.cachavachacba.com.ar/
