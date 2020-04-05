@@ -1,5 +1,6 @@
 
-[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.png)](https://google.com)  [![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/tazaRegalo.jpg)](https://google.com)
+<!--[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.png)](https://google.com)-->  
+[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/tazaRegalo.jpg)](https://google.com)
 
 ## Productos brindados por el sitio
 Nuestro sitio va a brindar diversos tipos de juguetes, entre ellos cuentos infantiles y juegos de mesa, para niños de diferentes edades pertenecientes al rango de 0 a 12 años. Se van a mostrar por medio de un catálogo con sus filtros correspondientes para hacer mas amena la búsqueda de los distintos productos que ofreceremos y además incluiremos envíos a domicilio en todo el mundo como un servicio adicional.
@@ -13,6 +14,9 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
  - Distintos medios de pago
  - Amplia variedad de productos categorizados para ciertas edades y precios
  - Listado de cumpleaños donde los invitados puedan comprar los juguetes en una lista creada por el cumpleañero.
+
+## Logo
+[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.jpg)](https://google.com)
 
 ## Fuentes y Estilos
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
