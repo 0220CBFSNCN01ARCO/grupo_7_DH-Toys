@@ -3,7 +3,7 @@
 [![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/tazaRegalo.jpg)](https://google.com)
 
 ## Productos brindados por el sitio
-Nuestro sitio va a brindar diversos tipos de juguetes, entre ellos cuentos infantiles y juegos de mesa, para niños de diferentes edades pertenecientes al rango de 0 a 12 años. Se van a mostrar por medio de un catálogo con sus filtros correspondientes para hacer mas amena la búsqueda de los distintos productos que ofreceremos y además incluiremos envíos a domicilio en todo el mundo como un servicio adicional.
+Nuestro sitio brindara diversos tipos de juguetes, didácticos, cuentos infantatiles, entre otros. Orientados a niños entre las edades de 0 a 12 años. Los mismos se presentaran mediante catálogo con diversos filtros  para mejorar la experiencia del cliente, facilitando su busqueda de acuerdo a su intereses y permitiendo que la operación de compra sea fácil y rápida. Además incluiremos envíos a domicilio en todo el mundo como un servicio adicional.
 
 ## Público Objetivo
 Los productos serán para niños pero la venta de los mismos va a ser destinado a adultos mayores de 18 años.
