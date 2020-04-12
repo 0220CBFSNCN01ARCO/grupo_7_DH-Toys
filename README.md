@@ -16,7 +16,7 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
  - Listado de cumpleaños donde los invitados puedan comprar los juguetes en una lista creada por el cumpleañero.
 
 ## Wireframes
-- [HOME](https://xd.adobe.com/view/d27ed622-7c04-4564-62a7-3b379e8827d3-a44f/)
+- [HOME](https://xd.adobe.com/view/ea17250d-18ec-4727-7fec-a2eda7b5093d-9c26/)
 
 ## Logo
 [![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.jpg)](https://google.com)
