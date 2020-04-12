@@ -9,11 +9,21 @@ Nuestro sitio brindara diversos tipos de juguetes, didácticos, cuentos infantat
 Los productos serán para niños pero la venta de los mismos va a ser destinado a adultos mayores de 18 años.
 
 ## ¿Cómo ajustaremos nuestra oferta a ese público?
- - Ofreciendo descuentos y promociones
- - Envíos express
- - Distintos medios de pago
- - Amplia variedad de productos categorizados para ciertas edades y precios
+ - Ofreciendo descuentos y promociones.
+ - Envíos express.
+ - Distintos medios de pago.
+ - Amplia variedad de productos categorizados para ciertas edades y precios.
  - Listado de cumpleaños donde los invitados puedan comprar los juguetes en una lista creada por el cumpleañero.
+
+ Dispondremos de una página web con distintas secciones. En el index tendremos el HOME, donde podremos ver una barra de navegación con las distintas páginas (Home, Juguetes, Por Edad, Nosotros y Contacto). A su vez podremos acceder al carrito de compras, al login y un buscador, todo dispuesto en esta barra de navegación como así también poder ver los juguetes mas populares y comprados. En la seccion Juguetes tendremos un listado de los mismos, y posibilidad de filtrar por precio y tipo. La página Por Edad te permitirá generar un gran filtro para que busques tu juguete correcto de acuerdo a la edad del niño. En la sección Nosotros podrás encontrar información relacionada al equipo de trabajo y de la empresa. Y por ultimo en Contacto te brindaremos la posibilidad de que nos consultes cualquier inquietud y necesidad de información que tengas!.
+    Es importante recalcar que contaremos con una sección privada solo para Administradores del sitio, en donde
+podremos dar de alta, baja y modificar juguetes que se mostrarán dinamicamente en la página.
+
+## Equipo de Trabajo
+# Compuesto por 3 integrante:
+- BEDINI, Eduardo.
+- OLMOS, Francisco.
+- QUIROGA, Ignacio.
 
 ## Wireframes
 - [HOME](https://xd.adobe.com/view/ea17250d-18ec-4727-7fec-a2eda7b5093d-9c26/)
