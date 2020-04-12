@@ -27,6 +27,7 @@ podremos dar de alta, baja y modificar juguetes que se mostrarán dinamicamente 
 
 ## Wireframes
 - [HOME](https://xd.adobe.com/view/ea17250d-18ec-4727-7fec-a2eda7b5093d-9c26/)
+- [ADMIN](https://xd.adobe.com/view/fdc966de-b576-4065-75b2-fd8088ff606b-8bf8/)
 
 ## Logo
 [![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.jpg)](https://google.com)
