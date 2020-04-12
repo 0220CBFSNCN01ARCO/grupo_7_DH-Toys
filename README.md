@@ -20,7 +20,7 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
 podremos dar de alta, baja y modificar juguetes que se mostrarán dinamicamente en la página.
 
 ## Equipo de Trabajo
-### Compuesto por 3 integrante:
+### Compuesto por 3 integrantes:
 - BEDINI, Eduardo.
 - OLMOS, Francisco.
 - QUIROGA, Ignacio.
