@@ -1,5 +1,4 @@
 
-<!--[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/logo.png)](https://google.com)-->  
 [![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/tazaRegalo.jpg)](https://google.com)
 
 ## Productos brindados por el sitio
