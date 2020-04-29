@@ -1,5 +1,5 @@
 
-[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/site/img/tazaRegalo.jpg)](https://google.com)
+[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/site/public/img/tazaRegalo.jpg)](https://google.com)
 
 ## Productos brindados por el sitio
 Nuestro sitio brindara diversos tipos de juguetes, didácticos, cuentos infantatiles, entre otros. Orientados a niños entre las edades de 0 a 12 años. Los mismos se presentaran mediante catálogo con diversos filtros  para mejorar la experiencia del cliente, facilitando su busqueda de acuerdo a su intereses y permitiendo que la operación de compra sea fácil y rápida. Además incluiremos envíos a domicilio en todo el mundo como un servicio adicional.
@@ -34,7 +34,7 @@ podremos dar de alta, baja y modificar juguetes que se mostrarán dinamicamente 
 
 
 ## Logo
-[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/site/img/logo.jpg)](https://google.com)
+[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/site/public/img/logo.jpg)](https://google.com)
 
 ## Fuentes y Estilos
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@ podremos dar de alta, baja y modificar juguetes que se mostrarán dinamicamente 
 
 ## Paleta de colores
 
-![Paleta de Colores](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/site/img/paletaDeColores.png)
+![Paleta de Colores](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/site/public/img/paletaDeColores.png)
 
 
 ## Referencias
