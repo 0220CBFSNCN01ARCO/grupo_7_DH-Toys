@@ -1,16 +1,24 @@
 {
-  "name": "dhtoys",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
+  "name": "grupo_7_dh-toys",
+  "version": "1.0.0",
+  "description": "[![DHToys](https://raw.githubusercontent.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/master/img/tazaRegalo.jpg)](https://google.com)",
+  "main": "index.js",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
-  }
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys/issues"
+  },
+  "homepage": "https://github.com/0220CBFSNCN01ARCO/grupo_7_DH-Toys#readme"
 }
