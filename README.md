@@ -27,8 +27,10 @@ podremos dar de alta, baja y modificar juguetes que se mostrarán dinamicamente 
 ## Wireframes
 - [HOME](https://xd.adobe.com/view/ea17250d-18ec-4727-7fec-a2eda7b5093d-9c26/)
 - [ADMIN](https://xd.adobe.com/view/b0b0e36a-bc7d-47dc-524e-8e91fe1df282-c681/)
+- [LOGIN](https://xd.adobe.com/view/fd8d1d22-a6ea-4dbf-4a22-b29a4d837fe6-8bbc/)
 - [DESCRIPTION](https://xd.adobe.com/view/9163fb9d-0cbb-468f-686f-c4699a9d1145-e752/)
-- [CART](https://xd.adobe.com/view/2f034cad-b712-43f5-5e48-3918d2418bc6-5932/)
+- [CART](https://xd.adobe.com/view/cf0f6f8f-093d-4d93-7de5-a761df71294b-b93e/)
+
 
 
 ## Logo
