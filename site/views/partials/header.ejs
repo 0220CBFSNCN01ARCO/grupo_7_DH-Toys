@@ -1,24 +1,35 @@
 <header>
-    <nav class="navbar col-12 d-flex align-items-start">
-        <div class="col-3 p-0 d-flex justify-content-around">
-            <img class="img-logo" src="/images/logo2.jpg" alt="logo-DHToys">
-        </div>
-        <div class="col-6 d-flex p-0 justify-content-end">
-            <div class="col-10 search-text d-flex justify-content-center">
-                <input type="text">
+    <div class="fixed-top">
+        <div class="row collapse m-0 header-collapse justify-content-between" id="navbarToggleExternalContent">
+            <div class=" pt-2 pl-3 d-flex flex-column justify-content-start menu-selection">
+                <a href="">Home</a>
+                <a href="">Juguetes</a>
+                <a href="">Por Edad</a>
+                <a href="">Nosotros</a>
+                <a href="">Contacto</a>
             </div>
-            <div class="col-2 search-button p-0 d-flex align-items-center">
-                <button type="submit" class="fas fa-search"></button>
+            <div class="p-2 pr-4 d-flex justify-content-end">
+                <img class="img-logo" src="/images/logo2.jpg" alt="logo-DHToys">
             </div>
         </div>
-        
-        
-        <div>
-            <ul>
-                <li>probando</li>
-                <li>funcionamiento</li>
-                <li>del partial</li>
-            </ul>
-        </div>
-    </nav>
+        <nav class="navbar navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="row col-6 p-0">
+                <div class="col-10 search-text d-flex justify-content-center">
+                    <input type="text">
+                </div>
+                <div class="col-2 search-button p-0 d-flex align-items-center">
+                    <button type="submit" class="fas fa-search"></button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row col-12 p-0 m-0 justify-content-center logo-container">
+        <div class="space-img-logo"></div>
+        <img class="img-logo mt-1 mb-1" src="/images/logo2.jpg" alt="logo-DHToys">
+    </div>
 </header>
