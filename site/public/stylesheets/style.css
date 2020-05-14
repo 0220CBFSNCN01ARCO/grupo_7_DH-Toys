@@ -67,8 +67,7 @@ header{
 }
 
 hr{
-  border: 3px solid #262626;
-  margin-top: 28px;
+  display: none;
 }
 
 .tittle p {
@@ -80,9 +79,18 @@ hr{
 }
 
 .containerProduct{
+margin-bottom: 5%;
 border: 4px solid #262626;
 background-color: #ffea98;
 border-radius: 30px;
+}
+
+.imgProduct{
+  margin: 5% 0%;
+}
+
+.fila{
+  margin:2%
 }
 
 h4{
@@ -125,14 +133,20 @@ h4{
   .carousel-item{
     flex-direction: row;
   }
+
 }
 
 @media(min-width:768px) {
 
   .collapse:not(.show) {
     display: flex;
+    
 }
-
+hr{
+  display: block;
+  border: 3px solid #262626;
+  margin-top: 28px;
+}
 .fixed-top{
   position: static;
 }
