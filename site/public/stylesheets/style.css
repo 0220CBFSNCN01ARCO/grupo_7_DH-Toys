@@ -76,6 +76,7 @@ hr{
   display: none;
 }
 
+
 .tittle p {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
@@ -85,7 +86,7 @@ hr{
 }
 
 .containerProduct{
-margin-bottom: 5%;
+margin-bottom: 3%;
 border: 4px solid #262626;
 background-color: #ffea98;
 border-radius: 30px;
@@ -93,10 +94,6 @@ border-radius: 30px;
 
 .imgProduct{
   margin: 5% 0%;
-}
-
-.fila{
-  margin:2%
 }
 
 h4{
@@ -114,26 +111,26 @@ h4{
 }
 
 .price p {
-  font-weight: 900;
-  font-size: large;
-  padding-top: 5px;
+  font-weight: 800;
+  font-size: 21px;
+  padding-top: 4px;
   text-align: center;
-  font-family:'Montserrat';
+  font-family: 'Montserrat';
 }
 
 .view img{
-  width: 15%;
+  width: 21%;
+}
+
+.addToCart img{
+  width: 85%;
 }
 
 .cardBody{
   position: relative;
 }
 
-.addToCart img{
-  position: absolute;
-  left: 80%;
-  width: 10%;
-}
+
 
 @media(min-width:426px) {
   .carousel-item{
