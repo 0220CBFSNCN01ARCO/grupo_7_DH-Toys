@@ -142,10 +142,6 @@ h4{
   flex-direction: row-reverse!important;
 }
 
-.menu-selection img {
-  width: 20%;
-}
-
 .menu-selection{
   flex-direction: row!important;
   flex-wrap: wrap!important;
@@ -171,7 +167,8 @@ h4{
 
 .menu-selection-search{
   display: flex;
-  max-width: 30%;
+  width: 300px;
+  margin-right: 50px;
 }
 
 .search-text,
@@ -186,11 +183,16 @@ h4{
 
 .login{
   display: flex!important;
-  justify-content: center;
+  justify-content: flex-end;
+  width: 35%;
 }
 
 .login a{
   margin: 0px;
+}
+
+.login img{
+  width: 22px;
 }
 
 .menu-bottom{
@@ -250,22 +252,3 @@ h4{
     flex-direction: row;
   }
 } 
-/*
-@media(min-width:1200px) {
-
-  .menu-bottom{
-    width: 100%;
-  }
-
-  .menu-selection-options{
-    justify-content: flex-start;
-  }
-  
-  .menu-selection-cart{
-    width: 34%;
-  }
-
-  .menu-selection-cart img{
-    width: 14%;
-  }
-}*/
