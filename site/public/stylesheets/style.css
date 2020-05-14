@@ -130,7 +130,40 @@ h4{
   position: relative;
 }
 
+footer h2{
+  font-size: 12px;
+}
 
+footer h3{
+  font-size: 14px;
+}
+
+footer p{
+  font-size: 12px;
+  margin: 2px;
+}
+
+footer a{
+  border: 2px solid #F2F0E9;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #F2F0E9;
+  padding: 2px;
+}
+
+footer h6{
+  font-size: 12px;
+}
+
+.footer-copyright{
+  background-color: #262626;
+  color: #F2F0E9;
+}
+
+.footer-subscribe{  
+  background-color: #3A3A38;
+  color: #F2F0E9;
+}
 
 @media(min-width:426px) {
   .carousel-item{
