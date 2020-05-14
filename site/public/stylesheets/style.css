@@ -63,14 +63,13 @@ header{
 
 .container-navigation-cart img{
   width: 80%;
-  fill: #F2F0E9;
 }
 
 
 .tittleCarousel{
   display: flex;
   justify-content: center;
-
+  
 }
 
 hr{
