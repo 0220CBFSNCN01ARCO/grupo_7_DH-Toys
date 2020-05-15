@@ -1,0 +1,21 @@
+.formulario{
+    margin: 5vh 0;
+    border: 2px solid #262626;
+}
+
+.filaForm{
+    margin: 5% 0%
+}
+
+.botonCargar{
+    display: flex;
+    direction: rtl;
+}
+
+.title{
+    margin-top: 5%;
+}
+
+.campo{
+    font-weight: bold;
+}
