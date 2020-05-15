@@ -1,5 +1,4 @@
 .formulario{
-<<<<<<< HEAD
     margin: 5vh 0;
     border: 2px solid #262626;
 }
@@ -11,20 +10,6 @@
 .botonCargar{
     display: flex;
     direction: rtl;
-=======
-    border-left:2px solid #262626;
-    border-right:2px solid #262626;
-}
-
-.first{
-    margin-top: 5vh;
-    padding-top: 20px;
-    border-top:2px solid #262626;
-}
-
-.last{
-    border-bottom:2px solid #262626;
->>>>>>> 20defc3f98590cb18199a84216d8d61f939170c7
 }
 
 .title{
