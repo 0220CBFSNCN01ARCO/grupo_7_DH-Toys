@@ -1,0 +1,46 @@
+.detalleContainer{
+  background-color: #F2F0E9;
+}
+
+.detalleImagenPrincipal img{
+  width: 100%;
+}
+  
+.detalleImagen img{
+  width: 100%;
+}
+
+
+.infoProducto h2,
+.infoProducto h3,
+.detalleDescripcion p{
+  text-align: center;
+}
+
+.detalleProductoComprar{
+  background-color: #262626;
+  border: none;
+  color: white;
+  box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+}
+
+@media(min-width:768px) {
+
+  .infoProducto h2,
+  .infoProducto h3,
+  .detalleDescripcion p{
+  text-align: left;
+  }
+
+  .detalleDescripcion{
+    padding: 0!important;
+  }
+
+  .detalleProducto{
+    border: 1px solid #262626;
+    justify-content: space-around;
+    margin: 2rem!important;
+    padding: 2rem!important;
+  }
+}
+
