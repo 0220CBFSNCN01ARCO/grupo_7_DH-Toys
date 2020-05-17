@@ -18,6 +18,25 @@ Los productos serán para niños pero la venta de los mismos va a ser destinado 
     Es importante recalcar que contaremos con una sección privada solo para Administradores del sitio, en donde
 podremos dar de alta, baja y modificar juguetes que se mostrarán dinamicamente en la página.
 
+## Instalación
+
+Para empezar es necesario que se ejecuten los siguientes comandos:
+
+```bash
+npm install
+npm install nodemon (en caso de no tenerlo instalado en tu equipo)
+npm start (para iniciar express)
+```
+
+## Modo de uso
+
+Abrimos nuestro navegador e ingresamos a las distintas páginas:
+- http://localhost:3000/
+- http://localhost:3000/admin
+- http://localhost:3000/detalle
+- http://localhost:3000/carrito
+- http://localhost:3000/login
+
 ## Equipo de Trabajo
 ### Compuesto por 3 integrantes:
 - BEDINI, Eduardo.
