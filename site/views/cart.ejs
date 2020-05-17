@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
-</head>
+<html>
+
+<%- include('partials/head')%>
 <body>
-    
+  <div id="app">
+    <%- include('partials/header')%>
+     <!-- Title -->
+     <div class="titlecompra">
+      MI COMPRA
+      </div>
+      <div class="shopping-cart">
+        <!-- ENCABEZADO-->
+          <ul type="none" class="encabezadoDeListado">
+            <li>
+              <p class="detalleProducto">Producto</p>
+            </li>
+            <li>
+              <p class="detallePrecio">Precio</p>
+            </li>
+            <li>
+              <p class="detalleCantidad">Cantidad</p>
+            </li>
+            <li>
+              <p class="detalleTotal">Total</p>
+            </li>
+          </ul>
+        <!-- Producto 1 -->
+        <section class="descripcionProducto">
+            <div class="imagen">
+            <img src="images/Inserteimage.png" alt="" />
+          </div>
+          <div class="description">
+            <span>Common Projects</span>
+            <span>Bball High</span>
+            <span>White</span>
+          </div>
+          <div class="Precio-unitario">$549</div>
+          <div class="quantity">
+            <button class="plus-btn" type="button" name="button">
+              <img src="images/mas1.png" alt="Agregar uno" />
+            </button>
+            <input type="text" name="name" value="1">
+            <button class="minus-btn" type="button" name="button">
+              <img src="images/menos1.png" alt="Restar uno" />
+            </button>
+          </div>
+          <div class="Precio-total">$549</div>
+        </section>
+        <!-- Producto 2 -->
+        <section class="descripcionProducto">
+            <div class="imagen">
+            <img src="images/Inserteimage.png" alt=""/>
+          </div>
+          <div class="description">
+            <span>Maison Margiela</span>
+            <span>Future Sneakers</span>
+            <span>White</span>
+          </div>
+          <div class="Precio-unitario">$870</div>
+          <div class="quantity">
+            <button class="plus-btn" type="button" name="button">
+              <img src="images/mas1.png" alt="" />
+            </button>
+            <input type="text" name="name" value="1">
+            <button class="minus-btn" type="button" name="button">
+              <img src="images/menos1.png" alt="" />
+            </button>
+          </div>
+          <div class="Precio-total">$870</div>
+        </section>
+        <!-- Producto 3 -->
+        <section class="descripcionProducto">
+            <div class="imagen">
+            <img src="images/Inserteimage.png" alt="" />
+          </div>
+          <div class="description">
+            <span>Our Legacy</span>
+            <span>Brushed Scarf</span>
+            <span>Brown</span>
+          </div>
+          <div class="Precio-unitario">$349</div>
+          <div class="quantity">
+            <button class="minus-btn" type="button" name="button">
+              <img src="images/mas1.png" alt="" />
+            </button>
+            <input type="text" name="name" value="1">
+            <button class="minus-btn" type="button" name="button">
+              <img src="images/menos1.png" alt="" />
+            </button>
+          </div>
+          <div class="Precio-total">$349</div>
+        </section>
+      <!-- Boton de total a Pagar -->
+      <div class="totalaPagar">
+      TOTAL A PAGAR <br><br>
+        $1768
+      </div>
+      <p class="textoCuotas">Hasta 12 cuotas</p>
+      <!-- Boton finalizar compra -->
+      <button class="finalizarCompra">Finalizar compra</button>
+      </div>
+    <%- include('partials/footer')%>
+  </div>
+  <%- include('partials/scripts')%>
 </body>
+
 </html>

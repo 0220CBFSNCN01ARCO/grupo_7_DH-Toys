@@ -302,3 +302,153 @@ footer h6{
     flex-direction: row;
   }
 } 
+/* estilos de listado de producto*/
+.shopping-cart {
+  width: 95%;
+  height: 95%;
+  margin: 40px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  background-color:#F2F0E9;
+  border: 1px black solid;
+}
+.titlecompra {
+  height: 60px;
+  padding: 20px 30px;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+.contenedorDeEncabezado{
+  border: black solid 1px;
+  align-items: center;
+}
+.encabezadoDeListado{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 60px;
+  padding-right: 10px;
+  border-bottom: black 1px solid;
+  padding-top: 11px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size:medium;
+  background-color: #FFDD56;
+}
+.detallePrecio{
+  padding-left: 470px;
+}
+.detalleCantidad{
+  padding-left: 160px;
+}
+.detalleTotal{
+  padding-left: 240px;
+}
+.descripcionProducto{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 50px;
+  margin-bottom: 15px;
+}
+.imagen {
+  margin-right: 0px;
+}
+.description {
+  padding-top: 10px;
+  margin-right: 60px;
+  width: 115px;
+}
+ 
+.description span {
+  display: block;
+  font-size: 14px;
+  color: #43484D;
+  font-weight: 400;
+}
+ 
+.description span:first-child {
+  margin-bottom: 5px;
+}
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 8px;
+  color: #86939E;
+}
+
+.quantity {
+  padding-top: 20px;
+  margin-right: 60px;
+}
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+ 
+button[class*=btn] {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.minus-btn img {
+  margin-bottom: 3px;
+}
+.plus-btn img {
+  margin-top: 2px;
+}
+ 
+button:focus,
+input:focus {
+  outline:0;
+}
+.total-price {
+  width: 83px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+.totalaPagar{
+  border: black solid 2px;
+  margin: auto;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+
+}
+.textoCuotas{
+  margin: auto;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+.finalizarCompra{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size:small ;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
