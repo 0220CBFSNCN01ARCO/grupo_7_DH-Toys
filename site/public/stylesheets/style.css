@@ -330,6 +330,7 @@ footer h6{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
   padding-left: 60px;
   padding-right: 10px;
   border-bottom: black 1px solid;
@@ -340,13 +341,12 @@ footer h6{
   background-color: #FFDD56;
 }
 .detallePrecio{
-  padding-left: 470px;
 }
 .detalleCantidad{
-  padding-left: 160px;
+
 }
 .detalleTotal{
-  padding-left: 240px;
+  
 }
 .descripcionProducto{
   display: flex;
@@ -470,6 +470,7 @@ background-color: #F2F0E9;
   padding-top: 30px;
   padding-bottom: 30px;
   border: black solid 1px;
+  margin-left: 10px;
 }
 .textLogin{
   font-weight: 700;
@@ -480,6 +481,7 @@ background-color: #F2F0E9;
   color: white;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-right: 10px;
 }
 .nuevaCuenta{
   text-align: center;
