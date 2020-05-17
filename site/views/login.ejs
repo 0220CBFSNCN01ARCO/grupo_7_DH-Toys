@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
+<html>
+
+<%- include('partials/head')%>
 <body>
-    
+  <div id="app">
+    <%- include('partials/header')%>
+    <div class="contenedorDeLogin">
+        <div class="logueo">
+          <h3 class="textLogin">LOGIN</h3><br><br>
+          <p>Los campos con * son obligatorios para realizar el inicio de sesión. Si ya tenés cuenta podes iniciar sesión dando click en el boton de inicio de sesión</p>
+          <br><br>
+      <form>
+        <div class="form-group col-8">
+          <label for="exampleInputEmail1">Ingresa tu Email *</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Ingresa tu dirección de email">
+        </div>
+        <div class="form-group col-8">
+          <label for="exampleInputPassword1">Ingresa tu Password *</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresa tu password">
+          <small id="emailHelp" class="form-text text-muted">¿Olvidaste tu contrseña?</small>
+        </div>
+        <button class="IniciarSesion">Iniciar sesion</button>
+      </form>
+      </div>
+      <div class="nuevaCuenta">
+        <h3 class="textNvoCliente">NUEVO CLIENTE</h3>
+        <p>¡Te damos la bienvenida a DH TOYD!<br> por favor haz click en el siguiente botón para <br> crearte tu cuenta</p>
+        <button class="crearCuenta">CREAR CUENTA</button>
+      </div>
+    </div>
+    <%- include('partials/footer')%>
+  </div>
+  <%- include('partials/scripts')%>
 </body>
+
 </html>
+
+
+
+
