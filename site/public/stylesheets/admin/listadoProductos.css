@@ -1,0 +1,30 @@
+.list-products-title{
+  text-align: center;
+}
+
+.table-container{
+  margin: 5vh 0;
+}
+
+tr {
+  border: 2px solid #262626;
+}
+
+th, td{
+  border: 1px solid #262626 ;
+}
+
+.link-edit-product img{
+  width: 25px;
+}
+
+.link-edit-product button{
+  background-color: transparent;
+  border: none;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  color: #fff;
+  border-color: #262626;
+  background-color: #262626;
+}
