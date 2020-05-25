@@ -12,21 +12,21 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <% for(let i = 0; i<10; i++) {%>
+        <% for(let i = 0; i < 10; i++) {%>
             <div class="col-8 col-sm-5 col-md-3 col-lg-3 col-xl-2 mr-3 ml-3 containerProduct">
                 <div>
                     <div class="image imgProduct">
                         <img class="card-img-top"
-                        src="images/photo.png"
+                        src=<%- products[i].image %>
                         alt="Card image cap">
                     </div>
-                    <h4 class="text center" style="text-align: center;">Lorem ipsum</h4>
+                    <h4 class="text center" style="text-align: center;"><%- products[i].name %></h4>
                     <div>
-                        <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam aut facere eligendi non omnis vitae.</p>
+                        <p class="text-center"><%- products[i].description %></p>
                     </div>
                     <div class="row">
                         <div class="col-12 price text-align-center">
-                            <p class="card-text">$1500</p>
+                            <p class="card-text">$ <%- products[i].price %></p>
                         </div>
                     </div>
                     <div class="row no-gutters">
