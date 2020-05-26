@@ -10,10 +10,22 @@ const productos = {
     allProductsWithImage: function(){
         const productos = this.productos();
         const productosConImagen = productos.map((producto) =>{
-            producto.image = '/images/products/' + producto.image;
+            producto.image = path.join('/','images','products', producto.image);
             return producto;
         })
         return productosConImagen;
     },
+    productById: function(id){
+        const productos = this.productos();
+        return productoFiltrado = productos.filter(product =>{
+            return product.id == id;
+        })
+    },
+    productWithImageById: function(id,){
+        const productos = this.allProductsWithImage();
+        return productoFiltrado = productos.filter(product =>{
+            return product.id == id;
+        })
+    }
 }
 module.exports = productos;

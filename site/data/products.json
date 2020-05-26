@@ -4,13 +4,13 @@
     "name": "Batman",
     "description": "Figura de acción de Batman. Muñeco articulado, coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto. ",
     "category": 1,
-    "image": "batman1.jpg",
+    "image": "batman.jpg",
     "price": 2500
   },
   {
     "id": 2,
     "name": "Buzz Lightyear",
-    "description":  "Figura coleccionable de Buzz Lightyear. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto. ",
+    "description": "Figura coleccionable de Buzz Lightyear. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto. ",
     "category": 2,
     "image": "buzz.jpg",
     "price": 1500
@@ -18,10 +18,10 @@
   {
     "id": 3,
     "name": "Woody",
-    "description": "Figura coleccionable del comisario Woody. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente 20 cm de alto. ",
-    "category": 3,
+    "description": "Figura coleccionable de Woody. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto. \r\n                            \r\n                            ",
+    "category": "3",
     "image": "woody.jpg",
-    "price": 1500
+    "price": "2000"
   },
   {
     "id": 4,

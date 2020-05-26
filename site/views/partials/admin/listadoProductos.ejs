@@ -13,12 +13,13 @@
           <th>orden</th>
           <th>acciones</th>
         </tr>
+        <% products.forEach(product => { %>
         <tr>
-          <td>1</td>
-          <td>Lorem</td>
-          <td>$999</td>
-          <td>Edad</td>
-          <td class="link-edit-product"><a href="" class=""><img src="/images/editProduct.svg" alt="img"></a>
+          <td><%- product.id %></td>
+          <td><%- product.name %></td>
+          <td>$<%- product.price %></td>
+          <td><%- product.category %></td>
+          <td class="link-edit-product"><a href=admin/editor/<%- product.id %> class=""><img src="/images/editProduct.svg" alt="img"></a>
             <div class="custom-control custom-switch d-inline ">
               <input type="checkbox" class="custom-control-input" id="customSwitch1">
               <label class="custom-control-label" for="customSwitch1"></label>
@@ -28,81 +29,7 @@
               <button class="p-0 m-0"><img src="/images/close-delete.svg" alt="delete"></button>
           </td>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Lorem</td>
-          <td>$999</td>
-          <td>Edad</td>
-          <td class="link-edit-product"><a href="" class=""><img src="/images/editProduct.svg" alt="img"></a>
-            <div class="custom-control custom-switch d-inline ">
-              <input type="checkbox" class="custom-control-input" id="customSwitch1">
-              <label class="custom-control-label" for="customSwitch1"></label>
-            </div>
-              <!--<button class="p-0 m-0 toggle-on"><img src="/images/toggle-on.svg" alt="on"></button>
-              <button class="p-0 m-0 toggle-off d-none"><img src="/images/toggle-off.svg" alt="off"></button>-->
-              <button class="p-0 m-0"><img src="/images/close-delete.svg" alt="delete"></button>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Lorem</td>
-          <td>$999</td>
-          <td>Edad</td>
-          <td class="link-edit-product"><a href="" class=""><img src="/images/editProduct.svg" alt="img"></a>
-            <div class="custom-control custom-switch d-inline ">
-              <input type="checkbox" class="custom-control-input" id="customSwitch1">
-              <label class="custom-control-label" for="customSwitch1"></label>
-            </div>
-              <!--<button class="p-0 m-0 toggle-on"><img src="/images/toggle-on.svg" alt="on"></button>
-              <button class="p-0 m-0 toggle-off d-none"><img src="/images/toggle-off.svg" alt="off"></button>-->
-              <button class="p-0 m-0"><img src="/images/close-delete.svg" alt="delete"></button>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Lorem</td>
-          <td>$999</td>
-          <td>Edad</td>
-          <td class="link-edit-product"><a href="" class=""><img src="/images/editProduct.svg" alt="img"></a>
-            <div class="custom-control custom-switch d-inline ">
-              <input type="checkbox" class="custom-control-input" id="customSwitch1">
-              <label class="custom-control-label" for="customSwitch1"></label>
-            </div>
-              <!--<button class="p-0 m-0 toggle-on"><img src="/images/toggle-on.svg" alt="on"></button>
-              <button class="p-0 m-0 toggle-off d-none"><img src="/images/toggle-off.svg" alt="off"></button>-->
-              <button class="p-0 m-0"><img src="/images/close-delete.svg" alt="delete"></button>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Lorem</td>
-          <td>$999</td>
-          <td>Edad</td>
-          <td class="link-edit-product"><a href="" class=""><img src="/images/editProduct.svg" alt="img"></a>
-            <div class="custom-control custom-switch d-inline ">
-              <input type="checkbox" class="custom-control-input" id="customSwitch1">
-              <label class="custom-control-label" for="customSwitch1"></label>
-            </div>
-              <!--<button class="p-0 m-0 toggle-on"><img src="/images/toggle-on.svg" alt="on"></button>
-              <button class="p-0 m-0 toggle-off d-none"><img src="/images/toggle-off.svg" alt="off"></button>-->
-              <button class="p-0 m-0"><img src="/images/close-delete.svg" alt="delete"></button>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Lorem</td>
-          <td>$999</td>
-          <td>Edad</td>
-          <td class="link-edit-product"><a href="" class=""><img src="/images/editProduct.svg" alt="img"></a>
-            <div class="custom-control custom-switch d-inline ">
-              <input type="checkbox" class="custom-control-input" id="customSwitch1">
-              <label class="custom-control-label" for="customSwitch1"></label>
-            </div>
-              <!--<button class="p-0 m-0 toggle-on"><img src="/images/toggle-on.svg" alt="on"></button>
-              <button class="p-0 m-0 toggle-off d-none"><img src="/images/toggle-off.svg" alt="off"></button>-->
-              <button class="p-0 m-0"><img src="/images/close-delete.svg" alt="delete"></button>
-          </td>
-        </tr>
+        <% }) %>
       </table>
     </div>
   </div>
