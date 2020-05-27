@@ -390,13 +390,5 @@
     "category": 49,
     "image": "ultricesPosuereCubilia.png",
     "price": 1012
-  },
-  {
-    "id": 50,
-    "name": "Thorndike",
-    "description": "Person on outside of car injured in collision with pick-up truck in traffic accident",
-    "category": 50,
-    "image": "pede.png",
-    "price": 2265
   }
 ]

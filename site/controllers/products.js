@@ -21,11 +21,21 @@ const productos = {
             return product.id == id;
         })
     },
-    productWithImageById: function(id,){
+    productWithImageById: function(id){
         const productos = this.allProductsWithImage();
         return productoFiltrado = productos.filter(product =>{
             return product.id == id;
         })
+    },
+    allProductDifferentsById: function(id){
+        const productos = this.productos();
+        return productosFiltrados = productos.filter(product =>{
+            return product.id != id;
+        })
+    },
+    lastProductId: function(){
+        const productsList = this.productos();
+        return lastProductId = productsList[productsList.length - 1].id;
     }
 }
 module.exports = productos;

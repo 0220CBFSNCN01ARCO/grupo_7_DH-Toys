@@ -1,6 +1,7 @@
 const products = require('./products');
 const operacionesJSON = require('./jsonLogic');
 const path = require('path');
+
 const adminController = {
   adminProducts: (req, res) => {
     const productsList = products.allProductsWithImage();
@@ -17,7 +18,6 @@ const adminController = {
                                         producto: productoFiltrado});
   },
   editProduct: (req, res) =>{
-    console.log('hola');
     const productsList = products.productos();
     const productId = req.params.id;
     const editedProduct = req.body;
@@ -32,6 +32,24 @@ const adminController = {
   })
   operacionesJSON.escribirJSON(productsList,path.join('site','data','products.json'));
   res.redirect('/admin')
+  },
+  addProduct:(req,res) =>{
+    const productToAdd = {
+      id: products.lastProductId() + 1,
+      name: req.body.name,
+      description: req.body.description,
+      category: req.body.category,
+      image: req.body.image,
+      price: req.body.price
+    }
+    operacionesJSON.agregarJSON(productToAdd,path.join('site','data','products.json'))
+    res.redirect('/admin')
+  },
+  deleteProduct:(req,res) =>{
+    const productId = req.params.id;
+    const newProductsList = products.allProductDifferentsById(productId);
+    operacionesJSON.escribirJSON(newProductsList,path.join('site','data','products.json'));
+    res.redirect('/admin')
   }
 }
 

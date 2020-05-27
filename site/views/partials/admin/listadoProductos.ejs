@@ -2,6 +2,11 @@
   <div class="d-flex justify-content-center list-products-title">
     <h2>ADMINISTRADOR DE PRODUCTOS</h2>
   </div>
+  <div class="d-flex justify-content-center">
+    <a href="/admin/create">
+      <button type="button" class="btn btn-warning">Agregar Producto</button>
+    </a>
+  </div>
   <div class="">
     <div class="row col-12 p-0 table-container justify-content-center">
       <table>
@@ -19,14 +24,19 @@
           <td><%- product.name %></td>
           <td>$<%- product.price %></td>
           <td><%- product.category %></td>
-          <td class="link-edit-product"><a href=admin/editor/<%- product.id %> class=""><img src="/images/editProduct.svg" alt="img"></a>
+          <td class="link-edit-product">
+            <a href=admin/editor/<%- product.id %> title=Editar<%- product.name %>>
+              <img src="/images/editProduct.svg" alt="img">
+            </a>
             <div class="custom-control custom-switch d-inline ">
               <input type="checkbox" class="custom-control-input" id="customSwitch1">
               <label class="custom-control-label" for="customSwitch1"></label>
             </div>
               <!--<button class="p-0 m-0 toggle-on"><img src="/images/toggle-on.svg" alt="on"></button>
               <button class="p-0 m-0 toggle-off d-none"><img src="/images/toggle-off.svg" alt="off"></button>-->
-              <button class="p-0 m-0"><img src="/images/close-delete.svg" alt="delete"></button>
+            <form action=/admin/delete/<%- product.id %>?_method=DELETE method="POST" class="d-inline">
+              <button class="p-0 m-0" title=Borrar<%- product.name %>><img src="/images/close-delete.svg" alt="delete"></button>
+            </form>
           </td>
         </tr>
         <% }) %>
