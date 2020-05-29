@@ -17,7 +17,7 @@ const adminController = {
     res.render('admin/productEditor', { title: 'Admin',
                                         producto: productoFiltrado});
   },
-  editProduct: (req, res) =>{
+  editProduct: (req, res, next) =>{
     const productsList = products.productos();
     const productId = req.params.id;
     const editedProduct = req.body;
@@ -26,7 +26,7 @@ const adminController = {
           product.name = editedProduct.name;
           product.description = editedProduct.description;
           product.category = editedProduct.category;
-          product.image = editedProduct.image;
+          product.image = req.file.originalname;
           product.price = editedProduct.price;
       }
   })

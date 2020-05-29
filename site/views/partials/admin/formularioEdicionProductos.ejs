@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row justify-content-center title">
-        <h1>EDITAR PRODUCTO: <%- producto[0].name %> </h1>
+        <h1>Editar <%- producto[0].name %> </h1>
     </div>
     <div class="row justify-content-center">
         <div class="col-12 col-md-12 col-lg-8 col-xl-8">
-            <form action=/admin/editor/<%- producto[0].id %>?_method=PUT  method="POST" class="formulario" >
+            <form action=/admin/editor/<%- producto[0].id %>?_method=PUT  method="POST" class="formulario" enctype="multipart/form-data" >
                 <div class="row justify-content-center filaForm">
                     <div class="col-10 col-md-10 col-lg-10 col-xl-10">
                             <label for="nombre" class="campo">Nombre Producto</label>
@@ -29,8 +29,14 @@
                 <div class="row justify-content-center filaForm">
                     <div class="col-10 col-md-10 col-lg-10 col-xl-10">
                             <label class="campo" for="imagen">Imagen</label>
-                            <input type="file" name="image" class="form-control" id="imagen" >
+                            <input type="file" name="image" class="form-control" id="imagen">
                     </div>
+                    <div class="row justify-content-center filaForm">
+                        <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                            <img id="imgProductos" src=/images/products/<%- producto[0].image%> alt="Imagen de <%- producto[0].name %>">
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="row justify-content-center filaForm">
                     <div class="col-10 col-md-10 col-lg-10 col-xl-10">
