@@ -25,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+//app routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.get('/admin', adminRouter);
@@ -36,6 +37,7 @@ app.delete('/admin/delete/:id', adminRouter);
 app.get('/detalle/:id', producDetailRouter);
 app.get('/login', loginRouter);
 app.get('/cart', cartRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

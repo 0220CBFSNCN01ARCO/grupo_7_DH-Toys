@@ -1,5 +1,5 @@
 const products = require('./products');
-const operacionesJSON = require('./jsonLogic');
+const jsonOperations = require('./jsonLogic');
 const path = require('path');
 
 const adminController = {
@@ -13,12 +13,12 @@ const adminController = {
   },
   productEditor: (req, res) => {
     const idProducto = req.params.id;
-    const productoFiltrado = products.productById(idProducto);
+    const filteredProduct = products.productById(idProducto);
     res.render('admin/productEditor', { title: 'Admin',
-                                        producto: productoFiltrado});
+                                        product: filteredProduct});
   },
   editProduct: (req, res, next) =>{
-    const productsList = products.productos();
+    const productsList = products.products();
     const productId = req.params.id;
     const editedProduct = req.body;
     productsList.map(product => {
@@ -30,25 +30,25 @@ const adminController = {
           product.price = editedProduct.price;
       }
   })
-  operacionesJSON.escribirJSON(productsList,path.join('site','data','products.json'));
+  jsonOperations.writeJSON(productsList,path.join('site','data','products.json'));
   res.redirect('/admin')
   },
-  addProduct:(req,res) =>{
+  addProduct:(req, res, next) =>{
     const productToAdd = {
       id: products.lastProductId() + 1,
       name: req.body.name,
       description: req.body.description,
       category: req.body.category,
-      image: req.body.image,
+      image: req.file.originalname,
       price: req.body.price
     }
-    operacionesJSON.agregarJSON(productToAdd,path.join('site','data','products.json'))
+    jsonOperations.addToJSON(productToAdd,path.join('site','data','products.json'))
     res.redirect('/admin')
   },
   deleteProduct:(req,res) =>{
     const productId = req.params.id;
-    const newProductsList = products.allProductDifferentsById(productId);
-    operacionesJSON.escribirJSON(newProductsList,path.join('site','data','products.json'));
+    const newProductsList = products.allProductsDifferentsById(productId);
+    jsonOperations.writeJSON(newProductsList,path.join('site','data','products.json'));
     res.redirect('/admin')
   }
 }

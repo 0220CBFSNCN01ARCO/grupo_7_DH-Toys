@@ -19,7 +19,7 @@ var upload = multer({ storage: storage })
 /* GET home page. */
 router.get('/admin', adminController.adminProducts)
 router.get('/admin/create', adminController.productRegister)
-router.post('/admin/create', adminController.addProduct)
+router.post('/admin/create',upload.single('image'), adminController.addProduct)
 router.get('/admin/editor/:id', adminController.productEditor)
 router.put('/admin/editor/:id',upload.single('image'), adminController.editProduct)
 router.delete('/admin/delete/:id',adminController.deleteProduct)

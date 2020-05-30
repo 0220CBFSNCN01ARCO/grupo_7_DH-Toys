@@ -1,41 +1,41 @@
-const operacionesJSON = require('./jsonLogic');
+const jsonOperations = require('./jsonLogic');
 const path = require('path');
 
-const productos = {
-    productos: function () {
-        const listadoProductos = operacionesJSON.leerJSON(path.join('site','data','products.json'));
-        return listadoProductos;
+const products = {
+    products: function () {
+        const productsList = jsonOperations.readJSON(path.join('site','data','products.json'));
+        return productsList;
         
     },
     allProductsWithImage: function(){
-        const productos = this.productos();
-        const productosConImagen = productos.map((producto) =>{
-            producto.image = path.join('/','images','products', producto.image);
-            return producto;
+        const products = this.products();
+        const productsWithImage = products.map((product) =>{
+            product.image = path.join('/','images','products', product.image);
+            return product;
         })
-        return productosConImagen;
+        return productsWithImage;
     },
     productById: function(id){
-        const productos = this.productos();
-        return productoFiltrado = productos.filter(product =>{
+        const products = this.products();
+        return filteredProduct = products.filter(product =>{
             return product.id == id;
         })
     },
     productWithImageById: function(id){
-        const productos = this.allProductsWithImage();
-        return productoFiltrado = productos.filter(product =>{
+        const productsWithImage = this.allProductsWithImage();
+        return filteredProductWithImage = productsWithImage.filter(product =>{
             return product.id == id;
         })
     },
-    allProductDifferentsById: function(id){
-        const productos = this.productos();
-        return productosFiltrados = productos.filter(product =>{
+    allProductsDifferentsById: function(id){
+        const products = this.products();
+        return filteredProducts = products.filter(product =>{
             return product.id != id;
         })
     },
     lastProductId: function(){
-        const productsList = this.productos();
+        const productsList = this.products();
         return lastProductId = productsList[productsList.length - 1].id;
     }
 }
-module.exports = productos;
+module.exports = products;

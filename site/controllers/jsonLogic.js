@@ -1,22 +1,19 @@
 const fs = require ('fs');
 
-const operacionesJSON = {
-    leerSinParseJSON : function(archivoJSON) {
-        return fs.readFileSync(archivoJSON,{encoding:"utf-8"})
+const jsonOperations = {
+    readJSON : function(JSONfile) {
+        const file = fs.readFileSync(JSONfile,{encoding:"utf-8"})
+        return JSON.parse(file);
     },
-    leerJSON : function(archivoJSON) {
-        const archivo = fs.readFileSync(archivoJSON,{encoding:"utf-8"})
-        return JSON.parse(archivo);
+    writeJSON : function(newJSON, oldJSON) {
+        const file = JSON.stringify(newJSON,'utf-8')
+        return fs.writeFileSync(oldJSON,file);
     },
-    escribirJSON : function(newJSON, oldJSON) {
-        const archivo = JSON.stringify(newJSON,'utf-8')
-        return fs.writeFileSync(oldJSON,archivo);
-    },
-    agregarJSON : function(elemento,archivoJSON) {
-        let archivoParseado = this.leerJSON(archivoJSON);
-        archivoParseado.push(elemento);
-        this.escribirJSON(archivoParseado,archivoJSON);
+    addToJSON : function(element,JSONfile) {
+        let parsedFile = this.readJSON(JSONfile);
+        parsedFile.push(element);
+        this.writeJSON(parsedFile,JSONfile);
     }
 }
 
-module.exports = operacionesJSON;
+module.exports = jsonOperations;

@@ -1,27 +1,27 @@
 <div class="container">
     <div class="row justify-content-center title">
-        <h1>Editar <%- producto[0].name %> </h1>
+        <h1>Editar <%- product[0].name %> </h1>
     </div>
     <div class="row justify-content-center">
         <div class="col-12 col-md-12 col-lg-8 col-xl-8">
-            <form action=/admin/editor/<%- producto[0].id %>?_method=PUT  method="POST" class="formulario" enctype="multipart/form-data" >
+            <form action=/admin/editor/<%- product[0].id %>?_method=PUT  method="POST" class="formulario" enctype="multipart/form-data" >
                 <div class="row justify-content-center filaForm">
                     <div class="col-10 col-md-10 col-lg-10 col-xl-10">
                             <label for="nombre" class="campo">Nombre Producto</label>
-                            <input type="text" name="name" class="form-control" id="nombre" placeholder="Ingrese nombre del producto" value=<%- producto[0].name %> >
+                            <input type="text" name="name" class="form-control" id="nombre" placeholder="Ingrese nombre del producto" value=<%- product[0].name %> >
                     </div>  
                 </div>
                 <div class="row justify-content-center filaForm">
                     <div class="col-10 col-md-10 col-lg-10 col-xl-10">
                         <label class="campo" for="precio">Precio Unitario</label>
-                        <input type="number" name="price" class="form-control" id="precio" placeholder="Ingrese precio del producto" value=<%- producto[0].price %>>
+                        <input type="number" name="price" class="form-control" id="precio" placeholder="Ingrese precio del producto" value=<%- product[0].price %>>
                     
                     </div>
                 </div>
                 <div class="row justify-content-center filaForm">
                     <div class="col-10 col-md-10 col-lg-10 col-xl-10">
                             <label class="campo" for="descripcion">Descripcion</label>
-                            <textarea type="text" name="description" class="form-control" id="descripcion" rows="5"><%- producto[0].description %>
+                            <textarea type="text" name="description" class="form-control" id="descripcion" rows="5"><%- product[0].description %>
                             </textarea>
                        
                     </div>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="row justify-content-center filaForm">
                         <div class="col-10 col-md-10 col-lg-10 col-xl-10">
-                            <img id="imgProductos" src=/images/products/<%- producto[0].image%> alt="Imagen de <%- producto[0].name %>">
+                            <img id="imgProductos" src=/images/products/<%- product[0].image%> alt="Imagen de <%- product[0].name %>">
                         </div>
                     </div>
                     
@@ -41,12 +41,12 @@
                 <div class="row justify-content-center filaForm">
                     <div class="col-10 col-md-10 col-lg-10 col-xl-10">
                             <label class="campo" for="imagen">Orden</label>
-                            <input type="number" name="category" class="form-control" id="orden" placeholder="Ingrese el Orden del producto" value=<%- producto[0].category %> >
+                            <input type="number" name="category" class="form-control" id="orden" placeholder="Ingrese el Orden del producto" value=<%- product[0].category %> >
                     </div>
                 </div>
                 <div class="row justify-content-around filaForm">
                     <div class="col-5">
-                        <button type="button" class="btn btn-warning">CANCELAR</button>
+                        <button type="reset" class="btn btn-warning">CANCELAR</button>
                     </div>
                     <div class="col-5 botonCargar">
                         <button type="submit" class="btn btn-warning">CARGAR</button>
