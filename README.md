@@ -37,6 +37,9 @@ Abrimos nuestro navegador e ingresamos a las distintas páginas:
 - http://localhost:3000/carrito
 - http://localhost:3000/login
 
+## Tablero de trabajo
+- https://trello.com/b/slWANl4F/grupo-7-proyecto-integrador (Solo visible para los miembros del Proyecto)
+
 ## Equipo de Trabajo
 ### Compuesto por 3 integrantes:
 - BEDINI, Eduardo.
