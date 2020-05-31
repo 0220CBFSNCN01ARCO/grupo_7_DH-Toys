@@ -22,8 +22,12 @@
                     </div>
                     <h4 class="text center" style="text-align: center;"><%- products[i].name %></h4>
                     <div>
-                        <p class="text-center"><%- products[i].description %></p>
-                    </div>
+                    <% if (products[i].description.length > 100) { %>
+                        <p class="text-center"><%= products[i].description.substring(0, 100)+ '...' %></p>
+                    <% } else { %>
+                        <p class="text-center"><%= products[i].description %></p>
+                    <% } %>
+                </div>
                     <div class="row">
                         <div class="col-12 price text-align-center">
                             <p class="card-text">$ <%- products[i].price %></p>
