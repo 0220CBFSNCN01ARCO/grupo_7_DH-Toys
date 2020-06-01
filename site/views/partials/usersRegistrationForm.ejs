@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row justify-content-center title">
+        <h1>Formulario de Registro</h1>
+    </div>
+    <% if(typeof errors != 'undefined') {%>
+        <div class="alert alert-danger text-center" role="alert">
+            <% errors.forEach(error => {%>
+            <h5><%- error.msg %></h5>
+            <% })%> 
+        </div>
+    <% } %>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-12 col-lg-8 col-xl-8">
+            <form action="/login/register" method="POST" class="formulario" enctype="multipart/form-data">
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                            <label for="nombre" class="campo">Nombre</label>
+                            <input type="text" name="name" class="form-control" id="nombre" placeholder="Ingrese su Nombre" required>
+                    </div>  
+                </div>
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                        <label class="campo" for="lastName">Apellido</label>
+                        <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Ingrese su Apellido" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                        <label class="campo" for="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese E-mail" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                        <label class="campo" for="password">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Ingrese su Password" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                        <label class="campo" for="repeatPassword">Repetir Password</label>
+                        <input type="password" name="repeatPassword" class="form-control" id="repeatPassword" placeholder="Repita el Password" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                            <label class="campo" for="imagen">Foto Perfil</label>
+                            <input type="file" name="avatar" class="form-control" id="imagen" required>
+                    </div>
+                </div>
+                <div class="row justify-content-around filaForm">
+                    <div class="col-5">
+                        <button type="reset" class="btn btn-warning">CANCELAR</button>
+                    </div>
+                    <div class="col-5 botonCargar">
+                        <button type="submit" class="btn btn-warning">REGISTRAR</button>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>

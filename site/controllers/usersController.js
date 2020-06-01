@@ -1,6 +1,9 @@
+const jsonOperatios = require('./jsonLogic')
+const path = require('path')
+
 const usersController = {
-  users: (req, res) => {
-    res.send('respond with a resource');
+  users: function() {
+    return usersList = jsonOperatios.readJSON(path.join('site','data','users.json'))
   }
 }
 

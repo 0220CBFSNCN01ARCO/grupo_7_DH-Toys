@@ -3,6 +3,28 @@ body {
   background-color: #F2F0E9;
 }
 
+.formulario{
+  margin: 5vh 0;
+  border: 2px solid #262626;
+}
+
+.filaForm{
+  margin: 5% 0%
+}
+
+.botonCargar{
+  display: flex;
+  direction: rtl;
+}
+
+.title{
+  margin-top: 5%;
+}
+
+.campo{
+  font-weight: bold;
+}
+
 .menu-selection a{
   text-decoration: none;
   color: #F2F0E9;
@@ -302,6 +324,7 @@ footer h6{
     flex-direction: row;
   }
 } 
+
 /* estilos de listado de producto*/
 .shopping-cart {
   width: 95%;
@@ -340,14 +363,7 @@ footer h6{
   font-size:medium;
   background-color: #FFDD56;
 }
-.detallePrecio{
-}
-.detalleCantidad{
 
-}
-.detalleTotal{
-  
-}
 .descripcionProducto{
   display: flex;
   flex-direction: row;

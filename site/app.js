@@ -36,6 +36,9 @@ app.put('/admin/editor/:id', adminRouter);
 app.delete('/admin/delete/:id', adminRouter);
 app.get('/detalle/:id', producDetailRouter);
 app.get('/login', loginRouter);
+app.post('/login', loginRouter);
+app.get('/login/register', loginRouter);
+app.post('/login/register', loginRouter);
 app.get('/cart', cartRouter);
 
 // catch 404 and forward to error handler
