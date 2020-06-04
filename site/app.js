@@ -9,7 +9,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var producDetailRouter = require('./routes/productDetail');
-var loginRouter = require('./routes/login');
 var cartRouter = require('./routes/cart');
 
 var app = express();
@@ -28,17 +27,8 @@ app.use(methodOverride('_method'));
 //app routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.get('/admin', adminRouter);
-app.get('/admin/create', adminRouter);
-app.post('/admin/create', adminRouter);
-app.get('/admin/editor/:id', adminRouter);
-app.put('/admin/editor/:id', adminRouter);
-app.delete('/admin/delete/:id', adminRouter);
+app.use('/admin', adminRouter);
 app.get('/detalle/:id', producDetailRouter);
-app.get('/login', loginRouter);
-app.post('/login', loginRouter);
-app.get('/login/register', loginRouter);
-app.post('/login/register', loginRouter);
 app.get('/cart', cartRouter);
 
 // catch 404 and forward to error handler
