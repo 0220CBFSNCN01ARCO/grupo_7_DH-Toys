@@ -614,5 +614,13 @@
     "email": "francisco.olamos@unxdigital.com",
     "password": "$2b$10$6I7l9usDeFNUQPh9SZkxoO7.EBMRvOmlC9B.EqjilW1cRpBeYSHE.",
     "avatar": "abaddon.gif"
+  },
+  {
+    "id": 53,
+    "name": "Ignacio",
+    "lastName": "Quiroga",
+    "email": "iquiroga@grupoprominente.com",
+    "password": "$2b$10$AlJAiQV7k6U3FXNBOJ2uzeI5BndrBr8/B6wKQZbTNAlS13WiFHnIG",
+    "avatar": "walterwhite-avatar.jpg"
   }
 ]
