@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const loginController = require('../controllers/loginController');
+const usersController = require('../controllers/usersController');
 const multer = require('multer');
 const {reglasDeValidacionDeUsuarios, validar} = require('../middleware/userRegisterValidator');
 
@@ -19,5 +20,6 @@ router.get('/login', loginController.login )
 router.post('/login', loginController.verify )
 router.get('/login/register', loginController.register )
 router.post('/login/register',upload.single('avatar'),reglasDeValidacionDeUsuarios(), validar, loginController.addUser)
+router.get('/profile', usersController.profile );
 
 module.exports = router;
