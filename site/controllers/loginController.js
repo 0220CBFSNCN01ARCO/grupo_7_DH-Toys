@@ -45,13 +45,20 @@ const loginController = {
         lastName: req.body.lastName,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        avatar: req.file.originalname
+        avatar: req.file.originalname,
+        category: 2
       };
       jsonOperations.addToJSON(userToAdd, path.join('site', 'data', 'users.json'));
       res.redirect('/products');
     }else{
+      const userToReload = {
+        name: req.body.name,
+        lastName: req.body.lastName,
+        email: req.body.email
+      }
       return res.render('register',{title:'register',
-                                    errors: errors.errors})
+                                    errors: errors.errors,
+                                    user: userToReload})
     }
   }
 
