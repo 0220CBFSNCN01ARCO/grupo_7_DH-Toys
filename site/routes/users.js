@@ -19,7 +19,7 @@ var upload = multer({ storage: storage })
 router.get('/login', loginController.login )
 router.post('/login', loginController.verify )
 router.get('/login/register', loginController.register )
-router.post('/login/register',upload.single('avatar'),reglasDeValidacionDeUsuarios(), validar, loginController.addUser)
+router.post('/login/register', validar,upload.single('avatar'), reglasDeValidacionDeUsuarios(), loginController.addUser)
 router.get('/profile', usersController.profile );
 
 module.exports = router;
