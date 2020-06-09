@@ -2,6 +2,14 @@
 <html>
 <%- include('partials/head')%>
 <body>
+</div>
+<% if(typeof errors != 'undefined') {%>
+  <div class="alert alert-danger text-center" role="alert">
+      <% errors.forEach(error => {%>
+      <h5><%- error.msg %></h5>
+      <% })%> 
+  </div>
+<% } %>
   <div id="app">
     <%- include('partials/header')%>
     <div class="container-fluid">

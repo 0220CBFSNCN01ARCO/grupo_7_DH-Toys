@@ -8,18 +8,25 @@ const loginController = {
   login: (req, res) => {
     res.render('login', { title: 'login' });
   },
-  verify: (req, res) => {
+  verify: (req, res, next) => {
+    const errors = validationResult(req);
+    console.log(errors);
+    if (errors.isEmpty()) {
     const currentUser = req.body;
     const usersList = usersController.users();
     const userFiltered = usersList.filter(user => {
       return user.email == currentUser.email
     })
-    if (toString(userFiltered.category) == "admin") {
-      res.redirect('/admin')
-    } else {
-      res.redirect('/login')
-    }
+    const userCategory = usersList.filter(user => {
+      return user.category == 1
+    })
+    if ((userFiltered && userCategory) == true) {
+      res.redirect('/admin');
+    } else if ((userFiltered && userCategory) != true)
+      {res.send('Soy usuario común en la vista perfil')};
+  } else { return res.render('login',{ title:'login', errors: errors.errors})}
   },
+
   register: function (req, res, next) {
     res.render('register', { title: 'Register' })
   },
