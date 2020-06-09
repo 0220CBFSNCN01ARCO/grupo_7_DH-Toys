@@ -421,14 +421,7 @@ footer h6{
   color: #43484D;
   font-weight: 300;
 }
- 
-button[class*=btn] {
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
+
 .minus-btn img {
   margin-bottom: 3px;
 }
@@ -480,51 +473,7 @@ input:focus {
   margin-bottom: 10px;
 }
 
-/* estilos de login*/
-.contenedorDeLogin{
-display: flex;
-flex-wrap: nowrap;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-background-color: #F2F0E9;
-}
-.logueo{
-  margin-top: 100px;
-  margin-bottom: 50px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border: black solid 1px;
-  margin-left: 10px;
-}
-.textLogin{
-  font-weight: 700;
-}
-.IniciarSesion{
-  margin-left: 70%;
-  background-color: black;
-  color: white;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-right: 10px;
-}
-.nuevaCuenta{
-  text-align: center;
-  border: black solid 1px;
-  margin-left: 10px;
-  padding-top: 20px;
-}
 .textNvoCliente{
   font-weight: 700;
 }
-.crearCuenta{
-  margin:20%;
-  background-color: black;
-  color: white;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+

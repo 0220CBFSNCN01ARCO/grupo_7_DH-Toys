@@ -10,12 +10,11 @@ const reglasDeValidacionDeUsuarios = () => {
         if (userFound) {
             return false;
         } return true;
-    }).withMessage('E-mail ya existente'), check("password", "Password Invalido, minimo 4 caracteres")
+    }).withMessage('El e-mail ya está registrado.'), check("password", "Password Invalido, mínimo 4 caracteres.")
         .isLength({ min: 4 })
-        .custom((value, { req, loc, path }) => {
+        .custom((value, { req}) => {
             if (value !== req.body.repeatPassword) {
-                // trow error if passwords do not match
-                throw new Error("Los passwords no coinciden");
+                throw new Error("Los passwords no coinciden.");
             } else {
                 return value;
             }
@@ -29,24 +28,5 @@ const validar = (req, res, next) => {
 
 module.exports = {reglasDeValidacionDeUsuarios, validar}
 
-
-/*const emailMiddleware = {
-    verifyEmail: async (req, res, next) => {
-        try {
-            [body('email').custom(function (value) {
-                const users = usersController.users();
-                console.log(users);
-                const userFound = users.find(user => {
-                    return user.email == value;
-                })
-                if (userFound) {
-                    return true
-                } return false
-            }).withMessage('E-mail ya existente')]
-        } catch (error) {
-            return next(error)
-        }
-    }
-}*/
 
 
