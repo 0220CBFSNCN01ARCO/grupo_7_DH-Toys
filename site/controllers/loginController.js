@@ -15,15 +15,13 @@ const loginController = {
     const currentUser = req.body;
     const usersList = usersController.users();
     const userFiltered = usersList.filter(user => {
-      return user.email == currentUser.email
+      return user.email == currentUser.email && user.category =='admin'
     })
-    const userCategory = usersList.filter(user => {
-      return user.category == 1
-    })
-    if ((userFiltered && userCategory) == true) {
+    if ((userFiltered == true)) {
       res.redirect('/admin');
-    } else if ((userFiltered && userCategory) != true)
-      {res.send('Soy usuario común en la vista perfil')};
+    } else if ((userFiltered != true))
+      {res.send('Soy usuario en la vista perfil')};
+      req.session.userLogueado = userFiltered;
   } else { return res.render('login',{ title:'login', errors: errors.errors})}
   },
 
