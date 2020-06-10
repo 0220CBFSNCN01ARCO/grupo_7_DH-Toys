@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head')%>
-
 <body>
   <div id="app">
     <%- include('partials/header')%>
     <div class="contenedorDeLogin">
       <div class="profile">
         <div class="d-flex justify-content-center profile-image">
-          <img src="/images/users/<%-user[52].avatar%> " alt="">
+          <img src=../images/users/<%- user[0].avatar %> alt="Imagen del usuario logueado">
         </div>
         <div>
-          <h4>Nombre: <%= user[52].name %> </h4><br>
-          <h4>Email: <%= user[52].email %></h4><br>
-          <h4>Direccion: <%= user[52].email %></h4><br>
+          <h4><b>Nombre:</b> <%- user[0].name%> <%- user[0].lastName %></h4><br>
+          <h4><b>Email:</b> <%- user[0].email %></h4><br>
         </div>
       </div>
     </div>

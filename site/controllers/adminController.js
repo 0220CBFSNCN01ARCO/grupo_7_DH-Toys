@@ -3,12 +3,12 @@ const jsonOperations = require('./jsonLogic');
 const path = require('path');
 
 const adminController = {
-  adminProducts: (req, res) => {
-    const productsList = products.allProductsWithImage();
+  adminProducts: (req, res, next) => {
+      const productsList = products.allProductsWithImage();
     res.render('admin/productos', {
       title: 'Admin',
       products: productsList
-    });
+    })
   },
   productRegister: (req, res) => {
     res.render('admin/productRegister', { title: 'Admin' });

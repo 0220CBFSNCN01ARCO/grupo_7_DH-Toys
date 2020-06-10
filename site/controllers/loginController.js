@@ -6,27 +6,31 @@ const { check, validationResult, body } = require('express-validator')
 
 const loginController = {
   login: (req, res) => {
-    res.render('login', { title: 'login' });
+    res.render('login', { title: 'login', 
+                          user: req.session.userLogueado});
   },
   verify: (req, res, next) => {
     const errors = validationResult(req);
-    console.log(errors);
-    if (errors.isEmpty()) {
     const currentUser = req.body;
+    if (errors.isEmpty()) {
     const usersList = usersController.users();
     const userFiltered = usersList.filter(user => {
-      return user.email == currentUser.email && user.category =='admin'
+      return user.email == currentUser.email
     })
-    if ((userFiltered == true)) {
-      res.redirect('/admin');
-    } else if ((userFiltered != true))
-      {res.send('Soy usuario en la vista perfil')};
+    if (userFiltered != null && userFiltered[0].category == 1) {
       req.session.userLogueado = userFiltered;
-  } else { return res.render('login',{ title:'login', errors: errors.errors})}
+      res.redirect('/admin');
+    }else{
+      req.session.userLogueado = userFiltered;
+      res.redirect('/products');
+    }
+  } else { return res.render('login',{ title:'login',
+                                       errors: errors.errors,
+                                       user: req.session.userLogueado,
+                                       currentUser: currentUser})}
   },
-
   register: function (req, res, next) {
-    res.render('register', { title: 'Register' })
+    res.render('register', { title: 'Register', user: req.session.userLogueado })
   },
   addUser: function (req, res, next) {
     const errors = validationResult(req);

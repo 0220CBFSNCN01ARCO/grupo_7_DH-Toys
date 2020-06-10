@@ -21,9 +21,9 @@ const reglasDeValidacionDeUsuarios = () => {
             }
         })
     ]
-}
+};
 
-const ValidacionDelogin = () => {
+const validacionDelogin = () => {
     return [body('email').custom(function (value) {
         const users = usersController.users();
         const userFound = users.find(user => {
@@ -43,11 +43,33 @@ const ValidacionDelogin = () => {
     ]
 };
 
+const userLogged = (req,res,next) => {
+    console.log(req.session.userLogueado);
+    if(req.session.userLogueado){
+        res.redirect('/users/profile')
+    }
+    next()
+}
+
+const userNotLogged = (req,res,next) => {
+    if(!req.session.userLogueado){
+        res.redirect('/users/login')
+    }
+    next()
+}
+
+const adminValidator = (req, res, next) => {
+    if(req.session.userLogueado[0].category != 1){
+        res.redirect('/users/profile')
+    }
+    next()
+}
+
 const validar = (req, res, next) => {
     next();
 };
 
-module.exports = {reglasDeValidacionDeUsuarios, ValidacionDelogin, validar}
+module.exports = {reglasDeValidacionDeUsuarios, validacionDelogin, validar, userLogged, userNotLogged, adminValidator}
 
 
 
