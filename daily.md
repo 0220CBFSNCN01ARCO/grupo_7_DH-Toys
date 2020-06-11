@@ -1,23 +1,27 @@
+## Sprint 4
+
 ## ¿Que hiciste?
 
-- Bedini, Eduardo
+- Bedini, Eduardo: N/A
 
-- Olmos, Francisco
+- Olmos, Francisco: N/A
 
-- Quiroga, Ignacio
+- Quiroga, Ignacio: N/A
+
+(Inicio del sprint, asignación de tareas)
 
 ## ¿Que vas hacer?
 
-- Bedini, Eduardo
+- Bedini, Eduardo: Lógica de login de la página.
 
-- Olmos, Francisco
+- Olmos, Francisco: Revisión de Session y lógica general de la página.
 
-- Quiroga, Ignacio
+- Quiroga, Ignacio: Revisión del Front-End y creación de la vista de perfil de usuarios.
 
 ## ¿Que dificultades tuviste?
 
-- Bedini, Eduardo
+- Bedini, Eduardo: Identificar la category de usuario (Se resuelve en la última daily)
 
-- Olmos, Francisco
+- Olmos, Francisco: Modularizar el middleware de registro de usuarios (Se resuelve en la última daily).
 
-- Quiroga, Ignacio
+- Quiroga, Ignacio: Información relevante a mostrar en la vista del perfil de usuario.
