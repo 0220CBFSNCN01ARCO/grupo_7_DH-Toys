@@ -34,7 +34,6 @@ const loginController = {
   },
   addUser: function (req, res, next) {
     const errors = validationResult(req);
-    console.log(errors);
     if (errors.isEmpty()) {
       const userArray = jsonOperations.readJSON(path.join('site', 'data', 'users.json'));
       let lastUserId = 0;
@@ -62,6 +61,11 @@ const loginController = {
                                     errors: errors.errors,
                                     user: userToReload})
     }
+  },
+  logout(req,res, next) {
+    req.session.destroy((err) => {
+      res.redirect('/users/login')
+    })
   }
 
 }
