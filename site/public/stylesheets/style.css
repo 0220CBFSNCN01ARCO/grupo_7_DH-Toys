@@ -31,6 +31,10 @@ body {
   margin-bottom: 3px;
 }
 
+.userOptions a{
+  color: #262626;
+}
+
 header{
   background-color: #FFDD56 ;
 }
@@ -152,6 +156,8 @@ h4{
   position: relative;
 }
 
+
+
 footer h2{
   font-size: 12px;
 }
@@ -202,7 +208,6 @@ footer h6{
   .carousel-item{
     flex-direction: row;
   }
-
 }
 
 @media(min-width:768px) {
@@ -250,8 +255,15 @@ footer h6{
 
   .menu-selection-search{
     display: flex;
-    width: 300px;
-    margin-right: 50px;
+    width: 400px;
+  }
+
+  .userName{
+    display: contents;
+    font-size: large;
+    font-weight: bold;
+    color: #262626;
+    text-decoration: none;
   }
 
   .search-text,
@@ -333,6 +345,10 @@ footer h6{
   }
   .carousel-item{
     flex-direction: row;
+  }
+
+  footer{
+    flex-shrink: 0;
   }
 } 
 

@@ -8,19 +8,29 @@
                     <a href=""><img src="/images/twitter.svg" alt="twitter-logo-link"></a>
                     <a href=""><img src="/images/facebook-f.svg" alt="facebook-f-logo-link"></a>
                 </div>
-                <div class="menu-selection-search align-items-center">
-                    <div class="search-text d-flex justify-content-center">
+                <div class="menu-selection-search align-items-center ">
+                    <div class="search-text d-flex justify-content-center col-5">
                         <input type="text">
                     </div>
-                    <div class="search-button p-0 d-flex align-items-center">
+                    <div class="search-button p-0 d-flex align-items-center col-1">
                         <button type="submit" class="fas fa-search"></button>
                     </div>
                     <% if(user != undefined) { %>
-                        <div class="login d-none">
+                        <div class="login d-none col-2">
                             <a class="d-flex justify-content-center" href="/users/login"><img src=../images/users/<%- user[0].avatar %> alt="login"></a>
                         </div>
+                        <div class="btn-group col-4">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <%- user[0].name %>
+                            </button>
+                            <div class="dropdown-menu userOptions">
+                              <a class="dropdown-item" href="/users/profile">Perfil</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
+                            </div>
+                          </div>
                     <% } else { %>
-                        <div class="login d-none">
+                        <div class="login d-none col-6">
                             <a class="d-flex justify-content-center" href="/users/login"><img src="/images/user.svg" alt="login"></a>
                         </div>
                     <% } %>
