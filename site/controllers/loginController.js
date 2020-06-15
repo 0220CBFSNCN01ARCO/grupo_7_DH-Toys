@@ -59,7 +59,8 @@ const loginController = {
       }
       return res.render('register',{title:'register',
                                     errors: errors.errors,
-                                    user: userToReload})
+                                    userToReload: userToReload,
+                                    user: req.session.userLogueado})
     }
   },
   logout(req,res, next) {
