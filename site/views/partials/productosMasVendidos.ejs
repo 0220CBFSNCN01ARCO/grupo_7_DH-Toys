@@ -1,5 +1,4 @@
-
-<div class="container-fluid">
+<div class="container-fluid main">
     <div class="row justify-content-center mt-3 mb-3">
         <div class="col-md-3 col-lg-4 col-xl-3">
             <hr>
@@ -13,36 +12,34 @@
     </div>
     <div class="row justify-content-center">
         <% for(let i = 0; i < 10; i++) {%>
-            <div class="col-8 col-sm-5 col-md-3 col-lg-3 col-xl-2 mr-3 ml-3 containerProduct">
+        <div class="col-8 col-sm-5 col-md-3 col-lg-3 col-xl-2 mr-3 ml-3 containerProduct">
+            <div>
+                <div class="image imgProduct">
+                    <img class="card-img-top" src=<%- products[i].image %> alt="Card image cap">
+                </div>
+                <h4 class="text center" style="text-align: center;"><%- products[i].name %></h4>
                 <div>
-                    <div class="image imgProduct">
-                        <img class="card-img-top"
-                        src=<%- products[i].image %>
-                        alt="Card image cap">
-                    </div>
-                    <h4 class="text center" style="text-align: center;"><%- products[i].name %></h4>
-                    <div>
                     <% if (products[i].description.length > 100) { %>
-                        <p class="text-center"><%= products[i].description.substring(0, 100)+ '...' %></p>
+                    <p class="text-center"><%= products[i].description.substring(0, 100)+ '...' %></p>
                     <% } else { %>
-                        <p class="text-center"><%= products[i].description %></p>
+                    <p class="text-center"><%= products[i].description %></p>
                     <% } %>
                 </div>
-                    <div class="row">
-                        <div class="col-12 price text-align-center">
-                            <p class="card-text">$ <%- products[i].price %></p>
-                        </div>
+                <div class="row">
+                    <div class="col-12 price text-align-center">
+                        <p class="card-text">$ <%- products[i].price %></p>
                     </div>
-                    <div class="row no-gutters">
-                        <div class="col-10">
-                            <a href=detalle/<%- products[i].id %> class="view"><img src="images/eye.png" alt=""></a>
-                        </div>
-                        <div class="col-2">
-                            <a class="addToCart"><img src="images/cart.png" alt=""></a>
-                        </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-10">
+                        <a href=detalle/<%- products[i].id %> class="view"><img src="images/eye.png" alt=""></a>
+                    </div>
+                    <div class="col-2">
+                        <a class="addToCart"><img src="images/cart.png" alt=""></a>
                     </div>
                 </div>
             </div>
+        </div>
         <% } %>
     </div>
 </div>

@@ -3,6 +3,22 @@ body {
   background-color: #F2F0E9;
 }
 
+#app{
+  position: relative;
+  min-height: 100vh;
+}
+
+.main{
+  padding-bottom: 2.5rem;
+}
+
+#footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
 .formulario{
   margin: 5vh 0;
   border: 2px solid #262626;
