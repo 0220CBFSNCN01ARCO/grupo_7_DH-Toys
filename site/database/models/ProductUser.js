@@ -1,16 +1,16 @@
 
 module.exports = (sequelize, DataTypes) => {
-  let alias = 'Products_Users';
+  let alias = 'ProductsUsers';
 
   let cols = {
-    id_product_user: {
+    id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
       allowNull: false 
     },
-    id_user: DataTypes.INTEGER,
-    id_product: DataTypes.INTEGER
+    idUser: DataTypes.INTEGER,
+    idProduct: DataTypes.INTEGER
   };
 
   let config = {

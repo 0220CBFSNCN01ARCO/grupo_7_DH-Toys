@@ -1,9 +1,14 @@
 const db = require("../database/models");
 
 const dbController = {
-  connect: (req, res) => {
-    db.Products.findAll().then((productos) => {
-      res.render('dbtest', { productos });
+  products: (req, res) => {
+    db.Products.findAll({
+      include: [{association: "productCategory"}]
+    })
+    .then((products) => {
+      res.render('index', { title: 'Inicio',
+                            products: products,
+                            user: req.session.userLogueado});
     });
   }
 }

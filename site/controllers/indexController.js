@@ -1,16 +1,27 @@
-const products = require('./products');
+const db = require("../database/models");
+const { Sequelize } = require('../database/models');
 
 const indexController = {
   index: (req, res) => {
-    res.render('index', { title: 'Inicio',
-                          products: products.allProductsWithImage(),
-                          user: req.session.userLogueado});
+    db.Products.findAll({
+      include: [{association: "productCategory"}],
+      limit: 10
+    })
+    .then((products) => {
+      res.render('index', { title: 'Inicio',
+                            products: products,
+                            user: req.session.userLogueado});
+    });
   },
   allProducts: (req, res) =>{
-    const allProducsWithImage = products.allProductsWithImage();
-    res.render('products',{title: 'Productos',
-                           products: allProducsWithImage,
-                           user: req.session.userLogueado})
+    db.Products.findAll({
+      include: [{association: "productCategory"}]
+    })
+    .then((products) => {
+      res.render('products', { title: 'Productos',
+                              products: products,
+                              user: req.session.userLogueado});
+    });
   }
 }
 

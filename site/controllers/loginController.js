@@ -3,6 +3,8 @@ const jsonOperations = require('./jsonLogic')
 const path = require('path')
 const bcrypt = require('bcrypt');
 const { check, validationResult, body } = require('express-validator')
+const db = require("../database/models");
+const { Sequelize } = require('../database/models');
 
 const loginController = {
   login: (req, res) => {
@@ -13,6 +15,22 @@ const loginController = {
     const errors = validationResult(req);
     const currentUser = req.body;
     if (errors.isEmpty()) {
+    db.Users.findAll({
+      include: [{association: "userCategory"}],
+      where: {
+        email: currentUser.email
+      }
+    })
+    .then(user =>{
+      console.log(user)
+      if (user != null && user[0].userCategory.name == 'Admin') {
+        req.session.userLogueado = user;
+        res.redirect('/admin');
+      }else{
+        req.session.userLogueado = user;
+        res.redirect('/products');
+      }
+    })/*
     const usersList = usersController.users();
     const userFiltered = usersList.filter(user => {
       return user.email == currentUser.email
@@ -23,7 +41,7 @@ const loginController = {
     }else{
       req.session.userLogueado = userFiltered;
       res.redirect('/products');
-    }
+    }*/
   } else { return res.render('login',{ title:'login',
                                        errors: errors.errors,
                                        user: req.session.userLogueado,

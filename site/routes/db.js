@@ -3,6 +3,6 @@ var router = express.Router();
 var dbController = require('../controllers/dbController');
 
 
-router.get('/', dbController.connect);
+router.get('/', dbController.products);
 
 module.exports = router;

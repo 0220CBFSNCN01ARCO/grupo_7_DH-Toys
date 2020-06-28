@@ -1,6 +1,8 @@
 const { check, valiationResult, body } = require('express-validator');
 const usersController = require('../controllers/usersController');
 const bcrypt = require('bcrypt');
+const db = require("../database/models");
+const { Sequelize } = require('../database/models');
 
 const reglasDeValidacionDeUsuarios = () => {
     return [body('email').custom(function (value) {
@@ -25,21 +27,41 @@ const reglasDeValidacionDeUsuarios = () => {
 
 const validacionDelogin = () => {
     return [body('email').custom(function (value) {
+        db.Users.findAll({
+            include: [{association: "userCategory"}],
+            where: {
+              email: value
+            }
+          })
+          .then(userFound => {
+            if (userFound) {
+                return true;
+            } return false;
+          })/*
         const users = usersController.users();
         const userFound = users.find(user => {
             return user.email == value;
         })
         if (userFound) {
             return true;
-        } return false;
+        } return false;*/
     }).withMessage('El e-mail es incorrecto.'), body('password').custom( (value)=> {
+        db.Users.findAll()
+        .then(users => {
+            const userPassword = users.find(user => {
+                return bcrypt.compareSync(value, user.password);
+            })
+            if (userPassword) {
+                return true;
+            } return false;}).withMessage('El password es incorrecto')
+          })/*
         const users = usersController.users();
         const userPassword = users.find(user => {
             return bcrypt.compareSync(value, user.password);
         })
         if (userPassword) {
             return true;
-        } return false;}).withMessage('El password es incorrecto')
+        } return false;}).withMessage('El password es incorrecto')*/
     ]
 };
 
@@ -58,7 +80,7 @@ const userNotLogged = (req,res,next) => {
 }
 
 const adminValidator = (req, res, next) => {
-    if(req.session.userLogueado[0].category != 1){
+    if(req.session.userLogueado[0].idCategoryUser != 1){
         res.redirect('/users/profile')
     }
     next()

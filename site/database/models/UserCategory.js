@@ -1,10 +1,10 @@
 
 
 module.exports = (sequelize, DataTypes) => {
-  let alias = 'Categories_Users';
+  let alias = 'categories_users';
 
   let cols = {
-    id_category_user: {
+    id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
@@ -21,7 +21,14 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false
   }
 
-  const CategoriaUsuario = sequelize.define(alias, cols, config);
+  const UserCategory = sequelize.define(alias, cols, config);
 
-  return CategoriaUsuario;
+  UserCategory.associate = function(models) {
+    UserCategory.hasMany(models.Users,{
+      as: "users",
+      foreignKey: "idCategoryUser"
+    })
+  }
+
+  return UserCategory;
 }

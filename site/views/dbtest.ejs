@@ -8,9 +8,10 @@
 <body>
   <h1>All Products</h1>
       <ul>
-        <% for( let i = 0; i < productos.length; i++ ) { %>
+
+        <% for( let i = 0; i < products.length; i++ ) { %>
           <li>
-            <%= productos[i].name %>
+            <%= products[i].productCategory.name%>
           </li>
         </a>
         <% } %>
