@@ -45,9 +45,7 @@
     margin: 2rem!important;
     padding: 2rem!important;
   }
-  #footer{
-    bottom: 0!important;
-  }
+
 }
 
 @media(min-width:1200px){
