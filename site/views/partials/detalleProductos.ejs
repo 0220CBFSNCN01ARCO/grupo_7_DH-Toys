@@ -1,6 +1,6 @@
 <div class="detalleContainer">
   <div class="col-12 d-flex justify-content-center detalleTitulo ">
-    <h1><%- producto[0].name %></h1>
+    <h1><%- producto.name %></h1>
   </div>
   <div class="row col-12 m-0 p-0">
     <div class="detalleProducto d-flex flex-wrap p-1 m-1">
@@ -8,7 +8,7 @@
         <div class="col-12 col-md-12 p-0 detalleImagenPrincipal">
           <a href="">
             <figure>
-              <img src=<%- producto[0].image %> alt="imagen de producto">
+              <img src='/images/products/<%= producto.image %>' alt="imagen de producto">
             </figure>
           </a>
         </div>
@@ -16,21 +16,21 @@
           <div class="col-md-4 p-1">
             <a href="">
               <figure class="detalleImagen">
-                <img src=<%- producto[0].image %> alt="imagen de producto">
+                <img src='/images/products/<%= producto.image %>' alt="imagen de producto">
               </figure>
             </a>
           </div>
           <div class="col-md-4 p-1">
             <a href="">
               <figure class="detalleImagen">
-                <img src=<%- producto[0].image %> alt="imagen de producto">
+                <img src='/images/products/<%= producto.image %>' alt="imagen de producto">
               </figure>
             </a>
           </div>
           <div class="col-md-4 p-1">
             <a href="">
               <figure class="detalleImagen">
-                <img src=<%- producto[0].image %> alt="imagen de producto">
+                <img src='/images/products/<%= producto.image %>' alt="imagen de producto">
               </figure>
             </a>
           </div>
@@ -38,10 +38,10 @@
       </div>
       <div class="col-12 col-md-8">
         <article class="infoProducto">
-          <h2><strong>$<%- producto[0].price %></strong></h2>
+          <h2><strong>$<%- producto.price %></strong></h2>
           <h3><i class="fas fa-credit-card"></i><strong> Hasta 12 Cuotas</strong></h3>
           <div class="col-12 p-2 m-0 justify-content-center detalleDescripcion">
-            <p><%- producto[0].description %>
+            <p><%- producto.description %>
             </p>
           </div>
           

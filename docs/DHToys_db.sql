@@ -1,54 +1,54 @@
 /*Creación de DB*/
-CREATE DATABASE DHToys_db;
+CREATE DATABASE DHToys_db CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE DHToys_db;
 
 /*Creación de Tablas*/
 
 CREATE TABLE categories_users (
-	id_category_user INT AUTO_INCREMENT NOT NULL,
+	id INT AUTO_INCREMENT NOT NULL,
 	name VARCHAR(5) NOT NULL,
-	PRIMARY KEY (id_category_user)
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE users (
-	id_user INT AUTO_INCREMENT NOT NULL,
+	id INT AUTO_INCREMENT NOT NULL,
 	name VARCHAR(255) NOT NULL,
-	last_name VARCHAR(255) NOT NULL,
+	lastName VARCHAR(255) NOT NULL,
 	email VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL,
 	avatar VARCHAR(255) NOT NULL,
-    id_category_user INT,
-	PRIMARY KEY (id_user),
-    FOREIGN KEY (id_category_user)
-		REFERENCES categories_users(id_category_user)     
+    idCategoryUser INT,
+	PRIMARY KEY (id),
+    FOREIGN KEY (idCategoryUser)
+		REFERENCES categories_users(id)
 );
 
 CREATE TABLE categories_products (
-	id_category_product INT AUTO_INCREMENT NOT NULL,
+	id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id_category_product)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE products (
-	id_product INT AUTO_INCREMENT NOT NULL,
+	id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255) NOT NULL,
     description TEXT,
     image VARCHAR(255),
     price FLOAT,
     age INT,
-    id_category_product INT,
-    PRIMARY KEY (id_product),
-    FOREIGN KEY (id_category_product)
-		REFERENCES categories_products(id_category_product)    
+    idCategoryProduct INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (idCategoryProduct)
+		REFERENCES categories_products(id)    
 );
 
 CREATE TABLE products_users (
-	id_product_user INT AUTO_INCREMENT NOT NULL,
-    id_user INT,
-    id_product INT,
-    PRIMARY KEY (id_product_user),
-    FOREIGN KEY (id_user) REFERENCES users(id_user),
-    FOREIGN KEY (id_product) REFERENCES products(id_product)
+	id INT AUTO_INCREMENT NOT NULL,
+    idUser INT,
+    idProduct INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (idUser) REFERENCES users(id),
+    FOREIGN KEY (idProduct) REFERENCES products(id)
 );
 
 
@@ -57,7 +57,7 @@ CREATE TABLE products_users (
 /*Registros de la tabla categories_products*/
 INSERT INTO categories_products (name) VALUES 
 ('Aire Libre'),
-('Bebés'),
+('Bebes'),
 ('Bloques y Construcción'),
 ('Didácticos'),
 ('Figuras de Acción'),
@@ -69,7 +69,7 @@ INSERT INTO categories_products (name) VALUES
 ('Vehículos');
 
 /*Registros de la tabla products*/
-INSERT INTO products (name, description, image, price, age, id_category_product) VALUES
+INSERT INTO products (name, description, image, price, age, idCategoryProduct) VALUES
     ('Batman','Figura coleccionable de Batman. Muñeco articulado de exelente material y sin baterías, mide aproximadamente unos 20 cm de alto.','batman.jpg', 1500, 4, 5),
 	('Buzz Lightyear','Figura coleccionable de Buzz Lightyear. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto. ', 'buzz.jpg', 1500, 3, 5),
     ('Woody','Figura coleccionable de Woody. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto.','woody.jpg',2000, 3, 5),
@@ -118,11 +118,11 @@ INSERT INTO products (name, description, image, price, age, id_category_product)
 
 /*Registros de la tabla categories_users*/
 INSERT INTO categories_users (name) VALUES 
-('User'),
-('Admin');
+('Admin'),
+('User');
 
 /*Registros de la tabla users*/
-INSERT INTO users (name, last_name, email, password, avatar, id_category_user)VALUES
+INSERT INTO users (name, lastName, email, password, avatar, idCategoryUser)VALUES
     ('Francisco','Olmos','francisco.olamos@unxdigital.com','$2b$10$6I7l9usDeFNUQPh9SZkxoO7.EBMRvOmlC9B.EqjilW1cRpBeYSHE.','abaddon.gif',1),
     ('Francisco','Olmos','francisco.olmos.ubp@gmail.com','$2b$10$mU8hVDOcuJBOgSqvYlR.y.dc.rf4FzOkRRloNBcyvE/bhpylcH1ky','abaddon.gif',1),
     ('Ignacio','Quiroga','iquiroga@grupoprominente.com','$2b$10$AlJAiQV7k6U3FXNBOJ2uzeI5BndrBr8/B6wKQZbTNAlS13WiFHnIG','walterwhite-avatar.jpg',1),

@@ -12,18 +12,18 @@
       <table>
         <colgroup span="5" class="columns formulario1"></colgroup>
         <tr class="">
-          <th>id</th>
-          <th>nombre</th>
-          <th>precio</th>
-          <th>orden</th>
-          <th>acciones</th>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Categoría</th>
+          <th>Acciones</th>
         </tr>
         <% products.forEach(product => { %>
         <tr>
           <td><%- product.id %></td>
           <td><%- product.name %></td>
           <td>$<%- product.price %></td>
-          <td><%- product.category %></td>
+          <td><%- product.productCategory.name %></td>
           <td class="link-edit-product">
             <a href=admin/editor/<%- product.id %> title=Editar<%- product.name %>>
               <img src="/images/editProduct.svg" alt="img">
