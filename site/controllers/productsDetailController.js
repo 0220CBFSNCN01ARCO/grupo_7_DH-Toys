@@ -1,12 +1,15 @@
 const products = require('./products');
+const db = require("../database/models");
 
 const productosController = {
   obtenerDetalle: (req, res) => {
-    const productId = req.params.id;
-    const productoFiltradoConImagenes = products.productWithImageById(productId);
-    res.render('detalleProducto', { title: 'Detalle', 
-                                    producto: productoFiltradoConImagenes,
-                                    user: req.session.userLogueado })
+    db.Products.findByPk(req.params.id)
+    .then(product => {
+      res.render('detalleProducto', { title: 'Detalle', 
+                                      producto: product,
+                                      user: req.session.userLogueado })
+
+    })
   }
 }
 
