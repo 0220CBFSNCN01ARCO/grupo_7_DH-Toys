@@ -46,7 +46,8 @@ const adminController = {
       idCategoryProduct: req.body.category,
       image: req.file.originalname,
       price: req.body.price,
-      age: req.body.age
+      age: req.body.age,
+      state: true
     })
     res.redirect('/admin')
   },
@@ -57,7 +58,26 @@ const adminController = {
       }
     })
     res.redirect('/admin')
+  },
+  changeState: (req, res) => {
+    db.Products.findByPk(req.params.id)
+    .then(product => {
+      console.log(product)
+      if(product.state){
+        db.Products.update({
+          state: false
+        },{where: {
+          id:req.params.id
+        }})
+      }else{
+        db.Products.update({
+          state: true
+        },{where: {
+          id:req.params.id
+        }})
+      }
+    })
+    res.redirect('/admin')
   }
 }
-
 module.exports = adminController;

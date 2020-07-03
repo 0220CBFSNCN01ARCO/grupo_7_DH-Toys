@@ -5,9 +5,13 @@ const indexController = {
   index: (req, res) => {
     db.Products.findAll({
       include: [{association: "productCategory"}],
-      limit: 10
+      limit: 10,
+      where: {
+        state: true
+      }
     })
     .then((products) => {
+    console.log(products)
       res.render('index', { title: 'Inicio',
                             products: products,
                             user: req.session.userLogueado});
@@ -15,7 +19,10 @@ const indexController = {
   },
   allProducts: (req, res) =>{
     db.Products.findAll({
-      include: [{association: "productCategory"}]
+      include: [{association: "productCategory"}],
+      where: {
+        state: true
+      }
     })
     .then((products) => {
       res.render('products', { title: 'Productos',

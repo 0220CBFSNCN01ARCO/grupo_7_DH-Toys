@@ -25,17 +25,21 @@
           <td>$<%- product.price %></td>
           <td><%- product.productCategory.name %></td>
           <td class="link-edit-product">
-            <a href=admin/editor/<%- product.id %> title=Editar<%- product.name %>>
+            <a href='admin/editor/<%- product.id %>' title='Editar <%- product.name %>'>
               <img src="/images/editProduct.svg" alt="img">
             </a>
-            <div class="custom-control custom-switch d-inline ">
-              <input type="checkbox" class="custom-control-input" id="customSwitch1">
-              <label class="custom-control-label" for="customSwitch1"></label>
+            <div class="d-inline ">
+              <% if (product.state) { %>
+                <a href='/admin/changeState/<%= product.id%>' title='desactivar <%= product.name %>'>
+                  <img src="/images/toggle-on.svg" alt="togle-on"></a>
+              <% } else { %>
+                <a href='/admin/changeState/<%= product.id%>' title='activar <%= product.name %>'>
+                  <img src="/images/toggle-off.svg" alt="togle-on"></a>
+              <% } %> 
+              
             </div>
-              <!--<button class="p-0 m-0 toggle-on"><img src="/images/toggle-on.svg" alt="on"></button>
-              <button class="p-0 m-0 toggle-off d-none"><img src="/images/toggle-off.svg" alt="off"></button>-->
             <form action=/admin/delete/<%- product.id %>?_method=DELETE method="POST" class="d-inline">
-              <button class="p-0 m-0" title=Borrar<%- product.name %>><img src="/images/close-delete.svg" alt="delete"></button>
+              <button class="p-0 m-0" title='Borrar<%- product.name %>'><img src="/images/close-delete.svg" alt="delete"></button>
             </form>
           </td>
         </tr>
