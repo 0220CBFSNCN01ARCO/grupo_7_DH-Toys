@@ -36,7 +36,6 @@
                 <a href='/admin/changeState/<%= product.id%>' title='activar <%= product.name %>'>
                   <img src="/images/toggle-off.svg" alt="togle-on"></a>
               <% } %> 
-              
             </div>
             <form action=/admin/delete/<%- product.id %>?_method=DELETE method="POST" class="d-inline">
               <button class="p-0 m-0" title='Borrar<%- product.name %>'><img src="/images/close-delete.svg" alt="delete"></button>
