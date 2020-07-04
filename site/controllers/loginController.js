@@ -65,8 +65,11 @@ const loginController = {
     req.session.destroy((err) => {
       res.redirect('/users/login')
     })
+  },
+  profile(req, res, next) {
+      res.render('profile',{title:'Profile',
+                            user: req.session.userLogueado})
+    }
   }
-
-}
 
 module.exports = loginController;

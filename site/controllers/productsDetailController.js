@@ -1,15 +1,17 @@
-const products = require('./products');
 const db = require("../database/models");
 
 const productosController = {
-  obtenerDetalle: (req, res) => {
-    db.Products.findByPk(req.params.id)
-    .then(product => {
-      res.render('detalleProducto', { title: 'Detalle', 
-                                      producto: product,
-                                      user: req.session.userLogueado })
-
-    })
+  obtenerDetalle: async (req, res) => {
+    try {
+      const product = await db.Products.findByPk(req.params.id)
+      res.render('detalleProducto', {
+        title: 'Detalle',
+        producto: product,
+        user: req.session.userLogueado
+      })
+    } catch (error) {
+      res.send(error)
+    }
   }
 }
 
