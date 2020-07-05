@@ -1,7 +1,6 @@
 const { check, valiationResult, body } = require('express-validator');
 const bcrypt = require('bcrypt');
 const db = require("../database/models");
-const { Sequelize } = require('../database/models');
 
 const reglasDeValidacionDeUsuarios = () => {
     return [body('email').custom( async value => {

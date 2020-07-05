@@ -6,15 +6,24 @@
             <div class=" pt-2 pl-3 d-flex flex-column justify-content-start menu-selection">
                 <div class="menu-selection-search align-items-center">
                     <div class=" d-flex justify-content-center">
-                        <h3>ADMIN</h3>
-                    </div>
-                    <div class="login d-none">
-                        <a class="d-flex justify-content-center" href=""><img src="/images/adminUser.svg" alt="login"></a>
+                        <div class="login">
+                            <a class="d-flex justify-content-center" href="/users/profile"><img src="/images/users/<%= user[0].avatar %>" alt="login"></a>
+                        </div>
+                        <div class="btn-group col-4">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <%- user[0].name %>
+                            </button>
+                            <div class="dropdown-menu userOptions">
+                              <a class="dropdown-item" href="/users/profile">Perfil</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="d-flex menu-bottom">
                     <div class="d-flex flex-column menu-selection-options">
-                        <a href="">Productos</a>
+                        <a href="/admin">Productos</a>
                         <a href="">Usuarios</a>
                         <a href="">Pedidos</a>
                         <a href="">Ventas</a>
@@ -26,15 +35,25 @@
             </div>
         </div>
         <nav class="navbar navbar-dark container-navigation row">
-            <div class="col-10">
+            <div class="col-8">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             </div>
+            <div class="btn-group col-2">
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%- user[0].name %>
+                </button>
+                <div class="dropdown-menu userOptions">
+                  <a class="dropdown-item" href="/users/profile">Perfil</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
+                </div>
+            </div>
             <div class="col-2">
-                <a class="d-flex justify-content-center" href=""><img class="adminUserImg" src="images/adminUser.svg" alt="login"></a>
+                <a class="d-flex justify-content-center" href=""><img class="adminUserImg" src="/images/users/<%= user[0].avatar %>" alt="User Avatar"></a>
             </div>
         </nav>
     </div>

@@ -8,12 +8,13 @@ const adminController = {
     .then(products => {
       res.render('admin/productos', {
         title: 'Admin',
-        products: products
+        products: products,
+        user: req.session.userLogueado
       })
     })
   },
   productRegister: (req, res) => {
-    res.render('admin/productRegister', { title: 'Admin' });
+    res.render('admin/productRegister', { title: 'Admin', user: req.session.userLogueado });
   },
   productEditor: (req, res) => {
     db.Products.findByPk(req.params.id, {
@@ -22,7 +23,8 @@ const adminController = {
     .then(product => {
       res.render('admin/productEditor', {
         title: 'Admin',
-        product: product
+        product: product,
+        user: req.session.userLogueado
       });
     })
   },
@@ -37,7 +39,8 @@ const adminController = {
       }, {where: {
           id: req.params.id
       }})
-    res.redirect('/admin')
+      .then(res.redirect('/admin'))
+    
   },
   addProduct: (req, res, next) => {
     db.Products.create({
@@ -49,7 +52,7 @@ const adminController = {
       age: req.body.age,
       state: true
     })
-    res.redirect('/admin')
+    .then(res.redirect('/admin'))
   },
   deleteProduct: (req, res) => {
     db.Products.destroy({
@@ -76,8 +79,8 @@ const adminController = {
           id:req.params.id
         }})
       }
+      res.redirect('/admin')
     })
-    res.redirect('/admin')
   }
 }
 module.exports = adminController;

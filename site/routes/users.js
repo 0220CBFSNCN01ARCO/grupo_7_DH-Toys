@@ -21,4 +21,5 @@ router.get('/logout',loginController.logout)
 router.post('/login/register', upload.single('avatar'), reglasDeValidacionDeUsuarios(), validar, loginController.addUser)
 router.get('/profile', userNotLogged, loginController.profile );
 
+
 module.exports = router;

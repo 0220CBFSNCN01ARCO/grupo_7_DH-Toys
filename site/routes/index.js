@@ -5,5 +5,6 @@ const {userNotLogged} = require('../middleware/userValidator');
 
 router.get('/', indexController.index)
 router.get('/products', userNotLogged, indexController.allProducts)
+router.post('/search',userNotLogged, indexController.search)
 
 module.exports = router;

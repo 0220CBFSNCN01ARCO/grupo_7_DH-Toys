@@ -9,12 +9,16 @@
                     <a href=""><img src="/images/facebook-f.svg" alt="facebook-f-logo-link"></a>
                 </div>
                 <div class="menu-selection-search align-items-center ">
-                    <div class="search-text d-flex justify-content-center col-5">
-                        <input type="text">
-                    </div>
-                    <div class="search-button p-0 d-flex align-items-center col-1">
-                        <button type="submit" class="fas fa-search"></button>
-                    </div>
+                    <form action="/search" method="POST" class="d-inline">
+                        <div class="row">
+                            <div class="search-text d-flex justify-content-center col-10">
+                                <input type="text" name="search">
+                            </div>
+                            <div class="search-button p-0 d-flex align-items-center col-1">
+                                <button type="submit" class="fas fa-search"></button>
+                            </div>
+                        </div>
+                    </form>
                     <% if(user != undefined) { %>
                         <div class="login d-none col-2">
                             <a class="d-flex justify-content-center" href="/users/login"><img src=../images/users/<%- user[0].avatar %> alt="login"></a>
@@ -24,52 +28,79 @@
                                 <%- user[0].name %>
                             </button>
                             <div class="dropdown-menu userOptions">
+                                <% if(user[0].idCategoryUser == 1) { %>
+                                    <a class="dropdown-item" href="/admin">Admin</a>
+                                <% } %>
                               <a class="dropdown-item" href="/users/profile">Perfil</a>
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
                             </div>
-                          </div>
+                        </div>
                     <% } else { %>
                         <div class="login d-none col-6">
                             <a class="d-flex justify-content-center" href="/users/login"><img src="/images/user.svg" alt="login"></a>
                         </div>
                     <% } %>
                 </div>
-                <div class="d-flex menu-bottom">
-                    <div class="d-flex flex-column menu-selection-options">
-                        <a href="/">Home</a>
-                        <a href="/products">Juguetes</a>
-                        <a href="">Por Edad</a>
-                        <a href="">Nosotros</a>
-                        <a href="">Contacto</a>
+                    <div class="d-flex menu-bottom col-10">
+                        <div class="d-flex flex-column menu-selection-options" style="flex: none;">
+                            <a href="/">Home</a>
+                            <a href="/products">Juguetes</a>
+                            <a href="">Por Edad</a>
+                            <a href="">Nosotros</a>
+                            <a href="">Contacto</a>
+                        </div>
+                        <div class="d-none menu-selection-cart col-2">
+                            <a href="/cart"><img src="/images/cart.png" alt="logo-cart"></a>
+                        </div>
                     </div>
-                    <div class="d-none menu-selection-cart">
-                        <a href="/cart"><img src="/images/cart.png" alt="logo-cart"></a>
-                    </div>
-                </div>
             </div>
             <div class="p-2 pr-4 d-flex logo-container">
                 <img class="img-logo" src="/images/logo2.jpg" alt="logo-DHToys">
             </div>
         </div>
-        <nav class="navbar navbar-dark container-navigation">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="row col-8 p-0">
-                <div class="col-8 search-text d-flex justify-content-center">
-                    <input type="text">
+            <nav class="navbar navbar-dark container-navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="row col-10">
+                    <div class="col-5">
+                        <form action="/search" method="POST" class="d-inline">
+                            <div class="row">
+                                <div class="col-10 search-text d-flex justify-content-center mt-2">
+                                    <input type="text" name="search">
+                                </div>
+                                <div class="col-2 search-button p-0 d-flex align-items-center">
+                                    <button type="submit" class="fas fa-search"></button>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+                    <div class="col-5">
+                        <% if(user != undefined) { %>
+                            <div class="btn-group col-2 p-0">
+                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <%- user[0].name %>
+                                </button>
+                                <div class="dropdown-menu userOptions">
+                                  <a class="dropdown-item" href="/users/profile">Perfil</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
+                                </div>
+                            </div>
+                            <% } else { %>
+                                <div class="btn-group col-2 p-0 justify-content-rigth">
+                                    <a href="/users/login"><img src="/images/adminUser.svg" alt="user-avatar" style="width: 25px;"></a>
+                                </div>
+                            <% } %>
+    
+                    </div>
                 </div>
-                <div class="col-2 search-button p-0 d-flex align-items-center">
-                    <button type="submit" class="fas fa-search"></button>
-                </div>
-                <div class="col-2 p-0 d-flex container-navigation-cart justify-content-center align-items-center">
-                    <a href=""><img src="/images/shopping-cart-solid.svg" alt="logo-cart"></a>
-                </div>
-            </div>
-        </nav>
+                
+            </nav>
+        
     </div>
     <div class="row col-12 p-0 m-0 justify-content-center logo-container">
         <div class="space-img-logo"></div>
