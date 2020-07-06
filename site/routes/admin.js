@@ -22,7 +22,7 @@ router.post('/create',upload.single('image'), adminController.addProduct)
 router.get('/editor/:id', userNotLogged, adminValidator, adminController.productEditor)
 router.put('/editor/:id',upload.single('image'), adminController.editProduct)
 router.delete('/delete/:id',adminController.deleteProduct)
-router.get('/changeState/:id',userNotLogged, adminValidator, adminController.changeState)
+router.get('/changeProductStatus/:id',userNotLogged, adminValidator, adminController.changeProductStatus)
 
 //USERS
 

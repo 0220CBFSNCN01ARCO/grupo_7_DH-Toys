@@ -19,13 +19,12 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.FLOAT,
     age: DataTypes.INTEGER,
     idCategoryProduct: DataTypes.INTEGER,
-    state: DataTypes.BOOLEAN
+    status: DataTypes.BOOLEAN
   };
 
   let config = {
       tablename: "products",
-      timestamps: false,
-      paranoid: true
+      timestamps: false
   }
 
   const Product = sequelize.define(alias,cols, config);

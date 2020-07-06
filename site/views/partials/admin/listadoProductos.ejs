@@ -29,11 +29,11 @@
               <img src="/images/editProduct.svg" alt="img">
             </a>
             <div class="d-inline ">
-              <% if (product.state) { %>
-                <a href='/admin/changeState/<%= product.id%>' title='desactivar <%= product.name %>'>
+              <% if (product.status) { %>
+                <a href='/admin/changeProductStatus/<%= product.id%>' title='desactivar <%= product.name %>'>
                   <img src="/images/toggle-on.svg" alt="togle-on"></a>
               <% } else { %>
-                <a href='/admin/changeState/<%= product.id%>' title='activar <%= product.name %>'>
+                <a href='/admin/changeProductStatus/<%= product.id%>' title='activar <%= product.name %>'>
                   <img src="/images/toggle-off.svg" alt="togle-on"></a>
               <% } %> 
             </div>

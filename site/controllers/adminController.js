@@ -63,19 +63,18 @@ const adminController = {
     })
     res.redirect('/admin')
   },
-  changeState: (req, res) => {
+  changeProductStatus: (req, res) => {
     db.Products.findByPk(req.params.id)
     .then(product => {
-      //console.log(product)
-      if(product.state){
+      if(product.status){
         db.Products.update({
-          state: false
+          status: false
         },{where: {
           id:req.params.id
         }})
       }else{
         db.Products.update({
-          state: true
+          status: true
         },{where: {
           id:req.params.id
         }})
@@ -130,31 +129,30 @@ const adminController = {
     }
   },
   deleteUser: (req, res) => {
-    db.Products.destroy({
+    db.Users.destroy({
       where: {
         id: req.params.id
       }
     })
-    res.redirect('/admin')
+    res.redirect('/admin/users')
   },
   changeUserStatus: (req, res) => {
-    db.Products.findByPk(req.params.id)
-    .then(product => {
-      console.log(product)
-      if(product.state){
-        db.Products.update({
-          state: false
+    db.Users.findByPk(req.params.id)
+    .then(user => {
+      if(user.status){
+        db.Users.update({
+          status: false
         },{where: {
           id:req.params.id
         }})
       }else{
-        db.Products.update({
-          state: true
+        db.Users.update({
+          status: true
         },{where: {
           id:req.params.id
         }})
       }
-      res.redirect('/admin')
+      res.redirect('/admin/users')
     })
   }
 }
