@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="d-flex justify-content-center list-products-title">
+      <h2>ADMINISTRADOR DE USUARIOS</h2>
+    </div>
+      <div class="row col-12 p-0 table-container justify-content-center">
+        <table class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+          <colgroup span="5" class="columns formulario1"></colgroup>
+          <tr class="text-center">
+            <th>Id</th>
+            <th>Email</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+          </tr>
+          <% users.forEach(user => { %>
+          <tr class="text-center">
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.userCategory.name %></td>
+            <td class="link-edit-product">
+              <a href='/admin/userEditor/<%= user.id %>' title='Editar <%= user.name %>'>
+                <img src="/images/editProduct.svg" alt="img">
+              </a>
+              <div class="d-inline ">
+                <% if (user.state) { %>
+                  <a href='/admin/changeUserStatus/<%= user.id%>' title='desactivar <%= user.name %>'>
+                    <img src="/images/toggle-on.svg" alt="togle-on"></a>
+                <% } else { %>
+                  <a href='/admin/changeUserStatus/<%= user.id%>' title='activar <%= user.name %>'>
+                    <img src="/images/toggle-off.svg" alt="togle-on"></a>
+                <% } %> 
+              </div>
+              <form action=/admin/userDelete/<%= user.id %>?_method=DELETE method="POST" class="d-inline">
+                <button class="p-0 m-0" title='Borrar <%= user.name %>'><img src="/images/close-delete.svg" alt="delete"></button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </table>
+      </div>
+  </div>

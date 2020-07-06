@@ -55,7 +55,7 @@ const loginController = {
         lastName: req.body.lastName,
         email: req.body.email
       }
-      return res.render('register',{title:'register',
+      return res.render('register',{title:'Register',
                                     errors: errors.errors,
                                     userToReload: userToReload,
                                     user: req.session.userLogueado})

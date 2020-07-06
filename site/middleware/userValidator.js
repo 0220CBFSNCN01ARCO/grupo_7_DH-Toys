@@ -24,6 +24,20 @@ const reglasDeValidacionDeUsuarios = () => {
     ]
 };
 
+const userEditValidator = () => {
+    return [body('email').custom( async value => {
+        let user =  await db.Users.findOne({
+            where: {
+                email: value
+              }
+        });
+        if (user) {
+            return Promise.reject();
+        }
+    }).withMessage('El e-mail ya está registrado.')
+    ]
+}
+
 const validacionDelogin =  () => {
     return  [body('email').custom(async value => {
         let user =  await db.Users.findOne({
@@ -70,7 +84,7 @@ const validar = (req, res, next) => {
     next();
 };
 
-module.exports = {reglasDeValidacionDeUsuarios, validacionDelogin, validar, userLogged, userNotLogged, adminValidator}
+module.exports = {reglasDeValidacionDeUsuarios, validacionDelogin, validar, userLogged, userNotLogged, adminValidator, userEditValidator}
 
 
 

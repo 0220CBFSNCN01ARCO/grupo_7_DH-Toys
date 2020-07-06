@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row justify-content-center title">
+        <h1>Editar <%= userToEdit.name %> </h1>
+    </div>
+    <% if(typeof errors != 'undefined') {%>
+        <div class="alert alert-danger text-center" role="alert">
+            <% errors.forEach(error => {%>
+            <h5><%- error.msg %></h5>
+            <% })%>
+        </div>
+    <% }%>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-12 col-lg-8 col-xl-8">
+            <form action='/admin/userEditor/<%= userToEdit.id %>?_method=PUT'  method="POST" class="formulario" enctype="multipart/form-data">
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                            <label for="nombre" class="campo">Nombre</label>
+                            <input type="text" name="name" class="form-control" id="nombre" placeholder="Ingrese nombre del usuario" value='<%- userToEdit.name %>' >
+                    </div>  
+                </div>
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                        <label class="campo" for="lastName">Apellido</label>
+                        <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Ingrese apellido del usuario" value='<%- userToEdit.lastName %>'>
+                    
+                    </div>
+                </div>
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                        <label class="campo" for="email">E-mail</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese e-mail del usuario" value='<%- userToEdit.email %>'>
+                    
+                    </div>
+                </div>
+                <div class="row justify-content-center filaForm">
+                    <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                            <label class="campo" for="imagen">Avatar</label>
+                            <input type="file" name="avatar" required class="form-control" id="imagen">
+                    </div>
+                    <div class="row justify-content-center filaForm">
+                        <div class="col-10 col-md-10 col-lg-10 col-xl-10">
+                            <img id="imgProductos" src='/images/users/<%= userToEdit.avatar %>' alt="Avatar de <%- userToEdit.name %>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-around filaForm">
+                    <div class="col-5">
+                        <button type="reset" class="btn btn-warning">CANCELAR</button>
+                    </div>
+                    <div class="col-5 botonCargar">
+                        <button type="submit" class="btn btn-warning">ACEPTAR</button>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
