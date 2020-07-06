@@ -7,7 +7,7 @@ const indexController = {
       include: [{ association: "productCategory" }],
       limit: 10,
       where: {
-        state: true
+        status: true
       }
     })
       .then((products) => {
@@ -17,13 +17,13 @@ const indexController = {
           products: products,
           user: req.session.userLogueado
         });
-      });
+      }); 
   },
   allProducts: (req, res) => {
     db.Products.findAll({
       include: [{ association: "productCategory" }],
       where: {
-        state: true
+        status: true
       }
     })
       .then((products) => {
@@ -50,7 +50,7 @@ const indexController = {
       include: [{ association: "productCategory" }],
       where: {
         age: {[Sequelize.Op.lte]: 3},
-        state: true
+        status: true
       }
     })
       .then((products) => {
@@ -65,7 +65,7 @@ const indexController = {
       include: [{ association: "productCategory" }],
       where: {
         age: {[Sequelize.Op.between]: [3, 7]},
-        state: true
+        status: true
       }
     })
       .then((products) => {
@@ -80,7 +80,7 @@ const indexController = {
       include: [{ association: "productCategory" }],
       where: {
         age: {[Sequelize.Op.gte]: 7},
-        state: true
+        status: true
       }
     })
       .then((products) => {

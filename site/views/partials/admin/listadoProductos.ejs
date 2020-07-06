@@ -7,11 +7,10 @@
       <button type="button" class="btn btn-warning">Agregar Producto</button>
     </a>
   </div>
-  <div class="">
     <div class="row col-12 p-0 table-container justify-content-center">
-      <table>
+      <table class="col-12 col-sm-12 col-md-12 col-lg-12 ">
         <colgroup span="5" class="columns formulario1"></colgroup>
-        <tr class="">
+        <tr class="text-center">
           <th>Id</th>
           <th>Nombre</th>
           <th>Precio</th>
@@ -19,7 +18,7 @@
           <th>Acciones</th>
         </tr>
         <% products.forEach(product => { %>
-        <tr>
+        <tr class="text-center">
           <td><%- product.id %></td>
           <td><%- product.name %></td>
           <td>$<%- product.price %></td>
@@ -29,11 +28,11 @@
               <img src="/images/editProduct.svg" alt="img">
             </a>
             <div class="d-inline ">
-              <% if (product.state) { %>
-                <a href='/admin/changeState/<%= product.id%>' title='desactivar <%= product.name %>'>
+              <% if (product.status) { %>
+                <a href='/admin/changeProductStatus/<%= product.id%>' title='desactivar <%= product.name %>'>
                   <img src="/images/toggle-on.svg" alt="togle-on"></a>
               <% } else { %>
-                <a href='/admin/changeState/<%= product.id%>' title='activar <%= product.name %>'>
+                <a href='/admin/changeProductStatus/<%= product.id%>' title='activar <%= product.name %>'>
                   <img src="/images/toggle-off.svg" alt="togle-on"></a>
               <% } %> 
             </div>
@@ -45,5 +44,4 @@
         <% }) %>
       </table>
     </div>
-  </div>
 </div>

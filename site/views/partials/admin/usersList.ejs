@@ -21,7 +21,7 @@
                 <img src="/images/editProduct.svg" alt="img">
               </a>
               <div class="d-inline ">
-                <% if (user.state) { %>
+                <% if (user.status) { %>
                   <a href='/admin/changeUserStatus/<%= user.id%>' title='desactivar <%= user.name %>'>
                     <img src="/images/toggle-on.svg" alt="togle-on"></a>
                 <% } else { %>

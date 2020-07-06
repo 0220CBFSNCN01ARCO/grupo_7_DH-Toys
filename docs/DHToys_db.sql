@@ -19,6 +19,7 @@ CREATE TABLE users (
 	password VARCHAR(255) NOT NULL,
 	avatar VARCHAR(255) NOT NULL,
     idCategoryUser INT,
+    status BOOLEAN,
 	PRIMARY KEY (id),
     FOREIGN KEY (idCategoryUser)
 		REFERENCES categories_users(id)
@@ -38,7 +39,7 @@ CREATE TABLE products (
     price FLOAT,
     age INT,
     idCategoryProduct INT,
-    state BOOLEAN,
+    status BOOLEAN,
     PRIMARY KEY (id),
     FOREIGN KEY (idCategoryProduct)
 		REFERENCES categories_products(id)    
@@ -71,7 +72,7 @@ INSERT INTO categories_products (name) VALUES
 ('Vehículos');
 
 /*Registros de la tabla products*/
-INSERT INTO products (name, description, image, price, age, idCategoryProduct, state) VALUES
+INSERT INTO products (name, description, image, price, age, idCategoryProduct, status) VALUES
     ('Batman','Figura coleccionable de Batman. Muñeco articulado de exelente material y sin baterías, mide aproximadamente unos 20 cm de alto.','batman.jpg', 1500, 4, 5, true),
 	('Buzz Lightyear','Figura coleccionable de Buzz Lightyear. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto. ', 'buzz.jpg', 1500, 3, 5, true),
     ('Woody','Figura coleccionable de Woody. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto.','woody.jpg',2000, 3, 5, true),
@@ -124,12 +125,12 @@ INSERT INTO categories_users (name) VALUES
 ('User');
 
 /*Registros de la tabla users*/
-INSERT INTO users (name, lastName, email, password, avatar, idCategoryUser)VALUES
-    ('Francisco','Olmos','francisco.olamos@unxdigital.com','$2b$10$6I7l9usDeFNUQPh9SZkxoO7.EBMRvOmlC9B.EqjilW1cRpBeYSHE.','abaddon.gif',1),
-    ('Francisco','Olmos','francisco.olmos.ubp@gmail.com','$2b$10$mU8hVDOcuJBOgSqvYlR.y.dc.rf4FzOkRRloNBcyvE/bhpylcH1ky','abaddon.gif',1),
-    ('Ignacio','Quiroga','iquiroga@grupoprominente.com','$2b$10$AlJAiQV7k6U3FXNBOJ2uzeI5BndrBr8/B6wKQZbTNAlS13WiFHnIG','walterwhite-avatar.jpg',1),
-    ('Eduardo','Bedini','edu.bedini@gmail.com','$2b$10$0ocEwjzth1yWo2fWLEQEee3kzdjUKV.9P1ZYSOxX.5j28gpMD1Clm','el ojo.jpg',1),
-    ('javier','Bedini','ejbedini@gmail.com','$2b$10$4QmuCEcuGZyX7MXD7hcRTecR1hD783vyGnhuo.eVkf9O9tWMbooQu','el ojo.jpg',2),
-    ('Usuario','Prueba','usuarioDePrueba@gmail.com','$2b$10$6bBlAMH46EykEc25RUK67ebIxDcGprTSTcB1Tbx0mLW4HFwzM8BRy','userImage.png',2),
-    ('francisco1','olmitos','francisco.olmosaa@unxdigital.com','$2b$10$H3w8U.GZozW8plVPDn2E9OeAcZtJJY.13rEHv7ajk.hm9sryFV5K2','abaddon.gif',2),
-    ('francisco','olmos','francisco.olmos.ubp1@gmail.com','$2b$10$7jv2qb5CzN.Xv798ao36xuBCNJ0NN24ECJOV.54L5MqCXpELqZoA6','abaddon.gif',2);
+INSERT INTO users (name, lastName, email, password, avatar, idCategoryUser, status)VALUES
+    ('Francisco','Olmos','francisco.olamos@unxdigital.com','$2b$10$6I7l9usDeFNUQPh9SZkxoO7.EBMRvOmlC9B.EqjilW1cRpBeYSHE.','abaddon.gif',1, true),
+    ('Francisco','Olmos','francisco.olmos.ubp@gmail.com','$2b$10$mU8hVDOcuJBOgSqvYlR.y.dc.rf4FzOkRRloNBcyvE/bhpylcH1ky','abaddon.gif',1, true),
+    ('Ignacio','Quiroga','iquiroga@grupoprominente.com','$2b$10$AlJAiQV7k6U3FXNBOJ2uzeI5BndrBr8/B6wKQZbTNAlS13WiFHnIG','walterwhite-avatar.jpg',1, true),
+    ('Eduardo','Bedini','edu.bedini@gmail.com','$2b$10$0ocEwjzth1yWo2fWLEQEee3kzdjUKV.9P1ZYSOxX.5j28gpMD1Clm','el ojo.jpg',1, true),
+    ('javier','Bedini','ejbedini@gmail.com','$2b$10$4QmuCEcuGZyX7MXD7hcRTecR1hD783vyGnhuo.eVkf9O9tWMbooQu','el ojo.jpg',2, true),
+    ('Usuario','Prueba','usuarioDePrueba@gmail.com','$2b$10$6bBlAMH46EykEc25RUK67ebIxDcGprTSTcB1Tbx0mLW4HFwzM8BRy','userImage.png',2, true),
+    ('francisco1','olmitos','francisco.olmosaa@unxdigital.com','$2b$10$H3w8U.GZozW8plVPDn2E9OeAcZtJJY.13rEHv7ajk.hm9sryFV5K2','abaddon.gif',2, true),
+    ('francisco','olmos','francisco.olmos.ubp1@gmail.com','$2b$10$7jv2qb5CzN.Xv798ao36xuBCNJ0NN24ECJOV.54L5MqCXpELqZoA6','abaddon.gif',2, true);

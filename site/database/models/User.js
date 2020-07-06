@@ -30,7 +30,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    idCategoryUser: DataTypes.INTEGER
+    idCategoryUser: DataTypes.INTEGER,
+    status: DataTypes.BOOLEAN  
   }
 
   let config = {
