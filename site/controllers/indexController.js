@@ -45,6 +45,51 @@ const indexController = {
       .then(products => {
         res.render('search', { title: 'search', products, user: req.session.userLogueado, search: toFind })
       })
+  }, byAgeLessThanThree: (req, res) => {
+    db.Products.findAll({
+      include: [{ association: "productCategory" }],
+      where: {
+        age: {[Sequelize.Op.lte]: 3},
+        state: true
+      }
+    })
+      .then((products) => {
+        res.render('forAge', {
+          title: 'Productos',
+          products: products,
+          user: req.session.userLogueado
+        });
+      });
+  }, byAgeBetweenthreeAndSeven: (req, res) => {
+    db.Products.findAll({
+      include: [{ association: "productCategory" }],
+      where: {
+        age: {[Sequelize.Op.between]: [3, 7]},
+        state: true
+      }
+    })
+      .then((products) => {
+        res.render('forAge', {
+          title: 'Productos',
+          products: products,
+          user: req.session.userLogueado
+        });
+      });
+  }, byAgeSevenOnwards: (req, res) => {
+    db.Products.findAll({
+      include: [{ association: "productCategory" }],
+      where: {
+        age: {[Sequelize.Op.gte]: 7},
+        state: true
+      }
+    })
+      .then((products) => {
+        res.render('forAge', {
+          title: 'Productos',
+          products: products,
+          user: req.session.userLogueado
+        });
+      });
   }
 }
 

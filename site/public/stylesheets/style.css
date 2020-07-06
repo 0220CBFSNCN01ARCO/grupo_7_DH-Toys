@@ -44,7 +44,7 @@ body {
 .menu-selection a{
   text-decoration: none;
   color: #F2F0E9;
-  margin-bottom: 3px;
+  margin-bottom: 3px!important;
 }
 
 .userOptions a{
@@ -101,6 +101,14 @@ header{
   border: none;
   height: 15px;
   color: #F2F0E9
+}
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+.ageSelection{
+  background-color: #262626;
 }
 
 .container-navigation-cart img{
@@ -324,9 +332,13 @@ footer h6{
     font-weight: 700;
   }
 
-  .menu-selection-options a + a:before{
+  .menu-selection-options_anchor + a:before{
     content: ' | ';
     padding: 0 5px;
+  }
+
+  .ageSelection{
+    background-color: whitesmoke;
   }
 
   .menu-selection-options a:hover{
