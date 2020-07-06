@@ -86,13 +86,23 @@
                                 </button>
                                 <div class="dropdown-menu userOptions">
                                   <a class="dropdown-item" href="/users/profile">Perfil</a>
+                                  <a class="dropdown-item" href="/cart">Carrito</a>
                                   <div class="dropdown-divider"></div>
                                   <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
                                 </div>
                             </div>
                             <% } else { %>
-                                <div class="btn-group col-2 p-0 justify-content-rigth">
-                                    <a href="/users/login"><img src="/images/adminUser.svg" alt="user-avatar" style="width: 25px;"></a>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="btn-group col-2 p-0">
+                                            <a href="/cart"><img src="/images/cartWhite.png" alt="user-avatar" style="width: 30px;"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="btn-group col-2 p-0">
+                                            <a href="/users/login"><img src="/images/adminUser.svg" alt="user-avatar" style="width: 25px;"></a>
+                                        </div>
+                                    </div>
                                 </div>
                             <% } %>
     

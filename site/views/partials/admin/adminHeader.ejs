@@ -1,23 +1,24 @@
-
 <header>
     <div class="fixed-top">
         <div class="row collapse m-0 header-collapse justify-content-between container-menu-selection"
             id="navbarToggleExternalContent">
             <div class=" pt-2 pl-3 d-flex flex-column justify-content-start menu-selection">
-                <div class="menu-selection-search align-items-center">
-                    <div class=" d-flex justify-content-center">
-                        <div class="login">
-                            <a class="d-flex justify-content-center" href="/users/profile"><img src="/images/users/<%= user[0].avatar %>" alt="login"></a>
-                        </div>
-                        <div class="btn-group col-4">
-                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <%- user[0].name %>
-                            </button>
-                            <div class="dropdown-menu userOptions">
-                              <a class="dropdown-item" href="/users/profile">Perfil</a>
-                              <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
+                <div class="menu-selection-search align-items-end">
+                    <div class="row justify-content-end">
+                        <div class="col-2 col-md-2 col-lg-2">
+                            <div class="btn-group d-flex justify-content-end ">
+                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <%- user[0].name %>
+                                </button>
+                                <div class="dropdown-menu userOptions">
+                                    <a class="dropdown-item" href="/users/profile">Perfil</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
+                                </div>
                             </div>
+                        </div>
+                        <div class="col-2">
+                            <a class="d-flex justify-content-end" href=""><img class="adminUserImg" src="/images/users/<%= user[0].avatar %>" alt="User Avatar"></a>
                         </div>
                     </div>
                 </div>
@@ -34,26 +35,30 @@
                 <img class="img-logo" src="/images/logo2.jpg" alt="logo-DHToys">
             </div>
         </div>
-        <nav class="navbar navbar-dark container-navigation row">
-            <div class="col-8">
+        <nav class="navbar navbar-dark container-navigation">
+            <div class="col-2 d-flex justify-content-start">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             </div>
-            <div class="btn-group col-2">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%- user[0].name %>
-                </button>
-                <div class="dropdown-menu userOptions">
-                  <a class="dropdown-item" href="/users/profile">Perfil</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
+            <div class="row justify-content-end">
+                <div class="col-2 col-md-2 col-lg-2">
+                    <div class="btn-group d-flex justify-content-end">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <%- user[0].name %>
+                        </button>
+                        <div class="dropdown-menu userOptions">
+                          <a class="dropdown-item" href="/users/profile">Perfil</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-2">
-                <a class="d-flex justify-content-center" href=""><img class="adminUserImg" src="/images/users/<%= user[0].avatar %>" alt="User Avatar"></a>
+                <div class="col-2">
+                    <a class="d-flex justify-content-end" href=""><img class="adminUserImg" src="/images/users/<%= user[0].avatar %>" alt="User Avatar"></a>
+                </div>
             </div>
         </nav>
     </div>
