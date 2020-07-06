@@ -24,14 +24,17 @@ const reglasDeValidacionDeUsuarios = () => {
     ]
 };
 
+//Valida que el email que se envía por el formulario de edición no exista en la base de datos en OTRO!!! usuario que no sea el mismo que esta editando
+//es decir
 const userEditValidator = () => {
-    return [body('email').custom( async value => {
+    return [body('email').custom( async (value, {req}) => {
         let user =  await db.Users.findOne({
             where: {
                 email: value
               }
         });
-        if (user) {
+        let originalUser = await db.Users.findByPk(req.params.id)
+        if (user && user.email != originalUser.email) {
             return Promise.reject();
         }
     }).withMessage('El e-mail ya está registrado.')

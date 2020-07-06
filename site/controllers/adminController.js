@@ -66,7 +66,7 @@ const adminController = {
   changeState: (req, res) => {
     db.Products.findByPk(req.params.id)
     .then(product => {
-      console.log(product)
+      //console.log(product)
       if(product.state){
         db.Products.update({
           state: false
@@ -110,7 +110,6 @@ const adminController = {
   editUser: (req, res, next) => {
     const errors = validationResult(req);
     const userToEdit = req.body;
-    console.log(userToEdit);
     if (errors.isEmpty()) {
     db.Users.update({
         name: req.body.name,
