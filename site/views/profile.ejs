@@ -4,20 +4,29 @@
 <body>
   <div id="app">
     <%- include('partials/header')%>
-    <div class="contenedorDeLogin main">
-      <div class="profile">
-        <div class="d-flex justify-content-center profile-image">
-          <img src=../images/users/<%- user[0].avatar %> alt="Imagen del usuario logueado">
+    <div class="container-fluid">
+        <div class="row mt-5 justify-content-center">
+          <span class="border border-dark rounded">
+          <div class="col-3 d-flex justify-content-center">
+            <span class="border border-warning rounded mt-3"><img src='/images/users/<%- user[0].avatar %>' class="rounded" style="width: 100%;" alt="Imagen del usuario logueado"></span>
+          </div>
+          <div class="col-5">
+            <div class="row">
+              <div class="col-12">
+                <h5><b>Nombre:</b> <%- user[0].name%> <%- user[0].lastName %></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h5><b>Email:</b> <%- user[0].email %></h4>
+              </div>
+            </div>
+          </div>
+        </span>
         </div>
-        <div>
-          <h4><b>Nombre:</b> <%- user[0].name%> <%- user[0].lastName %></h4><br>
-          <h4><b>Email:</b> <%- user[0].email %></h4><br>
-        </div>
-      </div>
     </div>
     <%- include('partials/scripts')%>
   </div>
   <%- include('partials/footer')%>
 </body>
-
 </html>

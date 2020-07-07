@@ -19,7 +19,7 @@ router.post('/login',validacionDelogin(), validar, loginController.verify )
 router.get('/login/register', userLogged,  loginController.register )
 router.get('/logout',loginController.logout)
 router.post('/login/register', upload.single('avatar'), reglasDeValidacionDeUsuarios(), validar, loginController.addUser)
-router.get('/profile', userNotLogged, loginController.profile );
+router.get('/profile1', userNotLogged, loginController.profile );
 
 
 module.exports = router;

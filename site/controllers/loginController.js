@@ -67,7 +67,7 @@ const loginController = {
     })
   },
   profile(req, res, next) {
-      res.render('profile',{title:'Profile',
+      res.render('profile1',{title:'Profile',
                             user: req.session.userLogueado})
     }
   }
