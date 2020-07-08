@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head')%>
+  <body>
+    <div id="app">
+      <%- include('partials/header')%>
+<section class="content-page">
+    <div class="container mb-80">
+        <div class="row">
+            <div class="col-sm-12">
+                <article class="post-8" style="background-color: white; border-radius: 15px;">
+                    <form class="cart-form" action="#" method="post">
+                        <div class="cart-product-table-wrap responsive-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="product-remove"></th>
+                                        <th class="product-thumbnail"></th>
+                                        <th class="product-name">Producto</th>
+                                        <th class="product-price">Precio</th>
+                                        <th class="product-quantity">Cantidad</th>
+                                        <th class="product-subtotal">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <% products.forEach(product => { %>
+                                        <tr> 
+                                            <td class="product-remove">
+                                                <a href="javascript:void(0)"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+                                            </td>
+                                            <td class="product-thumbnail" >
+                                                <a>
+                                                    <img src="/images/products/<%= product.image %> " alt=""></a>
+                                            </td>
+                                            <td class="product-name ">
+                                                <a><%= product.name %> </a>
+                                            </td>
+                                            <td class="product-price" >
+                                                <span class="product-price-amount amount"><span class="currency-sign">$</span><%= product.price %> </span>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <span style="padding: 5px;"><img src="/images/minus.png" id="minus" style="width: 20px;" alt="minus"></span>
+                                                    <input id="count"  class="text-center" type="number" min="1" max="100" value="1">
+                                                    <span style="padding: 5px;"><img src="/images/plus.png" id="more" style="width: 20px;" alt="plus"></span>
+                                            </td>
+                                            <td class="product-subtotal" >
+                                                <span class="product-price-sub_totle amount"><span class="currency-sign">$</span><%= product.price %></span>
+                                            </td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row cart-actions">
+                            <div class="col-12 d-flex justify-content-center mb-3">
+                                <input class="btn btn-md btn-warning" name="update_cart" value="Actualizar"  type="submit">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="cart-collateral">
+                        <div class="cart_totals">
+                            <h3>Total del Carrito</h3>
+                            <div class="responsive-table">
+                                <table>
+                                    <tbody>
+                                        <tr class="cart-subtotal">
+                                            <th>Subtotal</th>
+                                            <td><span class="product-price-amount amount"><span class="currency-sign">$</span>9999</span></td>
+                                        </tr>
+                                        <tr class="shipping">
+                                            <th>Envio</th>
+                                            <td>
+                                                <ul id="shipping_method">
+                                                    <li>
+                                                        <input name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_free_shipping" value="legacy_free_shipping" class="shipping_method" type="radio">
+                                                        <label for="shipping_method_0_legacy_free_shipping">Envio Gratis</label>
+                                                    </li>
+                                                    <li>
+                                                        <input name="shipping_method[0]" data-index="0" id="shipping_method_0_legacy_local_delivery" value="legacy_local_delivery" class="shipping_method" type="radio">
+                                                        <label for="shipping_method_0_legacy_local_delivery">Local Delivery</label>
+                                                    </li>
+                                                </ul>
+                                                <form>
+                                                    <p>
+                                                        <a href="#">Calcular Envio</a>
+                                                    </p>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>Total</th>
+                                            <td><span class="product-price-amount amount"><span class="currency-sign">$</span>9999</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="product-proceed-to-checkout">
+                                <a class="btn btn-lg btn-warning form-full-width" href="checkout.html">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('partials/footer')%>
+    </div>
+    <%- include('partials/scripts')%>
+
+    <script>$(document).ready(function(){
+        $('#count').prop('disabled', true);
+           $(document).on('click','#more',function(){
+            $('#count').val(parseInt($('#count').val()) + 1 );
+        });
+        $(document).on('click','#minus',function(){
+            $('#count').val(parseInt($('#count').val()) - 1 );
+                if ($('#count').val() == 0) {
+                    $('#count').val(1);
+                }
+            });
+     });</script>
+
+  </body>
+</html>

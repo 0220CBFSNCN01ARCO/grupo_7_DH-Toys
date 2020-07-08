@@ -10,7 +10,7 @@ const cartController = {
       }
     })
     .then(products => {
-      res.render('cart', { title: 'cart',
+      res.render('cart3', { title: 'cart',
                             user: req.session.userLogueado,
                             products});
     })

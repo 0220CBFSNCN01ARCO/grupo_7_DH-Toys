@@ -30,7 +30,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.get('/detalle/:id', producDetailRouter);
-app.get('/cart', cartRouter);
+app.get('/cart3', cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -21,7 +21,7 @@
                     </form>
                     <% if(user != undefined) { %>
                     <div class="login d-none col-2">
-                        <a class="d-flex justify-content-center" href="/users/login"><img
+                        <a class="d-flex justify-content-center" href="/users/profile1"><img
                                 src=../images/users/<%- user[0].avatar %> alt="login"></a>
                     </div>
                     <div class="btn-group col-4">
@@ -33,7 +33,7 @@
                             <% if(user[0].idCategoryUser == 1) { %>
                             <a class="dropdown-item" href="/admin">Admin</a>
                             <% } %>
-                            <a class="dropdown-item" href="/users/profile">Perfil</a>
+                            <a class="dropdown-item" href="/users/profile1">Perfil</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
                         </div>
@@ -64,7 +64,7 @@
                         <a class="menu-selection-options_anchor" href="">Contacto</a>
                     </div>
                     <div class="d-none menu-selection-cart col-2">
-                        <a href="/cart"><img src="/images/cart.png" alt="logo-cart"></a>
+                        <a href="/cart3"><img src="/images/cart.png" alt="logo-cart"></a>
                     </div>
                 </div>
             </div>
@@ -88,8 +88,8 @@
                                 <%- user[0].name %>
                             </button>
                             <div class="dropdown-menu userOptions">
-                                <a class="dropdown-item" href="/users/profile">Perfil</a>
-                                <a class="dropdown-item" href="/users/profile">Carrito</a>
+                                <a class="dropdown-item" href="/users/profile1">Perfil</a>
+                                <a class="dropdown-item" href="/cart3">Carrito</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
                             </div>
