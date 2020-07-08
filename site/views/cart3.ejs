@@ -8,9 +8,11 @@
     <div class="container mb-80">
         <div class="row">
             <div class="col-sm-12">
-                <article class="post-8" style="background-color: white; border-radius: 15px;">
-                    <form class="cart-form" action="#" method="post">
-                        <div class="cart-product-table-wrap responsive-table">
+                <article class="post-8">
+                    <form class="cart-form" action="" method="get" style="box-shadow: 4px 4px 5px 0px rgba(171,169,171,0.29);
+                                                                            background-color: white;
+                                                                            border-radius: 25px;">
+                        <div class="cart-product-table-wrap responsive-table" style="background-color: white; border-radius: 15px; border: 1px solid lightgrey;">
                             <table>
                                 <thead>
                                     <tr>
@@ -41,7 +43,7 @@
                                             <td>
                                                 <div class="d-flex">
                                                     <span style="padding: 5px;"><img src="/images/minus.png" id="minus" style="width: 20px;" alt="minus"></span>
-                                                    <input id="count"  class="text-center" type="number" min="1" max="100" value="1">
+                                                    <input id="count"  class="text-center" type="number" min="1" max="100" value="1" style="width: 50px; border: 0px;">
                                                     <span style="padding: 5px;"><img src="/images/plus.png" id="more" style="width: 20px;" alt="plus"></span>
                                             </td>
                                             <td class="product-subtotal" >
@@ -96,7 +98,7 @@
                                 </table>
                             </div>
                             <div class="product-proceed-to-checkout">
-                                <a class="btn btn-lg btn-warning form-full-width" href="checkout.html">Comprar</a>
+                                <a class="btn btn-lg btn-warning form-full-width" href="">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -110,7 +112,9 @@
     <%- include('partials/scripts')%>
 
     <script>$(document).ready(function(){
-        $('#count').prop('disabled', true);
+        
+        const inputs = document.querySelector('.count')
+        console.log(inputs)
            $(document).on('click','#more',function(){
             $('#count').val(parseInt($('#count').val()) + 1 );
         });
