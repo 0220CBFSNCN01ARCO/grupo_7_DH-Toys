@@ -43,8 +43,8 @@
                                             <td>
                                                 <div class="d-flex">
                                                     <span style="padding: 5px;"><img src="/images/minus.png" id="minus" style="width: 20px;" alt="minus"></span>
-                                                    <input id="count"  class="text-center" type="number" min="1" max="100" value="1" style="width: 50px; border: 0px;">
-                                                    <span style="padding: 5px;"><img src="/images/plus.png" id="more" style="width: 20px;" alt="plus"></span>
+                                                    <input id="count" class="text-center" type="number" min="1" max="100" value="1" style="width: 50px; border: 0px;">
+                                                    <span style="padding: 5px;"><img src="/images/plus.png" id="plus" style="width: 20px;" alt="plus"></span>
                                             </td>
                                             <td class="product-subtotal" >
                                                 <span class="product-price-sub_totle amount"><span class="currency-sign">$</span><%= product.price %></span>
@@ -110,21 +110,5 @@
 <%- include('partials/footer')%>
     </div>
     <%- include('partials/scripts')%>
-
-    <script>$(document).ready(function(){
-        
-        const inputs = document.querySelector('.count')
-        console.log(inputs)
-           $(document).on('click','#more',function(){
-            $('#count').val(parseInt($('#count').val()) + 1 );
-        });
-        $(document).on('click','#minus',function(){
-            $('#count').val(parseInt($('#count').val()) - 1 );
-                if ($('#count').val() == 0) {
-                    $('#count').val(1);
-                }
-            });
-     });</script>
-
   </body>
 </html>
