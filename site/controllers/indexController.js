@@ -90,7 +90,10 @@ const indexController = {
           user: req.session.userLogueado
         });
       });
-  }
+  }, aboutUs: (req, res) => {
+    res.render('aboutUs', { title: 'aboutUs', 
+                          user: req.session.userLogueado});
+  },
 }
 
 module.exports = indexController;
