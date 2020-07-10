@@ -64,7 +64,7 @@ const indexController = {
     db.Products.findAll({
       include: [{ association: "productCategory" }],
       where: {
-        age: {[Sequelize.Op.between]: [3, 7]},
+        age: {[Sequelize.Op.between]: [4, 7]},
         status: true
       }
     })
@@ -79,7 +79,7 @@ const indexController = {
     db.Products.findAll({
       include: [{ association: "productCategory" }],
       where: {
-        age: {[Sequelize.Op.gte]: 7},
+        age: {[Sequelize.Op.gte]: 8},
         status: true
       }
     })
