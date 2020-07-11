@@ -1,109 +1,134 @@
 <!DOCTYPE html>
 <html>
-
 <%- include('partials/head')%>
 <body>
-  <div id="app">
-    <%- include('partials/header')%>
-     <!-- Title -->
-     <div class="titlecompra">
-      MI COMPRA
-      </div>
-      <div class="shopping-cart">
-        <!-- ENCABEZADO-->
-          <ul type="none" class="encabezadoDeListado">
-            <li>
-              <p class="detProducto">Producto</p>
-            </li>
-            <li>
-              <p class="detallePrecio">Precio</p>
-            </li>
-            <li>
-              <p class="detalleCantidad">Cantidad</p>
-            </li>
-            <li>
-              <p class="detalleTotal">Total</p>
-            </li>
-          </ul>
-        <!-- Producto 1 -->
-        <section class="descripcionProducto">
-            <div class="imagen">
-            <img src="images/Inserteimage.png" alt="" />
-          </div>
-          <div class="description">
-            <span>Common Projects</span>
-            <span>Bball High</span>
-            <span>White</span>
-          </div>
-          <div class="Precio-unitario">$549</div>
-          <div class="quantity">
-            <button class="plus-btn" type="button" name="button">
-              <img src="images/mas1.png" alt="Agregar uno" />
-            </button>
-            <input type="text" name="name" value="1">
-            <button class="minus-btn" type="button" name="button">
-              <img src="images/menos1.png" alt="Restar uno" />
-            </button>
-          </div>
-          <div class="Precio-total">$549</div>
+    <div id="app">
+        <%- include('partials/header')%>
+        <section class="content-page">
+            <div class="container mb-80">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <article class="post-8">
+                            <form class="cart-form" action="" method="get" style="box-shadow: 4px 4px 5px 0px rgba(171,169,171,0.29);
+                                                                            background-color: white;
+                                                                            border-radius: 25px;">
+                                <div class="cart-product-table-wrap responsive-table"
+                                    style="background-color: white; border-radius: 15px; border: 1px solid lightgrey;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="product-remove"></th>
+                                                <th class="product-thumbnail"></th>
+                                                <th class="product-name">Producto</th>
+                                                <th class="product-price">Precio</th>
+                                                <th class="product-quantity">Cantidad</th>
+                                                <th class="product-subtotal">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% products.forEach(product => { %>
+                                            <tr>
+                                                <td class="product-remove">
+                                                    <a href="javascript:void(0)"><i class="fa fa-times-circle"
+                                                            aria-hidden="true"></i></a>
+                                                </td>
+                                                <td class="product-thumbnail">
+                                                    <a>
+                                                        <img src="/images/products/<%= product.image %> " alt=""></a>
+                                                </td>
+                                                <td class="product-name ">
+                                                    <a><%= product.name %> </a>
+                                                </td>
+                                                <td class="product-price">
+                                                    <span class="product-price-amount amount"><span
+                                                            class="currency-sign">$</span><%= product.price %> </span>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <span style="padding: 5px;"><img src="/images/minus.png"
+                                                                id="minus" style="width: 20px;" alt="minus"></span>
+                                                        <input id="count" class="text-center" type="text" disabled min="1"
+                                                            max="100" value="1" style="width: 50px; border: 0px;">
+                                                        <span style="padding: 5px;"><img src="/images/plus.png"
+                                                                id="plus" style="width: 20px;" alt="plus"></span>
+                                                </td>
+                                                <td class="product-subtotal">
+                                                    <span class="product-price-sub_totle amount"><span
+                                                            class="currency-sign">$</span><%= product.price %></span>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row cart-actions">
+                                    <div class="col-12 d-flex justify-content-center mb-3">
+                                        <input class="btn btn-md btn-warning" name="update_cart" value="Actualizar"
+                                            type="submit">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="cart-collateral">
+                                <div class="cart_totals">
+                                    <h3>Total del Carrito</h3>
+                                    <div class="responsive-table">
+                                        <table>
+                                            <tbody>
+                                                <tr class="cart-subtotal">
+                                                    <th>Subtotal</th>
+                                                    <td><span class="product-price-amount amount"><span
+                                                                class="currency-sign">$</span>9999</span></td>
+                                                </tr>
+                                                <tr class="shipping">
+                                                    <th>Envio</th>
+                                                    <td>
+                                                        <ul id="shipping_method">
+                                                            <li>
+                                                                <input name="shipping_method[0]" data-index="0"
+                                                                    id="shipping_method_0_legacy_free_shipping"
+                                                                    value="legacy_free_shipping" class="shipping_method"
+                                                                    type="radio">
+                                                                <label
+                                                                    for="shipping_method_0_legacy_free_shipping">Envio
+                                                                    Gratis</label>
+                                                            </li>
+                                                            <li>
+                                                                <input name="shipping_method[0]" data-index="0"
+                                                                    id="shipping_method_0_legacy_local_delivery"
+                                                                    value="legacy_local_delivery"
+                                                                    class="shipping_method" type="radio">
+                                                                <label
+                                                                    for="shipping_method_0_legacy_local_delivery">Local
+                                                                    Delivery</label>
+                                                            </li>
+                                                        </ul>
+                                                        <form>
+                                                            <p>
+                                                                <a href="#">Calcular Envio</a>
+                                                            </p>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                <tr class="order-total">
+                                                    <th>Total</th>
+                                                    <td><span class="product-price-amount amount"><span
+                                                                class="currency-sign">$</span>9999</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="product-proceed-to-checkout">
+                                        <a class="btn btn-lg btn-warning form-full-width" href="">Comprar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </section>
-        <!-- Producto 2 -->
-        <section class="descripcionProducto">
-            <div class="imagen">
-            <img src="images/Inserteimage.png" alt=""/>
-          </div>
-          <div class="description">
-            <span>Maison Margiela</span>
-            <span>Future Sneakers</span>
-            <span>White</span>
-          </div>
-          <div class="Precio-unitario">$870</div>
-          <div class="quantity">
-            <button class="plus-btn" type="button" name="button">
-              <img src="images/mas1.png" alt="" />
-            </button>
-            <input type="text" name="name" value="1">
-            <button class="minus-btn" type="button" name="button">
-              <img src="images/menos1.png" alt="" />
-            </button>
-          </div>
-          <div class="Precio-total">$870</div>
-        </section>
-        <!-- Producto 3 -->
-        <section class="descripcionProducto">
-            <div class="imagen">
-            <img src="images/Inserteimage.png" alt="" />
-          </div>
-          <div class="description">
-            <span>Our Legacy</span>
-            <span>Brushed Scarf</span>
-            <span>Brown</span>
-          </div>
-          <div class="Precio-unitario">$349</div>
-          <div class="quantity">
-            <button class="minus-btn" type="button" name="button">
-              <img src="images/mas1.png" alt="" />
-            </button>
-            <input type="text" name="name" value="1">
-            <button class="minus-btn" type="button" name="button">
-              <img src="images/menos1.png" alt="" />
-            </button>
-          </div>
-          <div class="Precio-total">$349</div>
-        </section>
-      <!-- Boton de total a Pagar -->
-      <div class="totalaPagar">
-      TOTAL A PAGAR <br><br>
-        $1768
-      </div>
-      <p class="textoCuotas">Hasta 12 cuotas</p>
-      <!-- Boton finalizar compra -->
-      <button class="finalizarCompra">Finalizar compra</button>
-      </div>
-    
-  </div>
-  <%- include('partials/footer')%>
-  <%- include('partials/scripts')%>
+        <%- include('partials/footer')%>
+    </div>
+    <%- include('partials/scripts')%>
 </body>
-
 </html>
