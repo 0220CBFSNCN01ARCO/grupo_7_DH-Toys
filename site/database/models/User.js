@@ -31,7 +31,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     idCategoryUser: DataTypes.INTEGER,
-    status: DataTypes.BOOLEAN  
+    status: DataTypes.BOOLEAN,
+    phoneNumber: DataTypes.INTEGER,
+    country: DataTypes.STRING
   }
 
   let config = {

@@ -20,6 +20,8 @@ CREATE TABLE users (
 	avatar VARCHAR(255) NOT NULL,
     idCategoryUser INT,
     status BOOLEAN,
+    phoneNumber INT,
+    country VARCHAR(255),
 	PRIMARY KEY (id),
     FOREIGN KEY (idCategoryUser)
 		REFERENCES categories_users(id)
@@ -125,12 +127,12 @@ INSERT INTO categories_users (name) VALUES
 ('User');
 
 /*Registros de la tabla users*/
-INSERT INTO users (name, lastName, email, password, avatar, idCategoryUser, status)VALUES
-    ('Francisco','Olmos','francisco.olamos@unxdigital.com','$2b$10$6I7l9usDeFNUQPh9SZkxoO7.EBMRvOmlC9B.EqjilW1cRpBeYSHE.','abaddon.gif',1, true),
-    ('Francisco','Olmos','francisco.olmos.ubp@gmail.com','$2b$10$mU8hVDOcuJBOgSqvYlR.y.dc.rf4FzOkRRloNBcyvE/bhpylcH1ky','abaddon.gif',1, true),
-    ('Ignacio','Quiroga','iquiroga@grupoprominente.com','$2b$10$AlJAiQV7k6U3FXNBOJ2uzeI5BndrBr8/B6wKQZbTNAlS13WiFHnIG','walterwhite-avatar.jpg',1, true),
-    ('Eduardo','Bedini','edu.bedini@gmail.com','$2b$10$0ocEwjzth1yWo2fWLEQEee3kzdjUKV.9P1ZYSOxX.5j28gpMD1Clm','el ojo.jpg',1, true),
-    ('javier','Bedini','ejbedini@gmail.com','$2b$10$4QmuCEcuGZyX7MXD7hcRTecR1hD783vyGnhuo.eVkf9O9tWMbooQu','el ojo.jpg',2, true),
-    ('Usuario','Prueba','usuarioDePrueba@gmail.com','$2b$10$6bBlAMH46EykEc25RUK67ebIxDcGprTSTcB1Tbx0mLW4HFwzM8BRy','userImage.png',2, true),
-    ('francisco1','olmitos','francisco.olmosaa@unxdigital.com','$2b$10$H3w8U.GZozW8plVPDn2E9OeAcZtJJY.13rEHv7ajk.hm9sryFV5K2','abaddon.gif',2, true),
-    ('francisco','olmos','francisco.olmos.ubp1@gmail.com','$2b$10$7jv2qb5CzN.Xv798ao36xuBCNJ0NN24ECJOV.54L5MqCXpELqZoA6','abaddon.gif',2, true);
+INSERT INTO users (name, lastName, email, password, avatar, idCategoryUser, status, phoneNumber, country)VALUES
+    ('Francisco','Olmos','francisco.olamos@unxdigital.com','$2b$10$6I7l9usDeFNUQPh9SZkxoO7.EBMRvOmlC9B.EqjilW1cRpBeYSHE.','abaddon.gif',1, true, null, null),
+    ('Francisco','Olmos','francisco.olmos.ubp@gmail.com','$2b$10$mU8hVDOcuJBOgSqvYlR.y.dc.rf4FzOkRRloNBcyvE/bhpylcH1ky','abaddon.gif',1, true, null, null),
+    ('Ignacio','Quiroga','iquiroga@grupoprominente.com','$2b$10$AlJAiQV7k6U3FXNBOJ2uzeI5BndrBr8/B6wKQZbTNAlS13WiFHnIG','walterwhite-avatar.jpg',1, true, null, null),
+    ('Eduardo','Bedini','edu.bedini@gmail.com','$2b$10$0ocEwjzth1yWo2fWLEQEee3kzdjUKV.9P1ZYSOxX.5j28gpMD1Clm','el ojo.jpg',1, true, null, null),
+    ('javier','Bedini','ejbedini@gmail.com','$2b$10$4QmuCEcuGZyX7MXD7hcRTecR1hD783vyGnhuo.eVkf9O9tWMbooQu','el ojo.jpg',2, true, null, null),
+    ('Usuario','Prueba','usuarioDePrueba@gmail.com','$2b$10$6bBlAMH46EykEc25RUK67ebIxDcGprTSTcB1Tbx0mLW4HFwzM8BRy','userImage.png',2, true, null, null),
+    ('francisco1','olmitos','francisco.olmosaa@unxdigital.com','$2b$10$H3w8U.GZozW8plVPDn2E9OeAcZtJJY.13rEHv7ajk.hm9sryFV5K2','abaddon.gif',2, true, null, null),
+    ('francisco','olmos','francisco.olmos.ubp1@gmail.com','$2b$10$7jv2qb5CzN.Xv798ao36xuBCNJ0NN24ECJOV.54L5MqCXpELqZoA6','abaddon.gif',2, true, null, null);
