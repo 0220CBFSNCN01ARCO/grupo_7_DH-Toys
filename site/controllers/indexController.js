@@ -91,8 +91,8 @@ const indexController = {
         });
       });
   }, aboutUs: (req, res) => {
-    res.render('aboutUs', { title: 'aboutUs', 
-                          user: req.session.userLogueado});
+    res.render('aboutUs', { title: 'aboutUs',
+    user: req.session.userLogueado});
   },
 }
 
