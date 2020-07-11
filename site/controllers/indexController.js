@@ -11,7 +11,6 @@ const indexController = {
       }
     })
       .then((products) => {
-        console.log(products)
         res.render('index', {
           title: 'Inicio',
           products: products,

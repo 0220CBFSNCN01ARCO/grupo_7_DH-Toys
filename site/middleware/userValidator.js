@@ -64,7 +64,7 @@ const validacionDelogin =  () => {
 
 const userLogged = (req,res,next) => {
     if(req.session.userLogueado){
-        res.redirect('/users/profile')
+        res.redirect('/users/profile/')
     }
     next()
 }

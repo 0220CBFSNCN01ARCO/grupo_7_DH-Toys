@@ -39,9 +39,8 @@ const adminController = {
         age: req.body.age
       }, {where: {
           id: req.params.id
-      }})
-      .then(res.redirect('/admin'))
-    
+      }},
+      res.redirect('/admin'))
   },
   addProduct: (req, res, next) => {
     db.Products.create({
