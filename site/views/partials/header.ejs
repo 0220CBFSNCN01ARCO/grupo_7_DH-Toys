@@ -63,13 +63,15 @@
                         <a class="menu-selection-options_anchor" href="/aboutUs">Nosotros</a>
                         <a class="menu-selection-options_anchor" href="">Contacto</a>
                     </div>
-                    <div class="d-none menu-selection-cart col-2">
-                        <a href="/cart3"><img src="/images/cart.png" alt="logo-cart"></a>
+                    <div class="d-none menu-selection-cart col-2" id="sidebar_toggle_btn">
+                        <a class="">
+                            <img src="/images/cart.png" alt="logo-cart">
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="p-2 pr-4 d-flex logo-container">
-                <img class="img-logo" src="/images/logo2.jpg" alt="logo-DHToys">
+                <a href="/"><img class="img-logo" src="/images/logo2.jpg" alt="logo-DHToys"></a>
             </div>
         </div>
         <nav class="navbar navbar-dark container-navigation row justify-content-around">
@@ -89,7 +91,7 @@
                             </button>
                             <div class="dropdown-menu userOptions">
                                 <a class="dropdown-item" href="/users/profile/<%= user[0].id %>">Perfil</a>
-                                <a class="dropdown-item" href="/cart3">Carrito</a>
+                                <a class="dropdown-item" href="/cart">Carrito</a>
                                 <% if(user[0].idCategoryUser == 1) { %>
                                     <a class="dropdown-item" href="/admin">Admin</a>
                                     <% } %>
@@ -130,6 +132,6 @@
     </div>
     <div class="row col-12 p-0 m-0 justify-content-center logo-container">
         <div class="space-img-logo"></div>
-        <img class="img-logo mt-1 mb-1" src="/images/logo2.jpg" alt="logo-DHToys">
+        <a href="/"><img class="img-logo mt-1 mb-1" src="/images/logo2.jpg" alt="logo-DHToys"></a>
     </div>
 </header>
