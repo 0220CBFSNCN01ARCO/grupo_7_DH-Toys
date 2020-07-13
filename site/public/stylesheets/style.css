@@ -770,18 +770,6 @@ input.input-lg, .input-lg {
   width: 10px;
 }
 
-sidebar-right {
-  right: -320px;
-}
-
-.hide{
-  display: none;
-}
-
-  .sidebar-right.sidebar-open {
-      right: 0;
-  }
-
   .sidebar-menu {
     background: #fff;
     width: 320px;
