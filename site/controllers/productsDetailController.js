@@ -7,7 +7,8 @@ const productosController = {
       res.render('detalleProducto', {
         title: 'Detalle',
         producto: product,
-        user: req.session.userLogueado
+        user: req.session.userLogueado,
+        cart: req.session.cart
       })
     } catch (error) {
       res.send(error)

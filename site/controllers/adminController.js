@@ -10,12 +10,13 @@ const adminController = {
       res.render('admin/productos', {
         title: 'Admin',
         products: products,
-        user: req.session.userLogueado
+        user: req.session.userLogueado,
+        cart: req.session.cart
       })
     })
   },
   productRegister: (req, res) => {
-    res.render('admin/productRegister', { title: 'Admin', user: req.session.userLogueado });
+    res.render('admin/productRegister', { title: 'Admin', user: req.session.userLogueado, cart: req.session.cart });
   },
   productEditor: (req, res) => {
     db.Products.findByPk(req.params.id, {
@@ -25,7 +26,8 @@ const adminController = {
       res.render('admin/productEditor', {
         title: 'Admin',
         product: product,
-        user: req.session.userLogueado
+        user: req.session.userLogueado,
+        cart: req.session.cart
       });
     })
   },
@@ -89,7 +91,8 @@ const adminController = {
       res.render('admin/users', {
         title: 'Admin Users',
         users,
-        user: req.session.userLogueado
+        user: req.session.userLogueado,
+        cart: req.session.cart
       })
     })
   },
@@ -101,7 +104,8 @@ const adminController = {
       res.render('admin/userEditor', {
         title: 'Admin Users',
         userToEdit: user,
-        user: req.session.userLogueado
+        user: req.session.userLogueado,
+        cart: req.session.cart
       });
     })
   },
@@ -123,7 +127,7 @@ const adminController = {
         include: [{association: "userCategory"}]
       })
       .then(user => {
-        res.render('admin/userEditor', {title: 'Admin Users', userToEdit:user, errors: errors.errors, user: req.session.userLogueado })
+        res.render('admin/userEditor', {title: 'Admin Users', userToEdit:user, errors: errors.errors, user: req.session.userLogueado, cart: req.session.cart })
       })
     }
   },

@@ -7,12 +7,15 @@ const loginController = {
   login: (req, res) => {
     res.render('login', {
       title: 'login',
-      user: req.session.userLogueado
+      user: req.session.userLogueado,
+      cart: req.session.cart
     });
   },
   verify: (req, res, next) => {
     const errors = validationResult(req);
     const currentUser = req.body;
+    const cartItems = []
+    const cart = {cartItems, total: 0 }
     if (errors.isEmpty()) {
       db.Users.findAll({
         include: [{ association: "userCategory" }],
@@ -23,9 +26,11 @@ const loginController = {
         .then(user => {
           if (user && user[0].userCategory.name == 'Admin') {
             req.session.userLogueado = user;
+            req.session.cart = cart;
             res.redirect('/admin');
           } else {
             req.session.userLogueado = user;
+            req.session.cart = cart;
             res.redirect('/products');
           }
         })
@@ -34,12 +39,13 @@ const loginController = {
         title: 'login',
         errors: errors.errors,
         user: req.session.userLogueado,
-        currentUser: currentUser
+        currentUser: currentUser,
+        cart: req.session.cart
       })
     }
   },
   register: function (req, res, next) {
-    res.render('register', { title: 'Register', user: req.session.userLogueado })
+    res.render('register', { title: 'Register', user: req.session.userLogueado, cart: req.session.cart })
   },
   addUser: function (req, res, next) {
     const errors = validationResult(req);
@@ -65,7 +71,8 @@ const loginController = {
         title: 'Register',
         errors: errors.errors,
         userToReload: userToReload,
-        user: req.session.userLogueado
+        user: req.session.userLogueado,
+        cart: req.session.cart
       })
     }
   },
@@ -77,7 +84,8 @@ const loginController = {
   profile(req, res, next) {
     res.render('profile', {
       title: 'Perfil de Usuario',
-      user: req.session.userLogueado
+      user: req.session.userLogueado,
+      cart: req.session.cart
     })
   },
   updateProfile: async (req, res) => {
@@ -93,23 +101,10 @@ const loginController = {
         where: {
           id: req.params.id
         }
-      })/*
-        req.session.userLogueado = {
-          id: currentUser.id,
-          name: req.body.name,
-          lastName: req.body.lastName,
-          phoneNumber: req.body.phoneNumber,
-          country: req.body.country,
-          avatar: req.file.originalname,
-          passwowd: currentUser.password,
-          email: currentUser.email,
-          idCategoryUser: currentUser.idCategoryUser,
-          status: currentUser.status
-        }*/
+      })
         req.session.destroy((err) => {
           res.redirect('/users/login')
         })
-      //res.redirect('/products')
     } catch (error) {
       res.send("error")
     }

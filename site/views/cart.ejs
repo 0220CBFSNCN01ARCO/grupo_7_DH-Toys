@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <article class="post-8">
-                            <form class="cart-form" action="" method="get" style="box-shadow: 4px 4px 5px 0px rgba(171,169,171,0.29);
+                            <form action="/cart/updateCart" method="POST" class="cart-form"  style="box-shadow: 4px 4px 5px 0px rgba(171,169,171,0.29);
                                                                             background-color: white;
                                                                             border-radius: 25px;">
                                 <div class="cart-product-table-wrap responsive-table"
@@ -27,45 +27,46 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <% products.forEach(product => { %>
+                                            <% cart.cartItems.forEach(item => { %>
                                             <tr>
                                                 <td class="product-remove">
-                                                    <a href="javascript:void(0)"><i class="fa fa-times-circle"
-                                                            aria-hidden="true"></i></a>
+                                                    <a href="/cart/removeItem/<%= item.id %>" title="Borrar <%= item.name %>"><img class="imgDeleteItem" src="/images/close-icon-black.png" alt="Borrar <%= item.name %>"></a>
                                                 </td>
                                                 <td class="product-thumbnail">
                                                     <a>
-                                                        <img src="/images/products/<%= product.image %> " alt=""></a>
+                                                        <img src="/images/products/<%= item.image %>" alt=""></a>
                                                 </td>
                                                 <td class="product-name ">
-                                                    <a><%= product.name %> </a>
+                                                    <a><%= item.name %> </a>
                                                 </td>
                                                 <td class="product-price">
-                                                    <span class="product-price-amount amount"><span
-                                                            class="currency-sign">$</span><%= product.price %> </span>
+                                                    <span class="product-price-amount amount" id="priceItem"><span
+                                                            class="currency-sign">$</span><%= item.price %> </span>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex">
                                                         <span style="padding: 5px;"><img src="/images/minus.png"
                                                                 id="minus" style="width: 20px;" alt="minus"></span>
-                                                        <input id="count" class="text-center" type="text" disabled min="1"
-                                                            max="100" value="1" style="width: 50px; border: 0px;">
+                                                        <input id="count" class="text-center" type="text" name="cantidad" disabled value="<%= item.cantidad %>" style="width: 50px; border: 0px;" >
                                                         <span style="padding: 5px;"><img src="/images/plus.png"
                                                                 id="plus" style="width: 20px;" alt="plus"></span>
                                                 </td>
                                                 <td class="product-subtotal">
-                                                    <span class="product-price-sub_totle amount"><span
-                                                            class="currency-sign">$</span><%= product.price %></span>
+                                                    <span class="product-price-sub_totle amount" id="subTotal"><span
+                                                            class="currency-sign">$</span><%= item.subtotal %></span>
                                                 </td>
                                             </tr>
                                             <% }) %>
                                         </tbody>
                                     </table>
                                 </div>
+                                <div>
+                                    <label for="prueba">prueba</label>
+                                    <input type="text" name="prueba" id="prueba">
+                                </div>
                                 <div class="row cart-actions">
                                     <div class="col-12 d-flex justify-content-center mb-3">
-                                        <input class="btn btn-md btn-warning" name="update_cart" value="Actualizar"
-                                            type="submit">
+                                        <button type="submit" class="btn btn-md btn-warning">Actualizar</button>
                                     </div>
                                 </div>
                             </form>
@@ -78,7 +79,7 @@
                                                 <tr class="cart-subtotal">
                                                     <th>Subtotal</th>
                                                     <td><span class="product-price-amount amount"><span
-                                                                class="currency-sign">$</span>9999</span></td>
+                                                                class="currency-sign">$</span><%= cart.total %></span></td>
                                                 </tr>
                                                 <tr class="shipping">
                                                     <th>Envio</th>
@@ -113,7 +114,7 @@
                                                 <tr class="order-total">
                                                     <th>Total</th>
                                                     <td><span class="product-price-amount amount"><span
-                                                                class="currency-sign">$</span>9999</span></td>
+                                                                class="currency-sign">$</span><%= cart.total %> </span></td>
                                                 </tr>
                                             </tbody>
                                         </table>

@@ -18,6 +18,9 @@ body {
   min-height: calc(100vh - 106px);
 }
 
+.imgDeleteItem{
+  width: 10px;
+}
 .main{
   padding-bottom: 2.5rem;
 }
