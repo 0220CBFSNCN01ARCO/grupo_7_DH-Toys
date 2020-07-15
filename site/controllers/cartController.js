@@ -59,7 +59,7 @@ const cartController = {
     req.session.cart.cartItems.forEach(item => {
      req.session.cart.total += item.subtotal
     });
-    res.redirect("/");
+    res.redirect('back');
   },
   updateCart: (req, res)=>{
     const obj = JSON.parse(JSON.stringify(req.body));
