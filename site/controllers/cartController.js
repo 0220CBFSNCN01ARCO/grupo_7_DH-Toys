@@ -50,7 +50,6 @@ const cartController = {
     }
   },
   removeItem:(req, res)=>{
-    const fromPage = req.params.from
     const itemId = req.params.id
     const updatedCart = req.session.cart.cartItems.filter(item => {
       return item.id != itemId
@@ -60,13 +59,19 @@ const cartController = {
     req.session.cart.cartItems.forEach(item => {
      req.session.cart.total += item.subtotal
     });
-    if(fromPage){
-     return res.redirect('/'+fromPage)
-    } res.redirect();
+    res.redirect("/");
   },
   updateCart: (req, res)=>{
-    const obj = req.body
-    console.log(obj)
+    const obj = JSON.parse(JSON.stringify(req.body));
+    for (const [key,value] of Object.entries(obj)){
+      for(let i = 0; i < req.session.cart.cartItems.length; i++){
+        if(req.session.cart.cartItems[i].id == key){
+          req.session.cart.cartItems[i].cantidad = parseInt(value)
+          req.session.cart.cartItems[i].subtotal = parseInt(value) * req.session.cart.cartItems[i].price
+        }
+      }
+    }
+    res.redirect('/cart')
   }
 }
 
