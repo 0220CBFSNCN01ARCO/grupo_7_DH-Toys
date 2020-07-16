@@ -1,6 +1,7 @@
 window.addEventListener('load', function (e) {
     let name, txtValue
-    //const hide = document.querySelector('.hide')
+    const hide = document.querySelector('.hide')
+    //let count = 0
     //let hideElements = []
     const productsContainer = document.querySelector('#allProducts')
     const allProducts = productsContainer.querySelectorAll('#singleProduct')
