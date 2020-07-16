@@ -58,7 +58,8 @@ const indexController = {
         res.render('forAge', {
           title: 'Productos',
           products: products,
-          user: req.session.userLogueado
+          user: req.session.userLogueado,
+          cart: req.session.cart
         });
       });
   }, byAgeBetweenthreeAndSeven: (req, res) => {
@@ -74,6 +75,7 @@ const indexController = {
           title: 'Productos',
           products: products,
           user: req.session.userLogueado,
+          cart: req.session.cart,
           cart: req.session.cart
         });
       });
@@ -96,7 +98,8 @@ const indexController = {
   }, aboutUs: (req, res) => {
     res.render('aboutUs', { title: 'aboutUs',
                             user: req.session.userLogueado,
-                            cart: req.session.cart});
+                            cart: req.session.cart
+                          });
   },
 }
 

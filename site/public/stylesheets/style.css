@@ -193,7 +193,9 @@ h4{
   position: relative;
 }
 
-
+.hide{
+  display: none;
+}
 
 footer h2{
   font-size: 12px;

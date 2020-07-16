@@ -10,9 +10,12 @@
             <hr>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="allProducts">
+        <div class="hide">
+            <h1>NO SE ENCONTRARON ELEMENTOS</h1>
+        </div>
         <% for(let i = 0; i < products.length; i++) {%>
-        <div class="col-8 col-sm-5 col-md-3 col-lg-3 col-xl-2 mr-3 ml-3 containerProduct">
+        <div id="singleProduct" class="col-8 col-sm-5 col-md-3 col-lg-3 col-xl-2 mr-3 ml-3 containerProduct">
             <div>
                 <div class="image imgProduct">
                     <img class="card-img-top" src='/images/products/<%= products[i].image %>' alt="Card image cap">

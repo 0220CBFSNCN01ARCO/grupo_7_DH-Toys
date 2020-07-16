@@ -1,5 +1,12 @@
 const db = require("../database/models");
 
+function updateTotal(req){
+  req.session.cart.total = 0
+  req.session.cart.cartItems.forEach(item => {
+   req.session.cart.total += item.subtotal
+ });
+}
+
 const cartController = {
   cart: (req, res) => {
      db.Products.findAll({
@@ -39,12 +46,8 @@ const cartController = {
      if(!productFound){
       req.session.cart.cartItems.push(productToAdd)
      }
-     req.session.cart.total = 0
-     req.session.cart.cartItems.forEach(item => {
-      req.session.cart.total += item.subtotal
-    });
-     console.log(req.session.cart)
-     res.redirect('/')
+     updateTotal(req)
+     res.redirect('back')
     }catch(error){
       console.error(error)
     }
@@ -55,10 +58,7 @@ const cartController = {
       return item.id != itemId
     })
     req.session.cart.cartItems = updatedCart
-    req.session.cart.total = 0
-    req.session.cart.cartItems.forEach(item => {
-     req.session.cart.total += item.subtotal
-    });
+    updateTotal(req)
     res.redirect('back');
   },
   updateCart: (req, res)=>{
@@ -71,6 +71,7 @@ const cartController = {
         }
       }
     }
+    updateTotal(req)
     res.redirect('/cart')
   }
 }

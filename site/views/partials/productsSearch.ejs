@@ -4,6 +4,9 @@
             <hr>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 tittle">
+            <% if(!products.length) { %>
+                    <p>NO HAY RESULTADOS DE BUSQUEDA</p> 
+            <% } else { %>
             <p>Resultado de <%= search %> </p>
         </div>
         <div class="col-md-3 col-lg-4 col-xl-3">
@@ -35,11 +38,12 @@
                         <a href=detalle/<%- products[i].id %> class="view"><img src="/images/eye.png" alt=""></a>
                     </div>
                     <div class="col-2">
-                        <a class="addToCart"><img src="/images/cart.png" alt=""></a>
+                        <a href="/cart/addToCart/<%= products[i].id %>" title="Agregar <%= products[i].name%> al carrito" class="addToCart"><img src="/images/cart.png" alt=""></a>
                     </div>
                 </div>
             </div>
         </div>
         <% } %>
     </div>
+<% } %> 
 </div>

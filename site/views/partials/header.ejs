@@ -12,10 +12,10 @@
                     <form action="/search" method="POST" class="d-inline">
                         <div class="row">
                             <div class="search-text d-flex justify-content-center col-10">
-                                <input type="text" name="search">
+                                <input type="text" id="input" name="search" required>
                             </div>
                             <div class="search-button p-0 d-flex align-items-center col-1">
-                                <button type="submit" class="fas fa-search"></button>
+                                <button type="submit" class="fas fa-search"><i></i></button>
                             </div>
                         </div>
                     </form>
@@ -117,7 +117,7 @@
                         <form action="/search" method="POST" class="">
                             <div class="row d-flex justify-content-start">
                                 <div class="col-10 search-text d-flex justify-content-center mt-2">
-                                    <input type="text" name="search">
+                                    <input type="text" name="search" onkeyup="search()">
                                 </div>
                                 <div class="col-2 search-button p-0 d-flex align-items-center">
                                     <button type="submit" class="fas fa-search mt-2"></button>

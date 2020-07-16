@@ -24,21 +24,4 @@ window.addEventListener('load', () => {
     menuSidebar.classList.toggle('sidebar-open');
     menuSidebarOverlay.classList.toggle('sidebar_overlay_active');
   })
-  /*
-  document.querySelector('#sidebar_toggle_btn').addEventListener('click', function (e) {
-    e.preventDefault()
-    document.querySelector('#sidebar-right').classList.toggle('sidebar-open')
-    document.querySelector("#sidebar-right").classList.toggle('hide')
-    document.querySelector(".sidebar_overlay").classList.toggle('hide')
-  })
-
-  document.querySelector(".close-icon-black").addEventListener('click', function (e) {
-    document.querySelector("#sidebar-right").classList.toggle('hide')
-    document.querySelector(".sidebar_overlay").classList.toggle('hide')
-  })
-
-  document.querySelector(".sidebar_overlay").addEventListener('click', function (e) {
-    document.querySelector("#sidebar-right").classList.toggle('hide')
-    document.querySelector(".sidebar_overlay").classList.toggle('hide')
-  })*/
 })
