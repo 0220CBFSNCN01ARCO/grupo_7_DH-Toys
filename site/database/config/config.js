@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "dhtoys_db",
+    "database": "DHToys_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
@@ -10,7 +10,7 @@ module.exports = {
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
