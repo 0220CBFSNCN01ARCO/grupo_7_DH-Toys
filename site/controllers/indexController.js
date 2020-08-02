@@ -14,7 +14,8 @@ const indexController = {
         res.render('index', {
           title: 'Inicio',
           products: products,
-          user: req.session.userLogueado
+          user: req.session.userLogueado,
+          cart: req.session.cart
         });
       }); 
   },
@@ -29,7 +30,8 @@ const indexController = {
         res.render('products', {
           title: 'Productos',
           products: products,
-          user: req.session.userLogueado
+          user: req.session.userLogueado,
+          cart: req.session.cart
         });
       });
   }, search: (req, res) => {
@@ -42,7 +44,7 @@ const indexController = {
       }
     })
       .then(products => {
-        res.render('search', { title: 'search', products, user: req.session.userLogueado, search: toFind })
+        res.render('search', { title: 'search', products, user: req.session.userLogueado, search: toFind, cart: req.session.cart })
       })
   }, byAgeLessThanThree: (req, res) => {
     db.Products.findAll({
@@ -56,7 +58,8 @@ const indexController = {
         res.render('forAge', {
           title: 'Productos',
           products: products,
-          user: req.session.userLogueado
+          user: req.session.userLogueado,
+          cart: req.session.cart
         });
       });
   }, byAgeBetweenthreeAndSeven: (req, res) => {
@@ -71,7 +74,9 @@ const indexController = {
         res.render('forAge', {
           title: 'Productos',
           products: products,
-          user: req.session.userLogueado
+          user: req.session.userLogueado,
+          cart: req.session.cart,
+          cart: req.session.cart
         });
       });
   }, byAgeSevenOnwards: (req, res) => {
@@ -86,12 +91,20 @@ const indexController = {
         res.render('forAge', {
           title: 'Productos',
           products: products,
-          user: req.session.userLogueado
+          user: req.session.userLogueado,
+          cart: req.session.cart
         });
       });
   }, aboutUs: (req, res) => {
     res.render('aboutUs', { title: 'aboutUs',
-    user: req.session.userLogueado});
+                            user: req.session.userLogueado,
+                            cart: req.session.cart
+                          });
+  }, contact: (req, res) => {
+    res.render('contact', { title: 'contact',
+                            user: req.session.userLogueado,
+                            cart: req.session.cart
+                          });
   },
 }
 

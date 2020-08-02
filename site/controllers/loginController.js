@@ -59,7 +59,8 @@ const loginController = {
       const userToReload = {
         name: req.body.name,
         lastName: req.body.lastName,
-        email: req.body.email
+        email: req.body.email,
+
       }
       return res.render('register', {
         title: 'Register',
