@@ -23,64 +23,8 @@ const cartController = {
         products,
         cart: req.session.cart
       })
-      
-      let idUser = req.session.userLogueado[0].id;
-      let carrito = req.session.cart.cartItems;
-
-      const crearOrden = await db.orders.create({
-        description: null,
-        amount: req.session.cart.total,
-        idStatus: 1,
-        idUser: req.session.userLogueado[0].id
-      });
-
-      const ordenDeCompra = await db.orders.findAll({
-        where: { idUser: idUser },
-        order: [['id', 'DESC']],
-        limit: 1
-      });
-
-      carrito.forEach(prod => {
-        db.orders_products.create({
-          idProduct: prod.id,
-          idOrder: ordenDeCompra[0].id
-        })
-      });
-
     } catch (error) {
       console.error(error);
-    }
-  },
-
-  comprar: async (req, res) => {
-    let idUser = req.session.userLogueado[0].id;
-    let carrito = req.session.cart.cartItems;
-
-    db.orders.create({
-      description: null,
-      amount: req.session.cart.total,
-      idStatus: 1,
-      idUser: req.session.userLogueado[0].id
-    });
-
-    try {
-
-      const ordenDeCompra = await db.orders.findAll({
-        where: { idUser: idUser },
-        order: [['id', 'DESC']],
-        limit: 1
-      });
-
-      carrito.forEach(prod => {
-        db.orders_products.create({
-          idProduct: prod.id,
-          idOrder: ordenDeCompra[0].id
-        })
-      });
-
-
-    } catch (error) {
-      console.error(error)
     }
   },
 

@@ -10,7 +10,8 @@ router.get('/removeItem/:id', userNotLogged, cartController.removeItem)
 router.post('/updateCart', userNotLogged, cartController.updateCart)
 
 //MERCADOPAGO
-router.get('/carritoml', paymentController.init);
+router.get('/mpCart', paymentController.init);
 router.get('/approved', paymentController.successPayment);
 router.get('/rejected', paymentController.rejectedPayment);
+
 module.exports = router;
