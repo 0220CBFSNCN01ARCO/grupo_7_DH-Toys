@@ -29,7 +29,8 @@ const init = async (req, res) => {
     cart.forEach(prod => {
       db.orders_products.create({
         idProduct: prod.id,
-        idOrder: newOrder.id
+        idOrder: newOrder.id,
+        quantity: prod.cantidad
       })
     });
     let item = {

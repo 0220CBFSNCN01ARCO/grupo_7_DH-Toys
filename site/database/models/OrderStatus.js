@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
 
   let config = {
     tablename: 'orders_status',
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true
   };
 
   const OrderStatus = sequelize.define(alias, cols, config);

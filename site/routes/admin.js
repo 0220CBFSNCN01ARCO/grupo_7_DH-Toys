@@ -4,6 +4,8 @@ const adminController = require('../controllers/adminController')
 const multer = require('multer');
 const {userNotLogged, adminValidator, userEditValidator, validar} = require('../middleware/userValidator');
 
+//PRODUCTS
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'site/public/images/products')
@@ -15,7 +17,6 @@ var storage = multer.diskStorage({
  
 var upload = multer({ storage: storage })
 
-//PRODUCTS
 router.get('/', userNotLogged, adminValidator,  adminController.adminProducts)
 router.get('/create', userNotLogged, adminValidator, adminController.productRegister)
 router.post('/create',upload.single('image'), adminController.addProduct)
@@ -41,6 +42,12 @@ router.get('/userEditor/:id', userNotLogged, adminValidator, adminController.use
 router.put('/userEditor/:id',upload.single('avatar'),userEditValidator(), validar, adminController.editUser)
 router.delete('/userDelete/:id',adminController.deleteUser)
 router.get('/changeUserStatus/:id',userNotLogged, adminValidator, adminController.changeUserStatus)
+
+
+//ORDERS
+
+router.get('/orders',userNotLogged, adminValidator, adminController.adminOrders)
+router.get('/orderDetail/:id',userNotLogged, adminValidator, adminController.orderDetail)
 
 
 
