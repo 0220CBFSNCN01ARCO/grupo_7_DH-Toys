@@ -47,9 +47,12 @@
             </div>
 
             <div class="col-12 d-flex justify-content-center">
-              <button type="button" class="detalleProductoComprar p-3">
-                <p class="m-0">AGREGAR AL CARRITO</p>
-              </button>
+              <a href="/cart/addToCart/<%= producto.id %>">
+                <button type="button" class="detalleProductoComprar p-3">
+                  <p class="m-0">AGREGAR AL CARRITO</p>
+                </button>
+              </a>
+              
             </div>
           </article>
         </div>

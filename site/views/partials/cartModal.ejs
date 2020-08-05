@@ -1,0 +1,87 @@
+<section id="sidebar-right" class="sidebar-menu sidebar-right">
+  <div class="cart-sidebar-wrap">
+    <!-- Cart Headiing -->
+    <div class="cart-widget-heading">
+      <h4>Carrito de compras</h4>
+      <!-- Close Icon -->
+      <a
+        href="javascript:void(0)"
+        id="sidebar_close_icon"
+        class="close-icon-black"
+      ></a>
+      <!-- End Close Icon -->
+    </div>
+    <!-- End Cart Headiing -->
+    <!-- Cart Product Content -->
+    <div class="cart-widget-content">
+      <div class="cart-widget-product">
+        <!-- Empty Cart -->
+        <% if(cart == undefined || !cart.cartItems.length) { %>
+        <div class="product-content text-center">
+          <div class="product-content text-center mb-5">
+            <h5>¡Tu carrito está vacío!</h5>
+          </div>
+          <div class="mb-5">
+
+          </div>
+          <!--<i class="far fa-frown fa-10x"></i>-->
+          <i class="fas fa-sad-tear fa-8x"></i>
+          <div class="cart-action-buttons mt-5">
+            <a href="/products" class="btn btn-md btn-warning">Agregar Juguetes</a>
+          </div>
+        </div>
+        <!-- EndEmpty Cart -->
+        <% } else { %>
+        <!-- Cart Products -->
+        <ul class="cart-product-item">
+          <!-- Item -->
+          <% cart.cartItems.forEach(item => { %>
+            <li>
+              <!--Item Image-->
+              <a href="#" class="product-image"><img src="/images/products/<%= item.image %>" alt="imagen de <%= item.name %>"/></a>
+              <!--Item Content-->
+              <div class="product-content">
+                <!-- Item Linkcollateral -->
+                <a class="product-link" href="#"><%= item.name %></a>
+                <!-- Item Cart Totle -->
+                <div class="cart-collateral">
+                  <span class="qty-cart"><%= item.cantidad %> <span>&nbsp;<span>×</span>&nbsp;<span class="product-price-amount"><span class="currency-sign">$</span><%= item.price %> </span>
+                </div>
+                <!-- Item Remove Icon -->
+                <a class="product-remove" href="/cart/removeItem/<%= item.id %>" title='Borrar <%- item.name %>'><img src="/images/close-icon-black.png" alt="borrar <%= item.name%>" style="width: 10px;"></a>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+        <!-- End Cart Products -->
+      </div>
+    </div>
+    <!-- End Cart Product Content -->
+    <!-- Cart Footer -->
+    <div class="cart-widget-footer">
+      <div class="cart-footer-inner">
+        <!-- Cart Total -->
+        <h4 class="cart-total-hedding normal">
+            <span>Total :</span><span class="cart-total-price">$<%= cart.total %></span>
+        </h4>
+        <!-- Cart Total -->
+
+        <!-- Cart Buttons -->
+        <div class="cart-action-buttons">
+          <a href="/cart" class="btn btn-md btn-warning"
+            >Ver Carrito</a
+          >
+          <a href="/cart" class="btn btn-md btn-warning"
+            >Comprar</a
+          >
+        </div>
+        <!-- End Cart Buttons -->
+      </div>
+    </div>
+    <% } %>
+    <!-- Cart Footer -->
+  </div>
+</section>
+<div class="sidebar_overlay"></div>
+
+
