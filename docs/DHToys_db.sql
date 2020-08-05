@@ -4,7 +4,6 @@ CREATE DATABASE DHToys_db CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE DHToys_db;
 
 /*Creación de Tablas*/
-
 CREATE TABLE categories_users (
 	id INT AUTO_INCREMENT NOT NULL,
 	name VARCHAR(5) NOT NULL,
@@ -23,8 +22,7 @@ CREATE TABLE users (
     phoneNumber INT,
     country VARCHAR(255),
 	PRIMARY KEY (id),
-    FOREIGN KEY (idCategoryUser)
-		REFERENCES categories_users(id)
+    FOREIGN KEY (idCategoryUser) REFERENCES categories_users(id)
 );
 
 CREATE TABLE categories_products (
@@ -47,15 +45,31 @@ CREATE TABLE products (
 		REFERENCES categories_products(id)    
 );
 
-CREATE TABLE products_users (
+CREATE TABLE orders_status (
 	id INT AUTO_INCREMENT NOT NULL,
-    idUser INT,
-    idProduct INT,
-    PRIMARY KEY (id),
-    FOREIGN KEY (idUser) REFERENCES users(id),
-    FOREIGN KEY (idProduct) REFERENCES products(id)
+    name VARCHAR(10),
+    PRIMARY KEY (id)
 );
 
+CREATE TABLE orders (
+	id INT AUTO_INCREMENT NOT NULL,
+	description TEXT,
+    amount FLOAT,
+    idStatus INT,
+    idUser INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (idStatus) REFERENCES orders_status(id),
+    FOREIGN KEY (idUser) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE orders_products (
+	id INT AUTO_INCREMENT NOT NULL,
+    idProduct INT,
+    idOrder INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (idProduct) REFERENCES products(id),
+    FOREIGN KEY (idOrder) REFERENCES orders(id)
+);
 
 /*Insertando Registros*/
 
@@ -74,6 +88,13 @@ INSERT INTO categories_products (name) VALUES
 ('Vehículos');
 
 /*Registros de la tabla products*/
+
+INSERT INTO orders_status(name) VALUES
+	('Pendiente'),
+    ('Aprobado'),
+    ('Rechazado'),
+    ('Cancelado');
+
 INSERT INTO products (name, description, image, price, age, idCategoryProduct, status) VALUES
     ('Batman','Figura coleccionable de Batman. Muñeco articulado de exelente material y sin baterías, mide aproximadamente unos 20 cm de alto.','batman.jpg', 1500, 4, 5, true),
 	('Buzz Lightyear','Figura coleccionable de Buzz Lightyear. Basada en la pelicula Toy Story , coleccionable y sin baterías, mide aproximadamente unos 20 cm de alto. ', 'buzz.jpg', 1500, 3, 5, true),
@@ -130,7 +151,7 @@ INSERT INTO categories_users (name) VALUES
 INSERT INTO users (name, lastName, email, password, avatar, idCategoryUser, status, phoneNumber, country)VALUES
     ('Francisco','Olmos','francisco.olamos@unxdigital.com','$2b$10$6I7l9usDeFNUQPh9SZkxoO7.EBMRvOmlC9B.EqjilW1cRpBeYSHE.','abaddon.gif',1, true, null, null),
     ('Francisco','Olmos','francisco.olmos.ubp@gmail.com','$2b$10$mU8hVDOcuJBOgSqvYlR.y.dc.rf4FzOkRRloNBcyvE/bhpylcH1ky','abaddon.gif',1, true, null, null),
-    ('Ignacio','Quiroga','iquiroga@grupoprominente.com','$2b$10$AlJAiQV7k6U3FXNBOJ2uzeI5BndrBr8/B6wKQZbTNAlS13WiFHnIG','walterwhite-avatar.jpg',1, true, null, null),
+    ('Ignacio','Quiroga','iquiroga@grupoprominente.com','$2b$10$AlJAiQV7k6U3FXNBOJ2uzeI5BndrBr8/B6wKQZbTNAlS13WiFHnIG','userImage.png',1, true, null, null),
     ('Eduardo','Bedini','edu.bedini@gmail.com','$2b$10$0ocEwjzth1yWo2fWLEQEee3kzdjUKV.9P1ZYSOxX.5j28gpMD1Clm','el ojo.jpg',1, true, null, null),
     ('javier','Bedini','ejbedini@gmail.com','$2b$10$4QmuCEcuGZyX7MXD7hcRTecR1hD783vyGnhuo.eVkf9O9tWMbooQu','el ojo.jpg',2, true, null, null),
     ('Usuario','Prueba','usuarioDePrueba@gmail.com','$2b$10$6bBlAMH46EykEc25RUK67ebIxDcGprTSTcB1Tbx0mLW4HFwzM8BRy','userImage.png',2, true, null, null),

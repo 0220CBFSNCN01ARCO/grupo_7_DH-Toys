@@ -116,7 +116,7 @@
                                         </table>
                                     </div>
                                     <div class="product-proceed-to-checkout">
-                                        <a class="btn btn-lg btn-warning form-full-width" href="">Comprar</a>
+                                        <a class="btn btn-lg btn-warning form-full-width" id="spinner" href="/cart/mpCart">Comprar</a>
                                     </div>
                                 </div>
                             </div>
@@ -125,6 +125,13 @@
                 </div>
             </div>
         </section>
+        <div class="content-page-overlay hide">
+            <div class="d-flex justify-content-center center">
+            <div class="spinner-border text-warning" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+        </div>
         <%- include('partials/footer')%>
     </div>
     <%- include('partials/scripts')%>

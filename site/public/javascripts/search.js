@@ -1,8 +1,5 @@
 window.addEventListener('load', function (e) {
     let name, txtValue
-    const hide = document.querySelector('.hide')
-    //let count = 0
-    //let hideElements = []
     const productsContainer = document.querySelector('#allProducts')
     const allProducts = productsContainer.querySelectorAll('#singleProduct')
     let input = document.querySelector('#input')
@@ -14,11 +11,7 @@ window.addEventListener('load', function (e) {
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 allProducts[i].style.display = "block";
             } else {
-                allProducts[i].style.display = "none";/*
-                if(hideElements.indexOf(txtValue) != -1 || !hideElements.length){
-                    hideElements.push(txtValue)
-                    console.log("Array de elementos ocultos:" + hideElements)
-                }*/
+                allProducts[i].style.display = "none";
             }
         }
     })
