@@ -41,6 +41,7 @@ const init = async (req, res) => {
     return res.redirect(generatePreference.body.init_point);
   }catch(error){
     console.error(error);
+    res.redirect('/cart');
   }
 };
 
