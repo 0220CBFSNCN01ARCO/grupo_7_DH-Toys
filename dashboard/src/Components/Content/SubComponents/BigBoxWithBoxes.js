@@ -2,6 +2,7 @@ import React from 'react';
 import SmallBoxes from './SmallBoxes';
 
 export default function BigBoxWithBoxes(props) {
+  console.log(props.categories)
   return (
     <React.Fragment>
       {/* Categories in DB */}
@@ -12,12 +13,9 @@ export default function BigBoxWithBoxes(props) {
           </div>
           <div className="card-body">
             <div className="row">
-            <SmallBoxes name="Category 1"/>
-            <SmallBoxes name="Category 2"/>
-            <SmallBoxes name="Category 3"/>
-            <SmallBoxes name="Category 4"/>
-            <SmallBoxes name="Category 5"/>
-            <SmallBoxes name="Category 6"/>
+            {props.categories.map((category, i)=>{
+               return <SmallBoxes key={i} name={category.name} count={category.count}/>
+            })}
             </div>
           </div>
         </div>
