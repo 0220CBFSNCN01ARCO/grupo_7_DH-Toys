@@ -32,7 +32,7 @@ class Content extends Component {
 
   render() {
     return (
-      <div id="content dhcolor-white">
+      <div id="content">
         {/* Topbar */}
         <nav className="navbar navbar-expand navbar-light bg-white dhcolor-yellow topbar mb-4 static-top shadow">
           {/* Sidebar Toggle (Topbar) */}
