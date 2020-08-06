@@ -5,9 +5,13 @@ const apiProducts = {
   list: async (req, res) => {
     try {
       let listProducts = await db.Products.findAll({
-        attributes: ['id', 'name', 'description', 'idCategoryProduct'],
+        attributes: ['id', 'name', 'description'],
         include: [{ association: 'productCategory' }]
       });
+
+      for (let i = 0; i < listProducts.length; i++) {
+        listProducts[i].setDataValue("description", `http://localhost:3030/api/products/${i + 1}`);
+      }
 
       let categoryByGroup = await db.Products.findAll({
         attributes: ['productCategory.name', [sequelize.fn('COUNT', sequelize.col('products.id')), 'count']],
@@ -43,7 +47,7 @@ const apiProducts = {
         return res.status(404).json({ ok: false, msg: 'No se encontró el producto buscado' });
       }
 
-      productDescription.setDataValue("imgProduct", `http://localhost:3000/images/products/${productDescription.image}`);
+      productDescription.setDataValue("imgProduct", `http://localhost:3030/images/products/${productDescription.image}`);
 
       res.json(productDescription);
 

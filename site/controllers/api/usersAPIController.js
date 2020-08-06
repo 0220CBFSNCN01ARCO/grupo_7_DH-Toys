@@ -8,7 +8,7 @@ const apiUsers = {
       });
 
       for (let i = 0; i < listUsers.length; i++) {
-        listUsers[i].setDataValue("endpoint", `http://localhost:3000/api/users/${i + 1}`);
+        listUsers[i].setDataValue("endpoint", `http://localhost:3030/api/users/${i + 1}`);
       }
 
       let respuesta = {
@@ -35,7 +35,7 @@ const apiUsers = {
         return res.status(404).json({ ok: false, msg: 'No se encontró el usuario buscado' });
       }
       
-      userDescription.setDataValue("imgavatar", `http://localhost:3000/images/users/${userDescription.avatar}`);
+      userDescription.setDataValue("imgavatar", `http://localhost:3030/images/users/${userDescription.avatar}`);
 
       res.json(userDescription);
 

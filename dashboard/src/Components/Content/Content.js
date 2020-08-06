@@ -1,36 +1,64 @@
 import React, { Component } from 'react';
-import BoxDashboard from './SubComponents/BoxDashboard'
-import BigBoxWithImage from './SubComponents/BigBoxWithImage'
-import BigBoxWithBoxes from './SubComponents/BigBoxWithBoxes'
-import User from './SubComponents/User'
+import BoxDashboard from './SubComponents/BoxDashboard';
+import BigBoxWithImage from './SubComponents/BigBoxWithImage';
+import BigBoxWithBoxes from './SubComponents/BigBoxWithBoxes';
+import User from './SubComponents/User';
+
 class Content extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
-      products: [] };
+    this.state = {
+      productsCount: "",
+      usersCount: ""
+    };
   }
 
-  callAPIProducts() {
-    fetch("http://localhost:3030/api/products")
+  apiCall(url, consecuencia) {
+    fetch(url)
       .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(error => console.log(error))
-  }
-
-  callAPIUsers() {
-    fetch("http://localhost:3030/api/users")
-      .then(res => res.text())
-      .then(data => console.log(data))
-      .catch(error => console.log(error))
+      .then(data => consecuencia(data))
+      .catch(error => console.error(error))
   }
 
   componentDidMount() {
-    this.callAPIProducts()
-    this.callAPIUsers()
+    this.apiCall("http://localhost:3030/api/products", this.showProducts);
+    this.apiCall("http://localhost:3030/api/users", this.showUsers);
+  }
+
+  showProducts = (data) => {
+    console.log(data);
+    console.log(data.meta.products[data.meta.products.length - 1].description);
+    this.setState({
+      productsCount: data.meta.count,
+      categoryByGroup: data.meta.categoryByGroup.length,
+      lastProductCreated: data.meta.products[data.meta.products.length - 1].description
+    })
+  }
+
+  showUsers = (data) => {
+    console.log(data);
+    this.setState({
+      usersCount: data.meta.count
+    })
   }
 
   render() {
+
+    let contenido;
+
+    let validation = (information) => {
+
+      if (information === "") {
+        contenido = "Cargando..."
+      } else {
+        contenido = information
+      }
+      return contenido
+    }
+
+
+
     return (
       <div id="content">
         {/* Topbar */}
@@ -59,7 +87,7 @@ class Content extends Component {
             </li>
             <div className="topbar-divider d-none d-sm-block" />
             {/* Nav Item - User Information */}
-            <User name="Walter White" image="/assets/images/dummy-avatar.jpg"/>
+            <User name="Walter White" image="/assets/images/dummy-avatar.jpg" />
           </ul>
         </nav>
         {/* End of Topbar */}
@@ -74,22 +102,28 @@ class Content extends Component {
           <div className="row">
 
             {/* Amount of Products in DB */}
-            <BoxDashboard title="Products in Data Base" data="135" color="primary" icon="clipboard-list"/>
-            
+            <BoxDashboard title="Total de productos" data={validation(this.state.productsCount)} color="primary" icon="clipboard-list" />
+
             {/* $$$ of all products in DB */}
-            <BoxDashboard title="Amount in product" data="$546.456" color="success" icon="dollar-sign"/>
-            
+            <BoxDashboard title="Total de usuarios" data={validation(this.state.usersCount)} color="success" icon="user-check" />
+
             {/* Amount of users in DB */}
-            <BoxDashboard title="Users quantity" data="38" color="warning" icon="user-check"/>
-            
+            <BoxDashboard title="Total de categorias" data={validation(this.state.categoryByGroup)} color="warning" icon="clipboard-list" />
+
+            <BoxDashboard title="Total de Productos Vendidos" data="38" color="primary" icon="dollar-sign" />
+
+            <BoxDashboard title="Total de ventas" data="38" color="success" icon="dollar-sign" />
+
+            <BoxDashboard title="Total de Ordenes generadas" data="38" color="warning" icon="clipboard-list" />
+
           </div>
           {/* Content Row */}
           <div className="row">
             {/* Last Product in DB */}
-            <BigBoxWithImage title="Last product in Data Dase" color="primary" image="assets/images/product_dummy.svg" data="Lorem ipsum dolor sit amet" name="image dummy"/>
-            
+            <BigBoxWithImage title="Último producto creado" color="primary" image="assets/images/product_dummy.svg" data="Lorem ipsum dolor sit amet" name="image dummy" />
+
             {/* Categories in DB */}
-            <BigBoxWithBoxes title="Categories in DB"/>
+            <BigBoxWithBoxes title="Total de productos por categoria" />
           </div>
         </div>
         {/* /.container-fluid */}
