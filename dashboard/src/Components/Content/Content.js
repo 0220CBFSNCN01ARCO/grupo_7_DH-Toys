@@ -9,38 +9,43 @@ class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      products: [],
+      lastProduct: {},
       productsCount: "",
-      usersCount: ""
+      categoriesCount: "",
+      usersCount: "",
+      
     };
   }
 
-  apiCall(url, consecuencia) {
-    fetch(url)
-      .then(res => res.json())
-      .then(data => consecuencia(data))
-      .catch(error => console.error(error))
+  async apicall(url) {
+    const httpresult = await fetch(url);
+    return await httpresult.json();
+  }
+
+  async getProducts() {
+    let response = await this.apicall("http://localhost:3030/api/products");
+    console.log(response.meta.products)
+    const lastProductId = response.meta.products[response.meta.products.length - 1].id
+    const lastProduct = await this.apicall("http://localhost:3030/api/products/"+ lastProductId);
+    this.setState({
+      products: response.meta.products,
+      productsCount: response.meta.count,
+      lastProduct,
+      categoryByGroup: response.meta.categoryByGroup.length
+    });
+  }
+
+  async getUsers() {
+    const usersCount = (await this.apicall("http://localhost:3030/api/users")).meta.count;
+    this.setState({
+      usersCount,
+    });
   }
 
   componentDidMount() {
-    this.apiCall("http://localhost:3030/api/products", this.showProducts);
-    this.apiCall("http://localhost:3030/api/users", this.showUsers);
-  }
-
-  showProducts = (data) => {
-    console.log(data);
-    console.log(data.meta.products[data.meta.products.length - 1].description);
-    this.setState({
-      productsCount: data.meta.count,
-      categoryByGroup: data.meta.categoryByGroup.length,
-      lastProductCreated: data.meta.products[data.meta.products.length - 1].description
-    })
-  }
-
-  showUsers = (data) => {
-    console.log(data);
-    this.setState({
-      usersCount: data.meta.count
-    })
+    this.getProducts()
+    this.getUsers()
   }
 
   render() {
@@ -56,8 +61,6 @@ class Content extends Component {
       }
       return contenido
     }
-
-
 
     return (
       <div id="content">
@@ -120,7 +123,7 @@ class Content extends Component {
           {/* Content Row */}
           <div className="row">
             {/* Last Product in DB */}
-            <BigBoxWithImage title="Último producto creado" color="primary" image="assets/images/product_dummy.svg" data="Lorem ipsum dolor sit amet" name="image dummy" />
+            <BigBoxWithImage title="Último producto creado" color="primary" image={validation(this.state.lastProduct.imgProduct)} data="Lorem ipsum dolor sit amet" name="image dummy" />
 
             {/* Categories in DB */}
             <BigBoxWithBoxes title="Total de productos por categoria" />
