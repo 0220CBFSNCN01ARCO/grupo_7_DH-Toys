@@ -13,8 +13,8 @@ const init = async (req, res) => {
     external_reference: "123123",
     auto_return: "all",
     back_urls: {
-      failure: "http://localhost:3000/cart/rejected",
-      success: "http://localhost:3000/cart/approved",
+      failure: "http://localhost:3030/cart/rejected",
+      success: "http://localhost:3030/cart/approved",
     },
   }
   let idUser = req.session.userLogueado[0].id;
