@@ -13,6 +13,12 @@ const apiOrders = {
         where: { 'idStatus': 2 }
       })
 
+      let sumProducts = await db.orders.findAll({
+        attributes: ['idStatus',[sequelize.fn('SUM', sequelize.col('idStatus')), 'quantity']],
+        include: [{association: 'order', attributes: []}],
+        where: { 'idStatus': 2 }
+      })
+
       let approvedOrders = await db.orders.findAll({
         where: { 'idStatus': 2 },
         attributes: ['id', 'amount']
@@ -31,7 +37,8 @@ const apiOrders = {
           count_approved_orders: approvedOrders.length,
           approved_orders: approvedOrders,
           total_amount: total,
-          sellingOrders
+          sellingOrders,
+          sumProducts
         }
       }
       res.json(respuesta);

@@ -15,6 +15,7 @@ class Content extends Component {
       productsCount: "",
       categoriesCount: "",
       usersCount: "",
+      productsSum: ""
     };
   }
 
@@ -46,12 +47,13 @@ class Content extends Component {
 
   async getOrders() {
     const orders = (await this.apicall("http://localhost:3030/api/orders")).meta;
-    console.log(orders.total_amount);
+    console.log(orders.sumProducts[0].quantity);
     this.setState({
       orders,
       countOrders: orders.count_orders,
       sellingOrders: orders.sellingOrders[0].count,
-      total: orders.total_amount
+      total: `$${orders.total_amount}`,
+      productsSum: orders.sumProducts[0].quantity
     });
   }
 
@@ -125,7 +127,7 @@ class Content extends Component {
             {/* Amount of users in DB */}
             <BoxDashboard title="Total de categorias" data={validation(this.state.categoriesCount)} color="warning" icon="clipboard-list" />
 
-            <BoxDashboard title="Total de Productos Vendidos" data={validation(this.state.sellingOrders)} color="primary" icon="dollar-sign" />
+            <BoxDashboard title="Total de Productos Vendidos" data={validation(this.state.productsSum)} color="primary" icon="dollar-sign" />
 
             <BoxDashboard title="Total de ventas" data={validation(this.state.total)} color="success" icon="dollar-sign" />
 
