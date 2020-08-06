@@ -34,8 +34,9 @@ const apiProducts = {
 
     try {
       let productDescription = await db.Products.findByPk(req.params.id, {
-        attributes: ['id', 'name', 'description','image', 'price', 'age', 'productCategory.name'],
-        include: [{ association: 'productCategory'}],
+        
+        attributes: ['id', 'name', 'description','image', 'price', 'age'],
+        include: [{ association: 'productCategory', attributes: ['name']}],
       });
 
       if (!productDescription) {
