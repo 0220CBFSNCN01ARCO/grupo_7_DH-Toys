@@ -10,11 +10,11 @@ class Content extends Component {
     super(props);
     this.state = {
       products: [],
+      categoryByGroup: [],
       lastProduct: {},
       productsCount: "",
       categoriesCount: "",
       usersCount: "",
-      
     };
   }
 
@@ -25,14 +25,15 @@ class Content extends Component {
 
   async getProducts() {
     let response = await this.apicall("http://localhost:3030/api/products");
-    console.log(response.meta.products)
     const lastProductId = response.meta.products[response.meta.products.length - 1].id
+    //console.log(response.meta.categoryByGroup)
     const lastProduct = await this.apicall("http://localhost:3030/api/products/"+ lastProductId);
     this.setState({
       products: response.meta.products,
       productsCount: response.meta.count,
       lastProduct,
-      categoryByGroup: response.meta.categoryByGroup.length
+      categoriesCount: response.meta.categoryByGroup.length,
+      categoryByGroup: response.meta.categoryByGroup
     });
   }
 
@@ -111,7 +112,7 @@ class Content extends Component {
             <BoxDashboard title="Total de usuarios" data={validation(this.state.usersCount)} color="success" icon="user-check" />
 
             {/* Amount of users in DB */}
-            <BoxDashboard title="Total de categorias" data={validation(this.state.categoryByGroup)} color="warning" icon="clipboard-list" />
+            <BoxDashboard title="Total de categorias" data={validation(this.state.categoriesCount)} color="warning" icon="clipboard-list" />
 
             <BoxDashboard title="Total de Productos Vendidos" data="38" color="primary" icon="dollar-sign" />
 
@@ -123,10 +124,10 @@ class Content extends Component {
           {/* Content Row */}
           <div className="row">
             {/* Last Product in DB */}
-            <BigBoxWithImage title="Último producto creado" color="primary" image={validation(this.state.lastProduct.imgProduct)} data="Lorem ipsum dolor sit amet" name="image dummy" />
+            <BigBoxWithImage title="Último producto creado" color="primary" image={validation(this.state.lastProduct.imgProduct)} data={validation(this.state.lastProduct.description)} name={validation(this.state.lastProduct.description)} />
 
             {/* Categories in DB */}
-            <BigBoxWithBoxes title="Total de productos por categoria" />
+            <BigBoxWithBoxes title="Total de productos por categoria" categories={this.state.categoryByGroup} />
           </div>
         </div>
         {/* /.container-fluid */}
