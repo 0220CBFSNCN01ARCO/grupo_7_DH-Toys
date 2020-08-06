@@ -14,7 +14,8 @@ class Content extends Component {
       productsCount: "",
       categoriesCount: "",
       usersCount: "",
-      
+      orders: "",
+      countOrders: "",
     };
   }
 
@@ -43,9 +44,21 @@ class Content extends Component {
     });
   }
 
+  async getOrders() {
+    const orders = (await this.apicall("http://localhost:3030/api/orders")).meta;
+    console.log(orders.total_amount);
+    this.setState({
+      orders,
+      countOrders: orders.count_orders,
+      sellingOrders: orders.sellingOrders[0].count,
+      total: orders.total_amount
+    });
+  }
+
   componentDidMount() {
     this.getProducts()
     this.getUsers()
+    this.getOrders()
   }
 
   render() {
@@ -53,7 +66,6 @@ class Content extends Component {
     let contenido;
 
     let validation = (information) => {
-
       if (information === "") {
         contenido = "Cargando..."
       } else {
@@ -113,11 +125,11 @@ class Content extends Component {
             {/* Amount of users in DB */}
             <BoxDashboard title="Total de categorias" data={validation(this.state.categoryByGroup)} color="warning" icon="clipboard-list" />
 
-            <BoxDashboard title="Total de Productos Vendidos" data="38" color="primary" icon="dollar-sign" />
+            <BoxDashboard title="Total de Productos Vendidos" data={validation(this.state.sellingOrders)} color="primary" icon="dollar-sign" />
 
-            <BoxDashboard title="Total de ventas" data="38" color="success" icon="dollar-sign" />
+            <BoxDashboard title="Total de ventas" data={validation(this.state.total)} color="success" icon="dollar-sign" />
 
-            <BoxDashboard title="Total de Ordenes generadas" data="38" color="warning" icon="clipboard-list" />
+            <BoxDashboard title="Total de Ordenes generadas" data={validation(this.state.countOrders)}countOrders color="warning" icon="clipboard-list" />
 
           </div>
           {/* Content Row */}
