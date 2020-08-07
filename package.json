@@ -25,8 +25,7 @@
     "nodemon": "^2.0.3"
   },
   "scripts": {
-    "start": "node ./site/bin/www",
-    "start-dev": "nodemon ./site/bin/www",
+    "start": "nodemon ./site/bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
