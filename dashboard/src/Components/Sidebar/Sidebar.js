@@ -1,16 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ActionButtons from './SubComponents/ActionButtons'
 
-export default function Sidebar() {
-  return (
-    <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion dhcolor-black-gradient" id="accordionSidebar">
-
-			{/*<!-- Sidebar - Brand -->*/}
-			<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-				<div className="sidebar-brand-icon">
-					<i className="fas fa-chart-line"></i>
-				</div>
-				<div className="sidebar-brand-text mx-3">Admin</div>
+class SideBar extends Component {
+	render(){
+		return (
+			<ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion dhcolor-black-gradient" id="accordionSidebar">
+		
+					{/*<!-- Sidebar - Brand -->*/}
+					<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+						<div className="sidebar-brand-icon">
+							<i className="fas fa-chart-line"></i>
+						</div>
+				<div className="sidebar-brand-text mx-3"><a href="http://localhost:3030/admin" style={{color: 'white', textDecoration: 'none'}}>Admin</a></div>
 			</a>
 
 			{/*<!-- Divider -->*/}
@@ -41,5 +42,10 @@ export default function Sidebar() {
 			{/*<!-- Divider -->*/}
 			<hr className="sidebar-divider d-none d-md-block"/>
 		</ul>
-  )
+		  )  
+	}
+
+  
 }
+
+export default SideBar;

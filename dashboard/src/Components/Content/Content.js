@@ -27,7 +27,6 @@ class Content extends Component {
   async getProducts() {
     let response = await this.apicall("http://localhost:3030/api/products");
     const lastProductId = response.meta.products[response.meta.products.length - 1].id
-    //console.log(response.meta.categoryByGroup)
     const lastProduct = await this.apicall("http://localhost:3030/api/products/"+ lastProductId);
     this.setState({
       products: response.meta.products,
