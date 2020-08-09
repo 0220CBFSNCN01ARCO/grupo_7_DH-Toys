@@ -38,9 +38,13 @@ const indexController = {
     const toFind = req.body.search
     db.Products.findAll({
       where: {
-        name: {
-          [Sequelize.Op.like]: '%' + toFind + '%'
-        }
+        [Sequelize.Op.and]: [
+          {status: true},
+          {name: {
+            [Sequelize.Op.like]: '%' + toFind + '%'
+          }}
+        ]
+        
       }
     })
       .then(products => {
