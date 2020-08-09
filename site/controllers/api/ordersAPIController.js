@@ -14,7 +14,7 @@ const apiOrders = {
       })
 
       let sumProducts = await db.orders.findAll({
-        attributes: ['idStatus',[sequelize.fn('SUM', sequelize.col('idStatus')), 'quantity']],
+        attributes: ['idStatus',[sequelize.fn('SUM', sequelize.col('quantity')), 'quantity']],
         include: [{association: 'order', attributes: []}],
         where: { 'idStatus': 2 }
       })
