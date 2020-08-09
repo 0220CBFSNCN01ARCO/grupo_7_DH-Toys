@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/admin/adminHead')%>
+<body>
+    <%- include('../partials/admin/adminHeader')%>
+    <div class="container">
+        <div class="d-flex justify-content-center list-products-title">
+          <h2>DETALLE DE ORDEN NRO <%= orderDetail.idOrden %></h2>
+        </div>
+          <div class="row col-12 p-0 table-container justify-content-center">
+            <table class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+              <colgroup span="5" class="columns formulario1"></colgroup>
+              <tr class="text-center">
+                <th>Id</th>
+                <th>Juguete</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+              </tr>
+              <% orderDetail.forEach(order => { %>
+              <tr class="text-center">
+                <td><%= order.id %></td>
+                <td><%= order.products.name %></td>
+                <td>$<%= order.products.price %></td>
+                <td><%= order.quantity %></td>
+              </tr>
+              <% }) %>
+            </table>
+          </div>
+      </div>
+    <%- include('../partials/admin/adminFooter')%>
+    <%- include('../partials/scripts')%>
+</body>
+</html>

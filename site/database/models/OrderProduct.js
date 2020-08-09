@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false 
     },
     idProduct: DataTypes.INTEGER,
-    idOrder: DataTypes.INTEGER
+    idOrder: DataTypes.INTEGER,
+    quantity: DataTypes.INTEGER
   };
 
   let config = {

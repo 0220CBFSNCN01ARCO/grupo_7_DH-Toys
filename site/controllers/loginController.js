@@ -50,16 +50,29 @@ const loginController = {
   addUser: function (req, res, next) {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
-      db.Users.create({
-        name: req.body.name,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10),
-        avatar: req.file.originalname,
-        idCategoryUser: 2,
-        phoneNumber: null,
-        country: null
+      if(typeof req.file != 'undefined'){
+        db.Users.create({
+          name: req.body.name,
+          lastName: req.body.lastName,
+          email: req.body.email,
+          password: bcrypt.hashSync(req.body.password, 10),
+          avatar: req.file.originalname,
+          idCategoryUser: 2,
+          phoneNumber: null,
+          country: null
+        })
+      }else{
+        db.Users.create({
+          name: req.body.name,
+          lastName: req.body.lastName,
+          email: req.body.email,
+          password: bcrypt.hashSync(req.body.password, 10),
+          avatar: 'defaultUser.png',
+          idCategoryUser: 2,
+          phoneNumber: null,
+          country: null
       })
+    }
       res.redirect('/users/login');
     } else {
       const userToReload = {

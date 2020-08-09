@@ -78,7 +78,8 @@ const userNotLogged = (req,res,next) => {
 
 const adminValidator = (req, res, next) => {
     if(req.session.userLogueado[0].idCategoryUser != 1){
-        res.redirect('/users/profile')
+        console.log(req.session.userLogueado)
+        res.redirect(`/users/profile/${req.session.userLogueado[0].id}`)
     }
     next()
 }
