@@ -52,10 +52,11 @@ const successPayment = async (req, res) => {
       { where: { id: newOrder.id }}
     )
     req.session.cart = { cartItems: [], total: 0 };
-    res.redirect('/')
-  } catch (error) {
+  }
+   catch (error) {
     console.log(error)
   }
+  res.redirect('/')
 }
 
 const rejectedPayment = async (req, res) => {
@@ -63,10 +64,10 @@ const rejectedPayment = async (req, res) => {
     await db.orders.update({idStatus: 3},
       { where: { id: newOrder.id }}
     )
-    res.redirect('/cart');
   } catch (error) {
     console.error(error);
   }
+  res.redirect('/cart');
 }
 
 module.exports = {
