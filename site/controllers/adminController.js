@@ -157,6 +157,40 @@ const adminController = {
       }
       res.redirect('/admin/users')
     })
+  },
+  adminOrders: async (req, res) => {
+    let orders = {}
+    try{
+      orders = await db.orders.findAll(
+        { include: { all: true}}
+      )
+      res.render('admin/orders', {
+        title: 'Admin Orders',
+        orders,
+        user: req.session.userLogueado,
+        cart: req.session.cart
+      })
+    }catch(error){
+      console.error(error);
+    } 
+  },
+  orderDetail: async (req, res) =>{
+    let orderDetail = {}
+    try {
+      orderDetail = await db.orders_products.findAll({
+        include: [{association: 'products'}],
+        where: { idOrder: req.params.id}
+      })
+      console.log(orderDetail)
+      res.render('admin/orderDetail', {
+        title: 'Detalle Orden',
+        orderDetail,
+        user: req.session.userLogueado,
+        cart: req.session.cart
+      })
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
 module.exports = adminController;

@@ -13,8 +13,8 @@ const init = async (req, res) => {
     external_reference: "123123",
     auto_return: "all",
     back_urls: {
-      failure: "http://localhost:3000/cart/rejected",
-      success: "http://localhost:3000/cart/approved",
+      failure: "http://localhost:3030/cart/rejected",
+      success: "http://localhost:3030/cart/approved",
     },
   }
   let idUser = req.session.userLogueado[0].id;
@@ -29,7 +29,8 @@ const init = async (req, res) => {
     cart.forEach(prod => {
       db.orders_products.create({
         idProduct: prod.id,
-        idOrder: newOrder.id
+        idOrder: newOrder.id,
+        quantity: prod.cantidad
       })
     });
     let item = {
@@ -51,10 +52,11 @@ const successPayment = async (req, res) => {
       { where: { id: newOrder.id }}
     )
     req.session.cart = { cartItems: [], total: 0 };
-    res.redirect('/')
-  } catch (error) {
+  }
+   catch (error) {
     console.log(error)
   }
+  res.redirect('/')
 }
 
 const rejectedPayment = async (req, res) => {
@@ -62,10 +64,10 @@ const rejectedPayment = async (req, res) => {
     await db.orders.update({idStatus: 3},
       { where: { id: newOrder.id }}
     )
-    res.redirect('/cart');
   } catch (error) {
     console.error(error);
   }
+  res.redirect('/cart');
 }
 
 module.exports = {

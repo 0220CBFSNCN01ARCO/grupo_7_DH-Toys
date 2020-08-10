@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="d-flex justify-content-center list-products-title">
+      <h2>ADMINISTRADOR DE ORDENES DE COMPRA</h2>
+    </div>
+      <div class="row col-12 p-0 table-container justify-content-center">
+        <table class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+          <colgroup span="5" class="columns formulario1"></colgroup>
+          <tr class="text-center">
+            <th>Id</th>
+            <th>Usuario</th>
+            <th>Monto</th>
+            <th>Estado</th>
+            <th>Detalle</th>
+          </tr>
+          <% orders.forEach(order => { %>
+          <tr class="text-center">
+            <td><%= order.id %></td>
+            <td><%= order.users.email %></td>
+            <td>$<%= order.amount %></td>
+            <td><%= order.orderStatus.name %></td>
+            <td class="link-edit-product">
+              <a href='/admin/orderDetail/<%= order.id %>' title='Ver detalle'>
+                <img src="/images/editProduct.svg" alt="img">
+              </a>
+            </td>
+          </tr>
+          <% }) %>
+        </table>
+      </div>
+  </div>

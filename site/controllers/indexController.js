@@ -38,9 +38,13 @@ const indexController = {
     const toFind = req.body.search
     db.Products.findAll({
       where: {
-        name: {
-          [Sequelize.Op.like]: '%' + toFind + '%'
-        }
+        [Sequelize.Op.and]: [
+          {status: true},
+          {name: {
+            [Sequelize.Op.like]: '%' + toFind + '%'
+          }}
+        ]
+        
       }
     })
       .then(products => {
@@ -100,13 +104,19 @@ const indexController = {
                             user: req.session.userLogueado,
                             cart: req.session.cart
                           });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7b2b065aac16c4a0937208e52281ce8e9eb19740
   }, contact: (req, res) => {
     res.render('contact', { title: 'contact',
                             user: req.session.userLogueado,
                             cart: req.session.cart
                           });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7b2b065aac16c4a0937208e52281ce8e9eb19740
   },
 }
 

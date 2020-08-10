@@ -66,6 +66,7 @@ CREATE TABLE orders_products (
 	id INT AUTO_INCREMENT NOT NULL,
     idProduct INT,
     idOrder INT,
+    quantity INT,
     PRIMARY KEY (id),
     FOREIGN KEY (idProduct) REFERENCES products(id),
     FOREIGN KEY (idOrder) REFERENCES orders(id)
