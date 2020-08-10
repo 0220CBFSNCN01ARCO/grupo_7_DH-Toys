@@ -100,14 +100,13 @@ const indexController = {
                             user: req.session.userLogueado,
                             cart: req.session.cart
                           });
-<<<<<<< HEAD
+
   }, contact: (req, res) => {
     res.render('contact', { title: 'contact',
                             user: req.session.userLogueado,
                             cart: req.session.cart
                           });
-=======
->>>>>>> 75f95ec053329a551c6a23acb3de170e43ba2764
+
   },
 }
 
